@@ -9,454 +9,923 @@
   <meta name="google" content="notranslate" />
 
   <title>Sathya Boobalan</title>
-  <link rel="icon" type="image/png" href="./assets/favicon.ico" />
+  <link rel="icon" type="image/png" href="./assets/favicon.ico">
 
-  <!-- Font Awesome (kept to avoid icon visual changes) -->
+  <!-- Bootstrap -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-  <!-- Tailwind (kept for current look; build & purge in production to reduce size) -->
-  <script src="https://cdn.tailwindcss.com" defer></script>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- Custom Styles -->
   <style>
   /* === ROOT VARIABLES === */
-  :root{
+  :root {
     --bg-1: #05060a;
     --panel: #0b0f16;
     --glass: rgba(255,255,255,0.03);
+    --glass-strong: rgba(255,255,255,0.04);
     --muted: #9aa4b2;
     --neon: #0ea5e9;
+    --accent: rgba(14,165,233,0.12);
     --card-border: rgba(14,165,233,0.12);
   }
 
-  html,body{height:100%;margin:0;padding:0;overflow-x:hidden;scroll-behavior:smooth;
-    background:linear-gradient(180deg,#040608 0%,#0b0f12 100%);color:#e6eef6;
-    font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-    -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    background: linear-gradient(180deg, #040608 0%, #0b0f12 100%);
+    color: #e6eef6;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-  body{min-height:100vh;background-attachment:fixed;}
 
-  /* small layout shim to replace Bootstrap column classes used in the markup */
-  .row{display:flex;flex-wrap:wrap;margin:0 -8px;}
-  .col{padding:0 8px;box-sizing:border-box;}
-  .col-4{flex:0 0 33.3333%;}
-  .col-8{flex:0 0 66.6666%;}
-  @media (max-width: 768px){
-    .col-4,.col-8,.col{flex:0 0 100%;}
+  body {
+    min-height: 100vh;
+    background-attachment: fixed;
+  }
+.cert-thumb {
+  width: 100%;
+  height: 150px;              /* fixed height for all images */
+  object-fit: cover;          /* ensures image fills box without distortion */
+  border-radius: 8px;         /* same rounded look */
+  display: block;
+}
+
+
+
+
+
+
+
+  /* Education */
+  .edu-item { display:flex; gap:12px; align-items:flex-start; }
+  .edu-year { color:var(--neon); font-weight:700; min-width:86px; }
+
+  /* === PARTICLES CANVAS === */
+  #particles {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: transparent;
   }
 
-  /* keep the rest of your custom styles (trimmed to essentials) */
-  .cert-thumb{width:100%;height:150px;object-fit:cover;border-radius:8px;display:block;}
-  .edu-item{display:flex;gap:12px;align-items:flex-start;}
-  .edu-year{color:var(--neon);font-weight:700;min-width:86px;}
-  #particles{position:fixed;inset:0;z-index:0;pointer-events:none;background:transparent}
-  .site{position:relative;z-index:5;min-height:100vh;}
-  .btn-cta{display:inline-flex;align-items:center;gap:10px;padding:1rem 2rem;border:1px solid rgba(14,165,233,0.3);border-radius:12px;background:rgba(14,165,233,0.05);color:#cfeffb;font-weight:700;font-size:1.1rem;text-decoration:none;transition:all .25s}
-  .btn-cta:hover{background:rgba(14,165,233,0.15);border-color:rgba(14,165,233,0.6);color:var(--neon);transform:translateY(-2px)}
-  .cyber-header{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:radial-gradient(circle at 50% 50%, rgba(14,165,233,0.1), rgba(0,0,0,0.95));text-align:center;padding:1rem}
-  .cyber-header::before{content:"";position:absolute;width:200%;height:200%;background:linear-gradient(120deg,#0ea5e9,#0891b2,#06b6d4,#0ea5e9);background-size:300% 300%;animation:gradientShift 12s linear infinite;opacity:.08;z-index:0}
-  @keyframes gradientShift{0%{transform:rotate(0deg)}50%{transform:rotate(180deg)}100%{transform:rotate(360deg)}}
-  .cyber-content{position:relative;z-index:2}
-  .glow-title{font-size:clamp(3rem,6vw,6rem);font-weight:900;color:var(--neon);text-shadow:0 0 8px var(--neon),0 0 20px var(--neon)}
-  .glow-subtitle{margin-top:12px;font-size:2.2rem;font-weight:600;color:rgba(224,247,255,0.9);letter-spacing:.5px}
-  .glitch-typewriter{display:inline-block;overflow:hidden;white-space:nowrap;letter-spacing:.15em}
-  .glitch-typewriter .text{display:inline-block;animation:typewriter 3s steps(18) 1 forwards}
-  .glitch-typewriter .cursor{display:inline-block;background:var(--neon);width:.15em;margin-left:2px;animation:blink .8s step-end infinite}
-  @keyframes typewriter{0%{width:0}100%{width:18ch}}@keyframes blink{0%,50%,100%{opacity:1}25%,75%{opacity:0}}
-  .hero{background:#000;padding:6rem 1.5rem 4rem;text-align:center}
-  .hero-inner{max-width:980px;margin:0 auto}
-  .title{font-size:clamp(2rem,5vw,3.5rem);font-weight:800;letter-spacing:-.02em;color:#e6f7ff}
-  .title .neon{color:var(--neon);text-shadow:0 0 8px rgba(14,165,233,0.18)}
-  .subtitle{color:var(--muted);margin-top:.75rem;font-weight:600;font-size:1.1rem}
-  .social-icons{margin-top:26px;display:flex;justify-content:center;gap:24px}
-  .social-icons a{color:var(--neon);font-size:1.9rem;transition:all .3s}
-  .social-icons a:hover{color:#67e8f9;transform:scale(1.15)}
-  .section{padding:5rem 1.5rem}
-  .maxw{max-width:1100px;margin:0 auto}
-  .section-title{display:flex;align-items:baseline;gap:14px;margin-bottom:1.5rem}
-  .section-title h2{font-size:1.8rem;font-weight:800;color:#eaf6ff}
-  .section-title .bar{height:40px;width:6px;border-radius:4px;background:linear-gradient(180deg,var(--neon),#7dd3fc);box-shadow:0 6px 18px rgba(14,165,233,0.08)}
-  .muted{color:var(--muted);font-size:1.1rem}
-  .glass-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid var(--card-border);border-radius:12px;padding:1.25rem;box-shadow:0 8px 30px rgba(2,6,23,0.6);transition:transform .22s ease,box-shadow .22s ease}
-  .glass-card:hover{transform:translateY(-8px);border-color:rgba(14,165,233,0.22);box-shadow:0 30px 60px rgba(2,6,23,0.7)}
-  .contact-card{display:flex;gap:14px;align-items:center;justify-content:space-between;padding:1rem}
-  .project-img{width:100%;height:200px;object-fit:cover;border-radius:8px;display:block;margin-bottom:.75rem}
-  .tag{display:inline-block;font-size:.85rem;padding:.4rem .7rem;border-radius:999px;background:rgba(14,165,233,0.06);color:#bfeeff;border:1px solid rgba(14,165,233,0.08)}
-  .service-icon{width:72px;height:72px;display:inline-grid;place-items:center;border-radius:12px;background:linear-gradient(135deg,rgba(14,165,233,0.08),rgba(125,211,252,0.02));box-shadow:0 6px 18px rgba(14,165,233,0.04) inset;margin-bottom:1rem}
-  footer{padding:2.5rem 1rem;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02);font-size:1rem}
-  footer span{color:var(--neon)}
+  /* === SITE CONTAINER === */
+  .site {
+    position: relative;
+    z-index: 5;
+    min-height: 100vh;
+  }
 
-  /* responsive tweaks */
-  @media (max-width:768px){.glow-title{font-size:3rem}.glow-subtitle{font-size:1.4rem}.title{font-size:2rem}.subtitle{font-size:1rem}.section-title h2{font-size:1.4rem}.hero{padding:4rem 1rem 3rem}.project-img{height:160px}}
-  @media (max-width:480px){.glow-title{font-size:3rem}.glow-subtitle{font-size:1.4rem}.btn-cta{font-size:1rem;padding:.7rem 1rem}.section{padding:3rem 1rem}}
-  @media (max-width:768px){.cert-thumb{height:160px}}
-  </style>
+  /* BUTTONS (Glass / Neon Style) */
+  .btn-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 1rem 2rem;
+    border: 1px solid rgba(14,165,233,0.3);
+    border-radius: 12px;
+    background: rgba(14,165,233,0.05);
+    color: #cfeffb;
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .btn-cta i {
+    font-size: 1.4rem;
+  }
+
+  .btn-cta:hover {
+    background: rgba(14,165,233,0.15);
+    border-color: rgba(14,165,233,0.6);
+    color: #0ea5e9;
+    transform: translateY(-2px) scale(1.08);
+    text-shadow: 0 0 10px #0ea5e9, 0 0 20px #0ea5e9;
+  }
+
+  /* === CYBER GLOW HEADER === */
+  .cyber-header {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: radial-gradient(circle at 50% 50%, rgba(14,165,233,0.1), rgba(0,0,0,0.95));
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .cyber-header::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(120deg, #0ea5e9, #0891b2, #06b6d4, #0ea5e9);
+    background-size: 300% 300%;
+    animation: gradientShift 12s linear infinite;
+    opacity: 0.1;
+    z-index: 0;
+  }
+
+  @keyframes gradientShift {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .cyber-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .glow-title {
+    font-size: clamp(3rem, 6vw, 6rem);
+    font-weight: 900;
+    color: var(--neon);
+    text-shadow: 0 0 8px var(--neon), 0 0 20px var(--neon), 0 0 40px var(--neon);
+    animation: flicker 3s infinite;
+  }
+
+  .glow-subtitle {
+    margin-top: 12px;
+    font-size: 2.3rem;
+    font-weight: 600;
+    color: rgba(224,247,255,0.9);
+    letter-spacing: 0.5px;
+  }
+
+  /* GLITCH-TYPEWRITER */
+  .glitch-typewriter {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    letter-spacing: 0.15em;
+  }
+
+  .glitch-typewriter .text {
+    display: inline-block;
+    animation: typewriter 3s steps(18) 1 forwards, flicker 2s infinite;
+  }
+
+  .glitch-typewriter .cursor {
+    display: inline-block;
+    background: var(--neon);
+    width: 0.15em;
+    margin-left: 2px;
+    animation: blink 0.8s step-end infinite;
+  }
+
+  @keyframes typewriter {
+    0% { width: 0; }
+    100% { width: 18ch; }
+  }
+
+  @keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+  }
+
+  @keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+      opacity: 1;
+      text-shadow: 0 0 12px var(--neon), 0 0 22px var(--neon), 0 0 42px var(--neon);
+    }
+    20%, 24%, 55% {
+      opacity: 0.35;
+      text-shadow: none;
+    }
+  }
+
+  /* HERO */
+  .hero {
+    background: #000;
+    padding: 6rem 1.5rem 4rem;
+    text-align: center;
+  }
+
+  .hero-inner { max-width: 980px; margin: 0 auto; }
+
+  .title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #e6f7ff;
+  }
+
+  .title .neon {
+    color: var(--neon);
+    text-shadow: 0 0 8px rgba(14,165,233,0.18), 0 8px 30px rgba(14,165,233,0.06);
+  }
+
+  .subtitle {
+    color: var(--muted);
+    margin-top: 0.75rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+
+  /* SOCIAL ICONS */
+  .social-icons {
+    margin-top: 26px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .social-icons a {
+    color: var(--neon);
+    font-size: 1.9rem;
+    transition: all 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #67e8f9;
+    text-shadow: 0 0 10px #67e8f9, 0 0 20px #67e8f9;
+    transform: scale(1.2);
+  }
+
+  /* SECTION LAYOUT */
+  .section { padding: 5rem 1.5rem; }
+  .maxw { max-width: 1100px; margin: 0 auto; }
+
+  .section-title {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #eaf6ff;
+  }
+
+  .section-title .bar {
+    height: 40px;
+    width: 6px;
+    border-radius: 4px;
+    background: linear-gradient(180deg,var(--neon), #7dd3fc);
+    box-shadow: 0 6px 18px rgba(14,165,233,0.08);
+  }
+
+  .muted { color: var(--muted); font-size: 1.1rem; }
+
+  /* GLASS CARD */
+  .glass-card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+    transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    overflow:hidden;
+  }
+
+  .glass-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(14,165,233,0.22);
+    box-shadow: 0 30px 60px rgba(2,6,23,0.7);
+  }
+
+  /* Contact */
+  .contact-card {
+    display:flex; gap:14px; align-items:center; justify-content:space-between; padding:1rem;
+  }
+
+  .btn-cta {
+    background: linear-gradient(90deg, rgba(14,165,233,0.14), rgba(96,165,250,0.06));
+    color: #cfeffb;
+    padding:.8rem 1.3rem;
+    border-radius:10px;
+    border:1px solid rgba(14,165,233,0.12);
+    display:inline-flex;
+    gap:.6rem;
+    align-items:center;
+    font-weight:700;
+  }
+
+  /* Project image */
+  .project-img {
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:8px;
+    display:block;
+    margin-bottom:.75rem;
+  }
+
+  /* Tag */
+  .tag {
+    display:inline-block;
+    font-size:.85rem;
+    padding:.4rem .7rem;
+    border-radius:999px;
+    background: rgba(14,165,233,0.06);
+    color: #bfeeff;
+    border:1px solid rgba(14,165,233,0.08);
+  }
+
+  /* Service icon */
+  .service-icon {
+    width:72px; height:72px;
+    display:inline-grid;
+    place-items:center;
+    border-radius:12px;
+    background: linear-gradient(135deg, rgba(14,165,233,0.08), rgba(125,211,252,0.02));
+    box-shadow: 0 6px 18px rgba(14,165,233,0.04) inset;
+    margin-bottom:1rem;
+  }
+
+  /* Footer */
+  footer {
+    padding:2.5rem 1rem;
+    text-align:center;
+    color:var(--muted);
+    border-top:1px solid rgba(255,255,255,0.02);
+    font-size:1rem;
+  }
+  footer span { color: var(--neon); }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .glow-title { font-size: 3rem; }
+    .glow-subtitle { font-size: 1.4rem; }
+    .title { font-size: 2rem; }
+    .subtitle { font-size: 1rem; }
+    .section-title h2 { font-size: 1.4rem; }
+    .hero { padding:4rem 1rem 3rem; }
+    .project-img { height:160px; }
+    .contact-grid { grid-template-columns: 1fr !important; }
+    .contact-grid aside { margin-top: 18px; }
+  }
+
+  @media (max-width: 480px) {
+    .glow-title { font-size: 3rem; }
+    .glow-subtitle { font-size: 1.4rem; }
+    .btn-cta { font-size: 1rem; padding: 0.7rem 1rem; }
+    .section { padding: 3rem 1rem; }
+  }
+@media (max-width: 768px) {
+  .cert-thumb {
+    height: 160px;   /* slightly smaller for phones */
+  }
+}
+
+</style>
 </head>
+
+
 <body>
-  <!-- Particles: canvas hidden from assistive tech -->
+  <!-- Particles canvas (behind content) -->
   <canvas id="particles" aria-hidden="true"></canvas>
 
   <div class="site">
-    <header class="cyber-header">
-      <div class="glow-overlay"></div>
-      <div class="cyber-content">
-        <h1 class="glow-title">SATHYA&nbsp;BOOBALAN</h1>
-        <p class="glow-subtitle">System Administrator | Bug Bounty Hunter | Aspiring Penetration Tester</p>
-        <div class="social-icons">
-          <a href="https://sathyaboobalan.tiiny.site" title="Resume / Form" target="_blank" rel="noopener">
-            <i class="fa fa-file-lines" aria-hidden="true"></i>
-          </a>
-          <a href="https://in.linkedin.com/in/sathya-boobalan-07b11024a" title="LinkedIn" target="_blank" rel="noopener">
-            <i class="fab fa-linkedin" aria-hidden="true"></i>
-          </a>
-          <a href="mailto:sathyaboobalan.r2003@gmail.com" title="Email">
-            <i class="fas fa-envelope" aria-hidden="true"></i>
-          </a>
+
+
+<header class="cyber-header">
+  <div class="glow-overlay"></div>
+  <div class="cyber-content">
+    <h1 class="glow-title">SATHYA&nbsp;BOOBALAN</h1>
+    <p class="glow-subtitle">System Administrator | Bug Bounty Hunter | Aspiring Penetration Tester</p>
+    <div class="social-icons">
+      <!-- Resume / Document Icon -->
+      <a href="https://sathyaboobalan.tiiny.site" title="Resume / Form" target="_blank" rel="noopener">
+        <i class="fa fa-file-lines"></i>
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://in.linkedin.com/in/sathya-boobalan-07b11024a" title="LinkedIn" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+
+      <!-- Email -->
+      <a href="mailto:sathyaboobalan.r2003@gmail.com" title="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+  </div>
+</header>
+
+
+
+    <!-- MAIN -->
+    <main class="main" role="main">
+<!-- ABOUT (polished conversational style) -->
+<section id="about" class="section">
+  <div class="maxw">
+    <div class="section-title">
+      <div class="bar" aria-hidden="true"></div>
+      <h2>About Me</h2>
+    </div>
+
+    <div class="glass-card">
+      <div class="row">
+        <div class="col-md-4 col-sm-12" style="padding-right:16px;padding-bottom:6px;padding-top:6px;">
+          <img src="./assets/images/dp.jpg" alt="Sathya Boobalan" style="width:100%;border-radius:10px;object-fit:cover" />
+        </div>
+        <div class="col-md-8 col-sm-12" style="padding-left:16px">
+          <p style="margin-top:0;color:#dbefff; line-height:1.6; " >
+            I am a cybersecurity enthusiast and  working as <strong>System Admin</strong> in <strong>A.G. Padmavati's Hospital Ltd, Puducherry</strong>, passionate about keeping IT systems secure and exploring innovative ways to protect sensitive data. I have led the research project <strong>“Blockchain and AI-based Medical Record Analysis for Bone Fracture on Cloud”</strong> (Aug–Nov 2024), integrating Blockchain, IPFS, and AI for secure medical record storage and automated fracture detection. This work was published in the <strong>Scopus-indexed Journal of Neonatal Surgery (JNS), 2025</strong>.<br><br>
+
+            I am a detail-oriented and meticulous professional with a keen interest in joining a Penetration Testing team. I stay abreast of emerging cybersecurity trends and focus on identifying vulnerabilities to enhance system security. My aim is to keep advancing in the field of cybersecurity and help create safer digital spaces for everyone, even behind the scenes.  </p>
         </div>
       </div>
-    </header>
+    </div>
+  </div>
+</section>
 
-    <main class="main" role="main">
-      <!-- ABOUT -->
-      <section id="about" class="section">
-        <div class="maxw">
-          <div class="section-title"><div class="bar" aria-hidden="true"></div><h2>About Me</h2></div>
-          <div class="glass-card">
-            <div class="row" style="align-items:flex-start;">
-              <div class="col col-4" style="padding-right:16px;padding-bottom:6px;padding-top:6px;">
-                <!-- lazy-load profile image -->
-                <img src="./assets/images/dp.jpg" alt="Sathya Boobalan" style="width:100%;border-radius:10px;object-fit:cover" loading="lazy" decoding="async" width="600" height="600" />
-              </div>
-              <div class="col col-8" style="padding-left:16px">
-                <p style="margin-top:0;color:#dbefff;line-height:1.6;">
-                  I am a cybersecurity enthusiast and working as <strong>System Admin</strong> in <strong>A.G. Padmavati's Hospital Ltd, Puducherry</strong>, passionate about keeping IT systems secure and exploring innovative ways to protect sensitive data. I have led the research project <strong>“Blockchain and AI-based Medical Record Analysis for Bone Fracture on Cloud”</strong> (Aug–Nov 2024), integrating Blockchain, IPFS, and AI for secure medical record storage and automated fracture detection. This work was published in the <strong>Scopus-indexed Journal of Neonatal Surgery (JNS), 2025</strong>.<br><br>
-                  I am a detail-oriented and meticulous professional with a keen interest in joining a Penetration Testing team. I stay abreast of emerging cybersecurity trends and focus on identifying vulnerabilities to enhance system security. My aim is to keep advancing in the field of cybersecurity and help create safer digital spaces for everyone, even behind the scenes.
-                </p>
-              </div>
-            </div>
+    
+
+<!-- PROJECTS -->
+<section id="projects" class="section bg-black/40">
+  <div class="maxw">
+    <div class="section-title">
+      <div class="bar" aria-hidden="true"></div>
+      <h2>Projects</h2>
+    </div>
+
+    <div class="grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px">
+      
+      <!-- Project 1 -->
+      <article class="glass-card" aria-labelledby="proj1-title" tabindex="0" style="padding:1.3rem; border:1px solid var(--card-border);">
+<div style="padding-bottom:6px;padding-top:6px;">
+<img src="./assets/images/project2.jpg" alt="Blockchain and AI" class="project-img">
+</div>
+        
+        
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px; margin-top:0.7rem;">
+          <div>
+            <h3 id="proj1-title" style="font-weight:700;color:#eaf6ff;margin:0; font-size:1.5rem;">
+              Blockchain and AI based <br>Medical Record Analysis <br>for Bone Fracture on Cloud
+            </h3>
+            <p class="muted" style="margin:4px 0 0; font-size:1.3rem;">Aug 2024 — Nov 2024</p>
           </div>
+          <span class="tag" aria-hidden="true" style="font-size:1.3rem;">AI • Blockchain</span>
         </div>
-      </section>
 
-      <!-- PROJECTS -->
-      <section id="projects" class="section bg-black/40">
-        <div class="maxw">
-          <div class="section-title"><div class="bar" aria-hidden="true"></div><h2>Projects</h2></div>
-          <div class="grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px">
-            <article class="glass-card" aria-labelledby="proj1-title" tabindex="0" style="padding:1.3rem;border:1px solid var(--card-border);">
-              <div style="padding-bottom:6px;padding-top:6px;">
-                <img src="./assets/images/project2.jpg" alt="Blockchain and AI" class="project-img" loading="lazy" decoding="async" width="1200" height="700" />
-              </div>
-              <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:.7rem;">
-                <div>
-                  <h3 id="proj1-title" style="font-weight:700;color:#eaf6ff;margin:0;font-size:1.5rem;">
-                    Blockchain and AI based <br>Medical Record Analysis <br>for Bone Fracture on Cloud
-                  </h3>
-                  <p class="muted" style="margin:4px 0 0;font-size:1.3rem;">Aug 2024 — Nov 2024</p>
-                </div>
-                <span class="tag" aria-hidden="true" style="font-size:1.3rem;">AI • Blockchain</span>
-              </div>
-              <p class="muted" style="margin-top:.7rem;font-size:1.3rem;line-height:1.6;">
-                Research project integrating Blockchain and IPFS for secure medical record storage, with AI for bone fracture detection.
-                <br><br>
-                <strong style="color:#cfeffb;">Published in Scopus-indexed Journal:</strong>
-                <em>Journal of Neonatal Surgery (JNS)</em>, 2025.
-              </p>
-              <div style="margin-top:12px;display:flex;gap:8px;font-size:1.1rem;">
-                <a class="btn-cta" href="https://www.jneonatalsurg.com/index.php/jns/article/view/5836" target="_blank" aria-label="View publication" rel="noopener">
-                  <i class="fa fa-file-lines" aria-hidden="true"></i>
-                  <span class="muted" style="color:#cfeffb"> View Publication</span>
-                </a>
-              </div>
-            </article>
+        <p class="muted" style="margin-top:.7rem; font-size:1.3rem; line-height:1.6;">
+          Research project integrating Blockchain and IPFS for secure medical record storage, with AI for bone fracture detection.
+          <br><br>
+          <strong style="color:#cfeffb;">Published in Scopus-indexed Journal:</strong> 
+          <em>Journal of Neonatal Surgery (JNS)</em>, 2025.
+        </p>
 
-            <article class="glass-card" aria-labelledby="proj2-title" tabindex="0" style="padding:1.3rem;border:1px solid var(--card-border);">
-              <div style="padding-bottom:6px;padding-top:6px;">
-                <img src="./assets/images/vapt1.jpg" alt="VAPT Project" class="project-img" loading="lazy" decoding="async" width="1200" height="700" />
-              </div>
-              <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:.7rem;">
-                <div>
-                  <h3 id="proj2-title" style="font-weight:700;color:#eaf6ff;margin:0;font-size:1.5rem;">
-                    Securing the Small Business <br>— VAPT
-                  </h3><br>
-                  <p class="muted" style="margin:4px 0 0;font-size:1.3rem;">Jan 2024 — Apr 2024</p>
-                </div>
-                <span class="tag" style="font-size:1.3rem;">Pentest • VAPT</span>
-              </div>
-              <p class="muted" style="margin-top:.7rem;font-size:1.3rem;line-height:1.6;">
-                Comprehensive Vulnerability Assessment and Penetration Testing (VAPT) project for a small-to-medium business, covering network, web applications, and server infrastructure.
-                The project focused on identifying security gaps and providing actionable recommendations to strengthen the overall security posture and reduce potential risks.
-              </p>
-            </article>
-            <article></article>
+        <div style="margin-top:12px;display:flex;gap:8px; font-size:1.1rem;">
+          <a class="btn-cta" href="https://www.jneonatalsurg.com/index.php/jns/article/view/5836" target="_blank" aria-label="View publication">
+            <i class="fa fa-file-lines"></i>
+            <span class="muted" style="color:#cfeffb"> View Publication</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="glass-card" aria-labelledby="proj2-title" tabindex="0" style="padding:1.3rem; border:1px solid var(--card-border);">
+<div style="padding-bottom:6px;padding-top:6px;">
+        <img src="./assets/images/vapt1.jpg" alt="VAPT Project" class="project-img">
+</div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px; margin-top:0.7rem;">
+          <div>
+            <h3 id="proj2-title" style="font-weight:700;color:#eaf6ff;margin:0; font-size:1.5rem;">
+              Securing the Small Business <br>— VAPT
+            </h3><br>
+            <p class="muted" style="margin:4px 0 0; font-size:1.3rem;">Jan 2024 — Apr 2024</p>
           </div>
+          <span class="tag" style="font-size:1.3rem;">Pentest • VAPT</span>
         </div>
-      </section>
 
-      <!-- EXPERIENCE -->
-      <section id="experience" class="section" style="background: rgba(0,0,0,0.100);">
-        <div class="maxw">
-          <div class="section-title"><div class="bar" aria-hidden="true"></div><h2>Professional Experience</h2></div>
-          <div class="grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;">
-            <div class="glass-card" tabindex="0" style="padding:1.5rem;background:rgba(14,165,233,0.04);border:1px solid rgba(14,165,233,0.1);">
-              <div class="service-icon" aria-hidden="true" style="background: rgba(14,165,233,0.08); box-shadow: 0 4px 12px rgba(14,165,233,0.2) inset;">
-                <i class="fa-solid fa-network-wired fa-lg" style="color:var(--neon);" aria-hidden="true"></i>
-              </div>
-              <h3 style="margin-top:10px;color:#eaf6ff;font-size:1.6rem;font-weight:700;">System Admin</h3>
-              <p class="company" style="font-weight:500;color:#ccc;margin-top:4px;font-size:1.25rem;">A. G. Padmavati's Hospital Ltd, Puducherry</p>
-              <p class="duration" style="font-style:italic;color:#9aa4b2;margin:6px 0 12px;font-size:1.1rem;">July 10, 2025 – Present</p>
-              <p class="muted" style="font-size:1.3rem;line-height:1.7;color:#dbefff;">
-                Responsible for managing and maintaining IT systems across hospital departments. Ensuring secure network configurations, high server uptime, and data integrity. Implementing cybersecurity measures, troubleshooting system issues, and supporting medical and administrative operations through efficient infrastructure management.
-              </p>
-            </div>
-          </div>
+        <p class="muted" style="margin-top:.7rem;font-size:1.3rem; line-height:1.6;">
+          Comprehensive Vulnerability Assessment and Penetration Testing (VAPT) project for a small-to-medium business, covering network, web applications, and server infrastructure.  
+          The project focused on identifying security gaps and providing actionable recommendations to strengthen the overall security posture and reduce potential risks.
+        </p>
+      </article>
+
+      <!-- Empty project slot (for future use) -->
+      <article></article>
+    </div>
+  </div>
+</section>
+
+
+<section id="experience" class="section" style="background: rgba(0,0,0,0.100);">
+  <div class="maxw">
+    <div class="section-title">
+      <div class="bar" aria-hidden="true"></div>
+      <h2>Professional Experience</h2>
+    </div>
+
+    <div class="grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;">
+
+      <!-- Experience Card -->
+      <div class="glass-card" tabindex="0" style="padding:1.5rem; background: rgba(14,165,233,0.04); border:1px solid rgba(14,165,233,0.1);">
+        <div class="service-icon" aria-hidden="true" style="background: rgba(14,165,233,0.08); box-shadow: 0 4px 12px rgba(14,165,233,0.2) inset;">
+          <i class="fa-solid fa-network-wired fa-lg" style="color:var(--neon);"></i>
         </div>
-      </section>
+        <h3 style="margin-top:10px;color:#eaf6ff;font-size:1.6rem;font-weight:700;">System Admin</h3>
+        <p class="company" style="font-weight:500;color:#ccc;margin-top:4px;font-size:1.25rem;">
+          A. G. Padmavati's Hospital Ltd, Puducherry
+        </p>
+        <p class="duration" style="font-style:italic;color:#9aa4b2;margin:6px 0 12px;font-size:1.1rem;">
+          July 10, 2025 – Present
+        </p>
+        <p class="muted" style="font-size:1.3rem; line-height:1.7; color:#dbefff;">
+          Responsible for managing and maintaining IT systems across hospital departments. Ensuring secure network configurations, high server uptime, and data integrity. Implementing cybersecurity measures, troubleshooting system issues, and supporting medical and administrative operations through efficient infrastructure management.
+        </p>
+      </div>
 
-      <!-- TRYHACKME -->
-      <section id="tryhackme" class="section bg-black/40">
-        <div class="maxw">
-          <div class="section-title" style="margin-bottom:15px;"><div class="bar" aria-hidden="true"></div><h2>TryHackMe Profile</h2></div>
-          <div style="display:flex;justify-content:flex-start;margin-top:0;">
-            <div class="glass-card" tabindex="0" style="padding:1.5rem;background:rgba(14,165,233,0.05);border:1px solid rgba(14,165,233,0.15);max-width:700px;border-radius:12px;">
-              <!-- lazy load iframe (improves initial paint) -->
-              <iframe loading="lazy" src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=3131789" title="TryHackMe Profile" style="border:none;width:400px;height:88px;display:block;border-radius:8px;" allowfullscreen></iframe>
-            </div>
-          </div>
-        </div>
-      </section>
+    </div>
+  </div>
+</section>
 
+
+<section id="tryhackme" class="section bg-black/40">
+  <div class="maxw">
+    <div class="section-title" style="margin-bottom:15px;">
+      <div class="bar" aria-hidden="true"></div>
+      <h2>TryHackMe Profile</h2>
+    </div>
+
+    <!-- Left-aligned card -->
+    <div style="display:flex; justify-content:flex-start; margin-top:0;">
+      <div class="glass-card" tabindex="0" 
+           style="padding:1.5rem; 
+                  background: rgba(14,165,233,0.05); 
+                  border:1px solid rgba(14,165,233,0.15); 
+                  max-width:700px; 
+                  border-radius:12px;">
+        <iframe
+          src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=3131789"
+          title="TryHackMe Profile"
+          style="border:none; width: 400px; height:88px; aspect-ratio:16/9; display:block; border-radius:8px;"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+      
       <!-- SERVICES -->
       <section id="services" class="section">
         <div class="maxw">
-          <div class="section-title"><div class="bar" aria-hidden="true"></div><h2>Services</h2></div>
-          <div class="grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px">
-            <div class="glass-card" tabindex="0">
-              <div class="service-icon" aria-hidden="true"><i class="fa fa-shield-alt fa-lg" style="color:var(--neon)" aria-hidden="true"></i></div>
-              <h3 style="margin-top:6px;color:#eaf6ff;font-size:1.5rem;">Vulnerability Analysis</h3>
-              <p class="muted" style="margin-top:8px;font-size:1.3rem;">Thorough scanning and validation of vulnerabilities with prioritized risk ratings and remediation suggestions.</p>
+          <div class="section-title">
+            <div class="bar" aria-hidden="true"></div>
+            <h2>Services</h2>
+          </div>
+
+          <div class="grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px" >
+            <div class="glass-card" tabindex="0" >
+              <div class="service-icon" aria-hidden="true"><i class="fa fa-shield-alt fa-lg" style="color:var(--neon)" ></i></div>
+              <h3 style="margin-top:6px;color:#eaf6ff ;font-size:1.5rem;">Vulnerability Analysis</h3>
+              <p class="muted" style="margin-top:8px; font-size:1.3rem;">Thorough scanning and validation of vulnerabilities with prioritized risk ratings and remediation suggestions.</p>
             </div>
+
             <div class="glass-card" tabindex="0">
-              <div class="service-icon" aria-hidden="true"><i class="fa fa-bug fa-lg" style="color:var(--neon)" aria-hidden="true"></i></div>
-              <h3 style="margin-top:6px;color:#eaf6ff;font-size:1.5rem;">Penetration Testing</h3>
+              <div class="service-icon" aria-hidden="true"><i class="fa fa-bug fa-lg" style="color:var(--neon)"></i></div>
+              <h3 style="margin-top:6px;color:#eaf6ff; font-size:1.5rem;">Penetration Testing</h3>
               <p class="muted" style="margin-top:8px;font-size:1.3rem;">Web application and network penetration testing with proof-of-concept exploits and step-by-step remediation guidance.</p>
             </div>
+
             <div class="glass-card" tabindex="0">
-              <div class="service-icon" aria-hidden="true"><i class="fa fa-file-contract fa-lg" style="color:var(--neon)" aria-hidden="true"></i></div>
-              <h3 style="margin-top:6px;color:#eaf6ff;font-size:1.5rem;">CVE / Disclosure Reports</h3>
-              <p class="muted" style="margin-top:8px;font-size:1.3rem;">Clear, professional writeups formatted for vendor disclosure and program submission (CVE-ready).</p>
+              <div class="service-icon" aria-hidden="true"><i class="fa fa-file-contract fa-lg" style="color:var(--neon)"></i></div>
+              <h3 style="margin-top:6px;color:#eaf6ff; font-size:1.5rem;">CVE / Disclosure Reports</h3>
+              <p class="muted" style="margin-top:8px; font-size:1.3rem;">Clear, professional writeups formatted for vendor disclosure and program submission (CVE-ready).</p>
             </div>
+
             <div class="glass-card" tabindex="0">
-              <div class="service-icon" aria-hidden="true"><i class="fa fa-lock fa-lg" style="color:var(--neon)" aria-hidden="true"></i></div>
-              <h3 style="margin-top:6px;color:#eaf6ff;font-size:1.5rem;">Security Consulting</h3>
-              <p class="muted" style="margin-top:8px;font-size:1.3rem;">Advisory and mitigation planning for long-term security program improvements and secure SDLC integration.</p>
+              <div class="service-icon" aria-hidden="true"><i class="fa fa-lock fa-lg" style="color:var(--neon)"></i></div>
+              <h3 style="margin-top:6px;color:#eaf6ff; font-size:1.5rem;">Security Consulting</h3>
+              <p class="muted" style="margin-top:8px; font-size:1.3rem;">Advisory and mitigation planning for long-term security program improvements and secure SDLC integration.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ACHIEVEMENTS -->
-      <section id="achievements" class="section bg-black/40">
-        <div class="maxw">
-          <div class="section-title"><div class="bar" aria-hidden="true"></div><h2>Achievements & Certificates</h2></div>
-          <div class="grid-achievements" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px">
-            <div class="glass-card" tabindex="0">
-              <img src="./assets/images/certi1.jpg" alt="Cert 1" class="cert-thumb zoom-img" style="padding-bottom:6px;padding-top:6px" loading="lazy" decoding="async" width="1200" height="800">
-              <h4 style="margin-top:8px;color:#eaf6ff;font-size:1.5rem">Certified in Cybersecurity (CC)</h4>
-              <p class="muted" style="margin-top:6px;font-size:1.3rem">Aug 31, 2024</p>
-            </div>
-            <div class="glass-card" tabindex="0">
-              <img src="./assets/images/certi2.jpg" alt="Cert 2" class="cert-thumb zoom-img" style="padding-bottom:6px;padding-top:6px" loading="lazy" decoding="async" width="1200" height="800">
-              <h4 style="margin-top:8px;color:#eaf6ff;font-size:1.5rem">Be A White Hat Hacker and Pen Tester</h4>
-              <p class="muted" style="margin-top:6px;font-size:1.3rem">May 20, 2024</p>
-            </div>
-            <div class="glass-card" tabindex="0">
-              <img src="./assets/images/certi3.jpg" alt="Cert 3" class="cert-thumb zoom-img" style="padding-bottom:6px;padding-top:6px" loading="lazy" decoding="async" width="1200" height="800">
-              <h4 style="margin-top:8px;color:#eaf6ff;font-size:1.5rem">How To Become Highly Paid Hacker</h4>
-              <p class="muted" style="margin-top:6px;font-size:1.3rem">Mar 31, 2024</p>
-            </div>
-            <div class="glass-card" tabindex="0">
-              <img src="./assets/images/certificate.jpg" alt="Cert 4" class="cert-thumb zoom-img" style="padding-bottom:6px;padding-top:6px" loading="lazy" decoding="async" width="1200" height="800">
-              <h4 style="margin-top:8px;color:#eaf6ff;font-size:1.5rem">Cyber Threat Intelligence 101</h4>
-              <p class="muted" style="margin-top:6px;font-size:1.3rem">May 07, 2025</p>
-            </div>
-          </div>
-        </div>
-      </section>
+<!-- ACHIEVEMENTS -->
+<section id="achievements" class="section bg-black/40">
+  <div class="maxw">
+    <div class="section-title">
+      <div class="bar" aria-hidden="true"></div>
+      <h2>Achievements & Certificates</h2>
+    </div>
 
-      <!-- IMAGE LIGHTBOX -->
-      <div id="imgModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);justify-content:center;align-items:center;z-index:9999;cursor:zoom-out">
-        <img id="modalImg" src="" style="max-width:90%;max-height:90%;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,0.7)" alt="Zoomed image">
+    <div class="grid-achievements" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px">
+      <!-- Certificate 1 -->
+      <div class="glass-card" tabindex="0">
+        <img src="./assets/images/certi1.jpg" alt="Cert 1" class="cert-thumb zoom-img" style="padding-bottom:6px;padding-top:6px;">
+        <h4 style="margin-top:8px;color:#eaf6ff; font-size:1.5rem;">Certified in Cybersecurity (CC)</h4>
+        <p class="muted" style="margin-top:6px; font-size:1.3rem;">Aug 31, 2024</p>
       </div>
 
-      <script>
-        // IMAGE LIGHTBOX (small, fast)
-        document.addEventListener('click', function (e) {
-          const target = e.target;
-          if (target.matches('.zoom-img')) {
-            const modal = document.getElementById('imgModal');
-            const modalImg = document.getElementById('modalImg');
-            modalImg.src = target.src;
-            modal.style.display = 'flex';
-          } else if (target.id === 'imgModal' || target.closest('#imgModal')) {
-            const modal = document.getElementById('imgModal');
-            modal.style.display = 'none';
-            document.getElementById('modalImg').src = '';
-          }
-        }, false);
-      </script>
+      <!-- Certificate 2 -->
+      <div class="glass-card" tabindex="0">
+        <img src="./assets/images/certi2.jpg" alt="Cert 2" class="cert-thumb zoom-img" style="padding-bottom:6px;padding-top:6px;">
+        <h4 style="margin-top:8px;color:#eaf6ff; font-size:1.5rem;">Be A White Hat Hacker and Pen Tester</h4>
+        <p class="muted" style="margin-top:6px; font-size:1.3rem;">May 20, 2024</p>
+      </div>
 
-      <!-- EDUCATION -->
+      <!-- Certificate 3 -->
+      <div class="glass-card" tabindex="0">
+        <img src="./assets/images/certi3.jpg" alt="Cert 3" class="cert-thumb zoom-img" style="padding-bottom:6px;padding-top:6px;">
+        <h4 style="margin-top:8px;color:#eaf6ff; font-size:1.5rem;">How To Become Highly Paid Hacker</h4>
+        <p class="muted" style="margin-top:6px; font-size:1.3rem;">Mar 31, 2024</p>
+      </div>
+
+      <!-- Certificate 4 -->
+      <div class="glass-card" tabindex="0">
+        <img src="./assets/images/certificate.jpg" alt="Cert 4" class="cert-thumb zoom-img" style="padding-bottom:6px;padding-top:6px;">
+        <h4 style="margin-top:8px;color:#eaf6ff; font-size:1.5rem;">Cyber Threat Intelligence 101</h4>
+        <p class="muted" style="margin-top:6px; font-size:1.3rem;">May 07, 2025</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE MODAL -->
+<div id="imgModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);justify-content:center;align-items:center;z-index:9999;cursor:zoom-out">
+  <img id="modalImg" src="" style="max-width:90%;max-height:90%;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,0.7)">
+</div>
+
+<script>
+  // Select all zoomable images
+  const zoomImages = document.querySelectorAll('.zoom-img');
+  const modal = document.getElementById('imgModal');
+  const modalImg = document.getElementById('modalImg');
+
+  zoomImages.forEach(img => {
+    img.addEventListener('click', () => {
+      modal.style.display = 'flex';
+      modalImg.src = img.src;
+    });
+  });
+
+  // Close modal on click
+  modal.addEventListener('click', () => {
+    modal.style.display = 'none';
+    modalImg.src = '';
+  });
+</script>
+
+
+       <!-- EDUCATION -->
       <section id="education" class="section">
         <div class="maxw">
-          <div class="section-title"><div class="bar" aria-hidden="true"></div><h2>Education</h2></div>
+          <div class="section-title">
+            <div class="bar" aria-hidden="true"></div>
+            <h2>Education</h2>
+          </div>
+
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px">
             <div class="glass-card">
               <div class="edu-item">
                 <div class="edu-year" style="font-size:1.5rem;">2007–2021</div>
-                <div><h4 style="margin:0;color:#eaf6ff;font-size:1.5rem;">SSLC & HSC</h4><p class="muted" style="margin-top:6px;font-size:1.3rem;">Amalorpavam Higher Secondary School, Puducherry.</p></div>
+                <div>
+                  <h4 style="margin:0;color:#eaf6ff; font-size:1.5rem;">SSLC & HSC</h4>
+                  <p class="muted" style="margin-top:6px; font-size:1.3rem;">Amalorpavam Higher Secondary School, Puducherry.</p>
+                </div>
               </div>
             </div>
+
             <div class="glass-card">
               <div class="edu-item">
                 <div class="edu-year" style="font-size:1.5rem;">2021–2025</div>
-                <div><h4 style="margin:0;color:#eaf6ff;font-size:1.5rem;">B.Tech (CSE)</h4><p class="muted" style="margin-top:6px;font-size:1.3rem;">Mankula Vinayagar Institute of Technology, Puducherry.</p></div>
+                <div>
+                  <h4 style="margin:0;color:#eaf6ff; font-size:1.5rem;">B.Tech (CSE)</h4>
+                  <p class="muted" style="margin-top:6px; font-size:1.3rem;">Mankula Vinayagar Institute of Technology, Puducherry.</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- CONTACT -->
-      <section id="contact" class="section bg-black/30">
-        <div class="maxw">
-          <div class="section-title"><div class="bar" aria-hidden="true"></div><h2>Contact</h2></div>
-          <div class="contact-grid" style="display:grid;grid-template-columns:1fr 320px;gap:18px;align-items:start;">
-            <div>
-              <div class="glass-card contact-card">
-                <div><h3 style="margin:0;color:#eaf6ff;font-size:1.5rem;">Ready to collaborate?</h3><p class="muted" style="margin:6px 0 0;font-size:1.3rem;">For engagements, vulnerability disclosure, or mentoring — reach out.</p></div>
-                <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px;margin-top:12px;">
-                  <a class="btn-cta" href="mailto:sathyaboobalan.r2003@gmail.com" aria-label="Email Sathya"><i class="fa fa-envelope" aria-hidden="true"></i><span>Mail</span></a>
-                  <a class="btn-cta" href="https://in.linkedin.com/in/sathya-boobalan-07b11024a" target="_blank" rel="noopener" aria-label="LinkedIn profile"><i class="fab fa-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a>
-                </div>
-              </div>
-            </div>
 
-            <aside>
-              <div class="glass-card" style="text-align:center;">
-                <h4 style="margin:0;color:#eaf6ff;font-size:1.5rem;">Quick Info</h4>
-                <p class="muted" style="margin-top:8px;font-size:1.3rem;">Email: <a href="mailto:sathyaboobalan.r2003@gmail.com" style="color:var(--neon)">sathyaboobalan.r2003@gmail.com</a></p>
-                <p class="muted" style="font-size:1.3rem;">Location: India</p>
-                <div style="margin-top:8px;display:flex;justify-content:center;gap:12px">
-                  <a href="https://sathyaboobalan.tiiny.site" title="Resume" target="_blank" rel="noopener" style="font-size:1.8rem"><i class="fa fa-file-alt" style="color:#cfeffb" aria-hidden="true"></i></a>
-                  <a href="https://in.linkedin.com/in/sathya-boobalan-07b11024a" title="LinkedIn" target="_blank" rel="noopener" style="font-size:1.8rem"><i class="fab fa-linkedin" style="color:#cfeffb" aria-hidden="true"></i></a>
-                </div>
-              </div>
-            </aside>
+
+ <!-- CONTACT -->
+<section id="contact" class="section bg-black/30">
+  <div class="maxw">
+    <div class="section-title">
+      <div class="bar" aria-hidden="true"></div>
+      <h2>Contact</h2>
+    </div>
+
+    <div class="contact-grid" style="display:grid;grid-template-columns:1fr 320px;gap:18px;align-items:start;">
+      <div>
+        <div class="glass-card contact-card">
+          <div>
+            <h3 style="margin:0;color:#eaf6ff; font-size:1.5rem;">Ready to collaborate?</h3>
+            <p class="muted" style="margin:6px 0 0; font-size:1.3rem;">
+              For engagements, vulnerability disclosure, or mentoring — reach out.
+            </p>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px; margin-top:12px;">
+            <a class="btn-cta" href="mailto:sathyaboobalan.r2003@gmail.com" aria-label="Email Sathya">
+              <i class="fa fa-envelope"></i><span>Mail</span>
+            </a>
+            <a class="btn-cta" href="https://in.linkedin.com/in/sathya-boobalan-07b11024a" target="_blank" rel="noopener" aria-label="LinkedIn profile">
+              <i class="fab fa-linkedin"></i><span>LinkedIn</span>
+            </a>
           </div>
         </div>
-      </section>
+      </div>
+
+      <aside>
+        <div class="glass-card" style="text-align:center;">
+          <h4 style="margin:0;color:#eaf6ff; font-size:1.5rem;">Quick Info</h4>
+          <p class="muted" style="margin-top:8px; font-size:1.3rem;">
+            Email: <a href="mailto:sathyaboobalan.r2003@gmail.com" style="color:var(--neon)">sathyaboobalan.r2003@gmail.com</a>
+          </p>
+          <p class="muted" style="font-size:1.3rem;">Location: India</p>
+          <div style="margin-top:8px;display:flex;justify-content:center;gap:12px">
+            <a href="https://sathyaboobalan.tiiny.site" style="font-size:1.8rem; class="text-2xl" title="Resume" target="_blank" rel="noopener">
+              <i class="fa fa-file-alt" style="color:#cfeffb"></i>
+            </a>
+            <a href="https://in.linkedin.com/in/sathya-boobalan-07b11024a" style="font-size:1.8rem; class="text-2xl" title="LinkedIn" target="_blank" rel="noopener">
+              <i class="fab fa-linkedin" style="color:#cfeffb"></i>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+     
     </main>
 
     <!-- FOOTER -->
     <footer>
-      <div class="maxw"><p style="margin:0;font-size:1.3rem;">© <span id="year"></span> Sathya Boobalan. All rights reserved.</p></div>
+      <div class="maxw">
+        <p style="margin:0; font-size:1.3rem;">© <span id="year"></span> Sathya Boobalan. All rights reserved.</p>
+      </div>
     </footer>
   </div>
 
-  <!-- Particle script (deferred) -->
-  <script defer>
+  <!-- jQuery / Bootstrap JS (kept for compatibility) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Particle System (lightweight canvas) -->
+  <script>
+    // Simple performant particle background — subtle cyber-blue dots and connecting lines.
     (function () {
       const canvas = document.getElementById('particles');
-      if (!canvas) return;
       const ctx = canvas.getContext('2d');
       let w = canvas.width = innerWidth;
       let h = canvas.height = innerHeight;
       const DPR = window.devicePixelRatio || 1;
-      canvas.width = w * DPR; canvas.height = h * DPR; canvas.style.width = w + 'px'; canvas.style.height = h + 'px';
+      canvas.width = w * DPR; 
+      canvas.height = h * DPR; 
+      canvas.style.width = w + 'px'; 
+      canvas.style.height = h + 'px';
       ctx.scale(DPR, DPR);
 
-      function rnd(min,max){return Math.random()*(max-min)+min;}
-      function calcCount(){ return Math.max(30, Math.floor((w * h) / 16000)); } // fewer particles => better perf
-      const config = { maxRadius:2.2, speed:0.25, lineDist:140 };
+      const config = {
+        count: Math.max(50, Math.floor((w * h) / 10000)), // scale with screen
+        maxRadius: 2.2,
+        speed: 0.25,
+        lineDist: 140,
+        color: 'rgba(14,165,233,0.95)',
+        dotColor: 'rgba(14,165,233,0.16)'
+      };
 
-      let particles = [];
-      function create(){
-        particles = [];
-        const count = calcCount();
-        for(let i=0;i<count;i++){
-          particles.push({ x:rnd(0,w), y:rnd(0,h), vx:rnd(-config.speed,config.speed), vy:rnd(-config.speed,config.speed), r:rnd(0.6,config.maxRadius), alpha:rnd(0.25,0.9) });
+      const particles = [];
+
+      function rnd(min, max) { 
+        return Math.random() * (max - min) + min; 
+      }
+
+      function create() {
+        particles.length = 0;
+        for (let i = 0; i < config.count; i++) {
+          particles.push({
+            x: rnd(0, w),
+            y: rnd(0, h),
+            vx: rnd(-config.speed, config.speed),
+            vy: rnd(-config.speed, config.speed),
+            r: rnd(0.6, config.maxRadius),
+            alpha: rnd(0.25, 0.9)
+          });
         }
       }
 
       function resize() {
-        w = innerWidth; h = innerHeight;
-        canvas.width = w * DPR; canvas.height = h * DPR; canvas.style.width = w + 'px'; canvas.style.height = h + 'px';
+        w = canvas.width = innerWidth;
+        h = canvas.height = innerHeight;
+        canvas.width = w * DPR; 
+        canvas.height = h * DPR;
+        canvas.style.width = w + 'px'; 
+        canvas.style.height = h + 'px';
         ctx.scale(DPR, DPR);
         create();
       }
 
-      function update(){
-        for(const p of particles){
-          p.x+=p.vx; p.y+=p.vy;
-          if(p.x<-10) p.x=w+10; if(p.x>w+10) p.x=-10;
-          if(p.y<-10) p.y=h+10; if(p.y>h+10) p.y=-10;
+      function update() {
+        for (let p of particles) {
+          p.x += p.vx;
+          p.y += p.vy;
+          if (p.x < -10) p.x = w + 10;
+          if (p.x > w + 10) p.x = -10;
+          if (p.y < -10) p.y = h + 10;
+          if (p.y > h + 10) p.y = -10;
         }
       }
 
-      function draw(){
-        ctx.clearRect(0,0,w,h);
-        for(let i=0;i<particles.length;i++){
+      function draw() {
+        ctx.clearRect(0, 0, w, h);
+
+        // draw connecting lines (optimized: only check neighbors by indexing)
+        for (let i = 0; i < particles.length; i++) {
           const a = particles[i];
-          for(let j=i+1;j<particles.length;j++){
+          for (let j = i + 1; j < particles.length; j++) {
             const b = particles[j];
-            const dx=a.x-b.x, dy=a.y-b.y, dist = Math.sqrt(dx*dx+dy*dy);
-            if(dist < config.lineDist){
+            const dx = a.x - b.x;
+            const dy = a.y - b.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < config.lineDist) {
               const alpha = (1 - (dist / config.lineDist)) * 0.12;
-              ctx.strokeStyle = `rgba(14,165,233,${alpha})`; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+              ctx.strokeStyle = `rgba(14,165,233,${alpha})`;
+              ctx.lineWidth = 1;
+              ctx.beginPath();
+              ctx.moveTo(a.x, a.y);
+              ctx.lineTo(b.x, b.y);
+              ctx.stroke();
             }
           }
         }
-        for(const p of particles){ ctx.beginPath(); ctx.fillStyle = `rgba(14,165,233,${p.alpha * 0.25})`; ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill(); }
+
+        // draw dots
+        for (let p of particles) {
+          ctx.beginPath();
+          ctx.fillStyle = `rgba(14,165,233,${p.alpha * 0.25})`;
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fill();
+        }
       }
 
-      let raf=null;
-      function loop(){
-        update(); draw(); raf = requestAnimationFrame(loop);
+      let raf;
+      function loop() {
+        update();
+        draw();
+        raf = requestAnimationFrame(loop);
       }
 
       // init
-      create(); loop();
+      create();
+      loop();
 
-      // conserve CPU on small screens: stop animations if width < 600
-      function checkPerfMode(){
-        if (innerWidth < 600) { cancelAnimationFrame(raf); /* static faint dots to preserve feel */ draw(); } else { if(!raf) loop(); }
-      }
-      window.addEventListener('resize', function(){ cancelAnimationFrame(raf); setTimeout(()=>{ resize(); loop(); checkPerfMode(); }, 180); });
-      document.addEventListener('visibilitychange', function(){ if(document.hidden) cancelAnimationFrame(raf); else loop(); });
-      checkPerfMode();
+      // responsive
+      let resizeTimeout;
+      window.addEventListener('resize', () => {
+        cancelAnimationFrame(raf);
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+          resize();
+          loop();
+        }, 180);
+      });
+
+      // pause when tab hidden to save CPU
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) cancelAnimationFrame(raf);
+        else loop();
+      });
     })();
   </script>
 
-  <!-- small helpers -->
   <script>
+    // small helpers
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // keyboard focus outline improvement for accessibility
     (function () {
       const body = document.body;
       function handleFirstTab(e) {
-        if (e.key === 'Tab') { body.classList.add('user-is-tabbing'); window.removeEventListener('keydown', handleFirstTab); }
+        if (e.key === 'Tab') {
+          body.classList.add('user-is-tabbing');
+          window.removeEventListener('keydown', handleFirstTab);
+        }
       }
       window.addEventListener('keydown', handleFirstTab);
     })();
   </script>
 
-  <!-- PERFORMANCE NOTES (for your repo) -->
-  <!--
-    Recommended next steps to squeeze more perf:
-    1) Convert ./assets/images/* to WebP (or AVIF) and compress — biggest wins.
-    2) Build Tailwind in production with purge (remove unused utilities). CDN tailwind is convenient but heavy.
-    3) Replace Font Awesome with a few inline SVG icons (self-hosted) to remove the 200kb+ font file.
-    4) Use GitHub Pages + Cloudflare for caching (set long cache headers and enable Brotli).
-    5) If you have many static images, add a responsive srcset to serve smaller images on mobile.
-  -->
+
+ 
 </body>
 </html>
