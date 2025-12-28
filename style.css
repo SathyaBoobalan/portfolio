@@ -28,6 +28,47 @@ body {
   min-height: 100vh;
   background-attachment: fixed;
 }
+/* Container for the image to handle positioning */
+.cert-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px; /* Matches standard rounded corners */
+  margin-top: 6px;    /* Preserving your original top spacing */
+  margin-bottom: 6px; /* Preserving your original bottom spacing */
+  cursor: pointer;
+}
+
+/* The dark overlay with text */
+.cert-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #cfeffb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  
+  /* ADD THIS LINE TO FIX THE CLICK ISSUE */
+  pointer-events: none; 
+}
+
+/* Show overlay on hover */
+.cert-img-wrapper:hover .cert-overlay {
+  opacity: 1;
+}
+
+/* Optional: Scale image slightly on hover for a pro feel */
+.cert-img-wrapper:hover img {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
 
 .cert-thumb {
   width: 100%;
@@ -333,7 +374,7 @@ body {
 /* Project image */
 .project-img {
   width: 100%;
-  height: 200px;
+  height: 350px; /* Increased height for a more square-like aspect ratio */
   object-fit: cover;
   border-radius: 8px;
   display: block;
@@ -361,6 +402,39 @@ body {
   background: linear-gradient(135deg, rgba(14, 165, 233, 0.08), rgba(125, 211, 252, 0.02));
   box-shadow: 0 6px 18px rgba(14, 165, 233, 0.04) inset;
   margin-bottom: 1rem;
+}
+
+/* =========================================
+   PROJECTS SECTION OVERRIDES 
+   (Only affects the Project cards)
+   ========================================= */
+
+/* 1. Make the project cards flex containers so buttons align at bottom */
+#projects .glass-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 1rem; /* Specific padding for projects */
+}
+
+/* 2. Fix the Image Size (Small & Sleek) */
+#projects .project-img {
+  width: 100%;
+  height: 160px !important; /* Force compact height */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+/* 3. Fix Title Height (Aligns the dates perfectly) */
+#projects .glass-card h3 {
+  min-height: 4.5rem; /* Forces consistent height for titles */
+  line-height: 1.3;
+  font-size: 1.4rem;
+  margin: 0;
+  display: flex;
+  align-items: flex-start;
 }
 
 /* Footer */
@@ -397,7 +471,7 @@ footer span {
     padding: 4rem 1rem 3rem;
   }
   .project-img {
-    height: 160px;
+    height: 250px; /* Increased height for smaller screens as well */
   }
   .contact-grid {
     grid-template-columns: 1fr !important;
