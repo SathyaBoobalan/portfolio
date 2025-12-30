@@ -7,25 +7,34 @@
   <meta name="description" content="Sathya Boobalan — System Administrator, Cybersecurity & AI Researcher. Explore projects, certifications, and research work." />
   <meta name="author" content="Sathya Boobalan" />
   <meta name="google" content="notranslate" />
-
+  
   <title>Sathya Boobalan</title>
+  
+  <link id="main-style" rel="stylesheet" href="./styles/style.css">
   <link rel="icon" type="image/png" href="./assets/favicon.ico">
 
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <canvas id="particles" aria-hidden="true"></canvas>
 
+  
+
   <div class="site">
+    <div class="mode-switch-container" style="position: absolute !important; top: 1.5rem; right: 1.5rem; z-index: 9999;">
+    <button id="mode-toggle" class="mode-btn" aria-label="Switch Mode">
+      <span id="mode-text">Terminal Mode</span>
+    </button>
+  </div>
+    
     <header class="cyber-header">
       <div class="glow-overlay"></div>
       <div class="cyber-content">
         <h1 class="glow-title">SATHYA&nbsp;BOOBALAN</h1>
-        <p class="glow-subtitle">System Administrator | DevSecOps Engineer | Ethical Hacker</p>
+        <p class="glow-subtitle">System Administrator | DevSecOps Engineer | Ethical&nbsp;Hacker</p>
         <div class="social-icons">
           <a href="https://sathyaboobalan.tiiny.site" title="Resume / Form" target="_blank" rel="noopener">
             <i class="fa fa-file-lines"></i>
@@ -38,9 +47,21 @@
           </a>
         </div>
       </div>
+
+      <a href="#about" class="scroll-indicator" onclick="event.preventDefault(); document.querySelector('#about').scrollIntoView({behavior:'smooth'});">
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
+        <div class="arrow-scroll">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </a>
     </header>
 
     <main class="main" role="main">
+      
       <section id="about" class="section">
         <div class="maxw">
           <div class="section-title">
@@ -54,12 +75,12 @@
                 <img src="./assets/images/dp.jpg" alt="Sathya Boobalan" style="width:100%;border-radius:10px;object-fit:cover" />
               </div>
               <div class="col-md-8 col-sm-12" style="padding-left:16px">
-                <p style="margin-top:0;color:#dbefff; line-height:1.6; ">
-                  I am a <strong>Cybersecurity Professional</strong> and working as <strong>System Admin</strong> in <strong>A.G. Padmavati's Hospital Ltd, Puducherry</strong>, passionate about keeping IT systems secure and exploring innovative ways to protect sensitive data. I have led the research project <strong>“Blockchain and AI-based Medical Record Analysis for Bone Fracture on Cloud”</strong> (Aug–Nov 2024), integrating Blockchain, IPFS, and AI for secure medical record storage and automated fracture detection. This work was published in the <strong>Scopus-indexed Journal of Neonatal Surgery (JNS), 2025</strong>.<br><br>
-
-                  I am a detail-oriented and meticulous professional with a keen interest in joining a Penetration Testing team. I stay abreast of emerging cybersecurity trends and focus on identifying vulnerabilities to enhance system security. My aim is to keep advancing in the field of cybersecurity and help create safer digital spaces for everyone, even behind the scenes.
-                </p>
-              </div>
+    <p style="margin-top:0; color:#dbefff; line-height:1.6;">
+        I am a <strong>System Administrator</strong> at <strong>A.G. Padmavati's Hospital Ltd, Puducherry</strong>, and an <strong>Ethical Hacker</strong>. I am a <strong>Bug Bounty Hunter</strong>, <strong>compete in hacking events</strong>, and strictly apply <strong>DevSecOps</strong> principles in my development work.
+        <br><br>
+        I led the project <strong>“Blockchain and AI based Medical Record Analysis for Bone Fracture on Cloud Environment”</strong> (published in <strong>JNS 2025</strong>), utilizing <strong>Blockchain and IPFS</strong> for secure storage and <strong>AI</strong> for fracture detection.
+    </p>
+</div>
             </div>
           </div>
         </div>
@@ -74,79 +95,76 @@
 
           <div class="grid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(300px, 400px)); gap: 24px; justify-content: start;">
             
-            <article class="glass-card" aria-labelledby="proj-hms-title" tabindex="0" 
-              style="padding:1rem; border:1px solid var(--card-border); display: flex; flex-direction: column; height: 100%;">
-              
-              <div style="padding-bottom:6px;padding-top:6px;">
-                <img src="./assets/images/Project/HMS.png" alt="Hospital Management System Dashboard" class="project-img" 
-                  style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px;">
-              </div>
+            <article class="glass-card" aria-labelledby="proj-hms-title" tabindex="0"
+    style="padding:1rem; border:1px solid var(--card-border); display: flex; flex-direction: column; height: 100%;">
+    
+    <div style="padding-bottom:6px;padding-top:6px;">
+    <img src="./assets/images/Project/HMS.png" alt="Hospital Management System Dashboard" class="project-img"
+        style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px;">
+    </div>
 
-              <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-top:0.5rem;">
-                <div style="flex: 1;">
-                  <h3 id="proj-hms-title" style="font-weight:700; color:#eaf6ff; margin:0; font-size:1.4rem; line-height: 1.3; min-height: 4.2rem; display: flex; align-items: flex-start;">
-                    Hospital Management System <br>For AGP Hospital
-                  </h3>
-                </div>
-                <span class="tag" aria-hidden="true" style="font-size:1rem; white-space: nowrap;">MEAN Stack • Docker</span>
-              </div>
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-top:0.5rem;">
+    <div style="flex: 1;">
+        <h3 id="proj-hms-title" style="font-weight:700; color:#eaf6ff; margin:0; font-size:1.4rem; line-height: 1.3; min-height: 4.2rem; display: flex; align-items: flex-start;">
+        Hospital Management System <br>For AGP Hospital
+        </h3>
+    </div>
+    <span class="tag" aria-hidden="true" style="font-size:1rem; white-space: nowrap;">MEAN • Docker • Secure</span>
+    </div>
 
-              <div style="margin-top: 4px; margin-bottom: 8px;">
-                <p class="muted" style="margin:0; font-size:1.1rem;">Oct 2025 — Present</p>
-              </div>
+    <div style="margin-top: 4px; margin-bottom: 8px;">
+    <p class="muted" style="margin:0; font-size:1.1rem;">Oct 2025 — Present</p>
+    </div>
 
-              <div style="flex-grow: 1;">
-                <p class="muted" style="margin-top:0.5rem; font-size:1.2rem; line-height:1.5;">
-                  A comprehensive full-stack web application designed to streamline hospital administration.
-                </p>
-              </div>
+    <div style="flex-grow: 1;">
+    <p class="muted" style="margin-top:0.5rem; font-size:1.2rem; line-height:1.5;">
+        A comprehensive platform designed to digitize and streamline hospital operations. Built with <strong>DevSecOps principles</strong> to ensure robust security and scalability.
+    </p>
+    </div>
 
-              <div style="margin-top:10px;">
-                <a class="btn-cta" href="https://github.com/SathyaBoobalan/AGP-Hospital-Management-System" target="_blank" aria-label="View Project" style="padding: 0.6rem 1.2rem; font-size: 1.1rem;">
-                  <i class="fa fa-laptop-code" style="font-size:1.1rem"></i>
-                  <span class="muted" style="color:#cfeffb"> View Project</span>
-                </a>
-              </div>
-            </article>
+    <div style="margin-top:10px;">
+    <a class="btn-cta" href="https://github.com/SathyaBoobalan/AGP-Hospital-Management-System" target="_blank" aria-label="View Project" style="padding: 0.6rem 1.2rem; font-size: 1.1rem;">
+        <i class="fa fa-laptop-code" style="font-size:1.1rem"></i>
+        <span class="muted" style="color:#cfeffb"> View Project</span>
+    </a>
+    </div>
+</article><article class="glass-card" aria-labelledby="proj1-title" tabindex="0"
+    style="padding:1rem; border:1px solid var(--card-border); display: flex; flex-direction: column; height: 100%;">
+    
+    <div style="padding-bottom:6px;padding-top:6px;">
+    <img src="./assets/images/Project/Final_Year_Project.jpg" alt="Blockchain and AI Project" class="project-img"
+        style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px;">
+    </div>
 
-            <article class="glass-card" aria-labelledby="proj1-title" tabindex="0" 
-              style="padding:1rem; border:1px solid var(--card-border); display: flex; flex-direction: column; height: 100%;">
-              
-              <div style="padding-bottom:6px;padding-top:6px;">
-                <img src="./assets/images/Project/Final_Year_Project.jpg" alt="Blockchain and AI" class="project-img" 
-                  style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px;">
-              </div>
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-top:0.5rem;">
+    <div style="flex: 1;">
+        <h3 id="proj1-title" style="font-weight:700; color:#eaf6ff; margin:0; font-size:1.4rem; line-height: 1.3; min-height: 4.2rem; display: flex; align-items: flex-start;">
+        Blockchain and AI based Medical <br>Record Analysis for Bone Fracture on Cloud Environment
+        </h3>
+    </div>
+    <span class="tag" aria-hidden="true" style="font-size:1rem; white-space: nowrap;">AI • Blockchain</span>
+    </div>
 
-              <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-top:0.5rem;">
-                <div style="flex: 1;">
-                  <h3 id="proj1-title" style="font-weight:700; color:#eaf6ff; margin:0; font-size:1.4rem; line-height: 1.3; min-height: 4.2rem; display: flex; align-items: flex-start;">
-                    Blockchain and AI based Medical <br>Record Analysis
-                  </h3>
-                </div>
-                <span class="tag" aria-hidden="true" style="font-size:1rem; white-space: nowrap;">AI • Blockchain</span>
-              </div>
+    <div style="margin-top: 4px; margin-bottom: 8px;">
+    <p class="muted" style="margin:0; font-size:1.1rem;">Aug 2024 — Nov 2024</p>
+    </div>
 
-              <div style="margin-top: 4px; margin-bottom: 8px;">
-                <p class="muted" style="margin:0; font-size:1.1rem;">Aug 2024 — Nov 2024</p>
-              </div>
+    <div style="flex-grow: 1;">
+    <p class="muted" style="margin-top:0.5rem; font-size:1.2rem; line-height:1.5;">
+        A research project utilizing AI for bone fracture analysis, while integrating <strong>Blockchain and IPFS</strong> to ensure secure, decentralized medical record storage.
+        <br><br>
+        <strong style="color:#cfeffb;">Published:</strong>
+        <em>Journal of Neonatal Surgery (JNS)</em>, 2025.
+    </p>
+    </div>
 
-              <div style="flex-grow: 1;">
-                <p class="muted" style="margin-top:0.5rem; font-size:1.2rem; line-height:1.5;">
-                  Research project integrating Blockchain and IPFS for secure medical record storage.
-                  <br><br>
-                  <strong style="color:#cfeffb;">Published:</strong>
-                  <em>Journal of Neonatal Surgery (JNS)</em>, 2025.
-                </p>
-              </div>
-
-              <div style="margin-top:10px;">
-                <a class="btn-cta" href="https://www.jneonatalsurg.com/index.php/jns/article/view/5836" target="_blank" aria-label="View publication" style="padding: 0.6rem 1.2rem; font-size: 1.1rem;">
-                  <i class="fa fa-file-lines" style="font-size:1.1rem"></i>
-                  <span class="muted" style="color:#cfeffb"> View Publication</span>
-                </a>
-              </div>
-            </article>
-
+    <div style="margin-top:10px;">
+    <a class="btn-cta" href="https://www.jneonatalsurg.com/index.php/jns/article/view/5836" target="_blank" aria-label="View publication" style="padding: 0.6rem 1.2rem; font-size: 1.1rem;">
+        <i class="fa fa-file-lines" style="font-size:1.1rem"></i>
+        <span class="muted" style="color:#cfeffb"> View Publication</span>
+    </a>
+    </div>
+</article>
           </div>
         </div>
       </section>
@@ -160,11 +178,9 @@
 
           <div class="grid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(300px, 400px)); gap: 24px; justify-content: start;">
             
-            <article class="glass-card" aria-labelledby="ctf-yukthi-title" tabindex="0" 
+            <article class="glass-card" aria-labelledby="ctf-yukthi-title" tabindex="0"
               style="padding:1rem; border:1px solid var(--card-border); display: flex; flex-direction: column; height: 100%;">
               
-              
-
               <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-top:0.5rem;">
                 <div style="flex: 1;">
                   <h3 id="ctf-yukthi-title" style="font-weight:700; color:#eaf6ff; margin:0; font-size:1.4rem; line-height: 1.3; min-height: 4.2rem; display: flex; align-items: flex-start;">
@@ -183,15 +199,11 @@
                   Secured <strong>75th Rank</strong> out of <strong>321 participants</strong> (Top 23.4%) in this CTF. Solved complex challenges.
                 </p>
               </div>
-
-              
             </article>
 
-            <article class="glass-card" aria-labelledby="hwi-title" tabindex="0" 
+            <article class="glass-card" aria-labelledby="hwi-title" tabindex="0"
               style="padding:1rem; border:1px solid var(--card-border); display: flex; flex-direction: column; height: 100%;">
               
-    
-
               <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-top:0.5rem;">
                 <div style="flex: 1;">
                   <h3 id="hwi-title" style="font-weight:700; color:#eaf6ff; margin:0; font-size:1.4rem; line-height: 1.3; min-height: 4.2rem; display: flex; align-items: flex-start;">
@@ -210,39 +222,59 @@
                   Registered to participate in a <strong>Real Website Bug Hunting</strong> event. Will be testing live infrastructure to identify and report valid security vulnerabilities.
                 </p>
               </div>
-
-              
             </article>
 
           </div>
         </div>
       </section>
 
-      <section id="experience" class="section" style="background: rgba(0,0,0,0.100);">
-        <div class="maxw">
-          <div class="section-title">
-            <div class="bar" aria-hidden="true"></div>
-            <h2>Professional Experience</h2>
-          </div>
-          <div class="grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;">
-            <div class="glass-card" tabindex="0" style="padding:1.5rem; background: rgba(14,165,233,0.04); border:1px solid rgba(14,165,233,0.1);">
-              <div class="service-icon" aria-hidden="true" style="background: rgba(14,165,233,0.08); box-shadow: 0 4px 12px rgba(14,165,233,0.2) inset;">
-                <i class="fa-solid fa-network-wired fa-lg" style="color:var(--neon);"></i>
-              </div>
-              <h3 style="margin-top:10px;color:#eaf6ff;font-size:1.6rem;font-weight:700;">System Admin</h3>
-              <p class="company" style="font-weight:500;color:#ccc;margin-top:4px;font-size:1.25rem;">
-                A. G. Padmavati's Hospital Ltd, Puducherry
-              </p>
-              <p class="duration" style="font-style:italic;color:#9aa4b2;margin:6px 0 12px;font-size:1.1rem;">
-                July 10, 2025 – Present
-              </p>
-              <p class="muted" style="font-size:1.3rem; line-height:1.7; color:#dbefff;">
-                Responsible for managing and maintaining IT systems across hospital departments. Ensuring secure network configurations, high server uptime, and data integrity. Implementing cybersecurity measures, troubleshooting system issues, and supporting medical and administrative operations through efficient infrastructure management.
-              </p>
-            </div>
-          </div>
+      <section id="career-timeline" class="section">
+  <div class="maxw">
+    <div class="section-title">
+      <div class="bar" aria-hidden="true"></div>
+      <h2>Professional Journey</h2>
+    </div>
+
+    <div class="timeline-container">
+      
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2007 – 2021</div>
+        <div class="glass-card timeline-content">
+          <div class="edu-icon"><i class="fa-solid fa-school"></i></div>
+          <h3 class="timeline-title">SSLC & HSC</h3>
+          <p class="timeline-subtitle">Amalorpavam Higher Secondary School, Puducherry</p>
+          <p class="muted">Completed foundational and higher secondary education with a focus on core academic excellence.</p>
         </div>
-      </section>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2021 – 2025</div>
+        <div class="glass-card timeline-content">
+          <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h3 class="timeline-title">B.Tech (CSE)</h3>
+          <p class="timeline-subtitle">Manakula Vinayagar Institute of Technology, Puducherry</p>
+          <p class="muted">Specialized in Computer Science and Engineering, developing a strong foundation in software and hardware systems.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item current">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">July 2025 – Present</div>
+        <div class="glass-card timeline-content">
+          <div class="edu-icon"><i class="fa-solid fa-network-wired"></i></div>
+          <h3 class="timeline-title">System Admin</h3>
+          <p class="timeline-subtitle">A. G. Padmavati's Hospital Ltd, Puducherry</p>
+          <p class="muted">
+            Managing IT infrastructure, ensuring network security, and maintaining server uptime to support critical medical and administrative operations.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       <section id="tryhackme" class="section bg-black/40">
         <div class="maxw">
@@ -253,10 +285,10 @@
           <div style="display:flex; justify-content:flex-start; margin-top:0;">
             <div class="glass-card" tabindex="0"
               style="padding:1.5rem; 
-                  background: rgba(14,165,233,0.05); 
-                  border:1px solid rgba(14,165,233,0.15); 
-                  max-width:700px; 
-                  border-radius:12px;">
+                   background: rgba(14,165,233,0.05); 
+                   border:1px solid rgba(14,165,233,0.15); 
+                   max-width:700px; 
+                   border-radius:12px;">
               <iframe
                 src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=3131789"
                 title="TryHackMe Profile"
@@ -372,35 +404,6 @@
         <img id="modalImg" src="" style="max-width:90%;max-height:90%;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,0.7)">
       </div>
 
-      <section id="education" class="section">
-        <div class="maxw">
-          <div class="section-title">
-            <div class="bar" aria-hidden="true"></div>
-            <h2>Education</h2>
-          </div>
-          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px">
-            <div class="glass-card">
-              <div class="edu-item">
-                <div class="edu-year" style="font-size:1.5rem;">2007–2021</div>
-                <div>
-                  <h4 style="margin:0;color:#eaf6ff; font-size:1.5rem;">SSLC & HSC</h4>
-                  <p class="muted" style="margin-top:6px; font-size:1.3rem;">Amalorpavam Higher Secondary School, Puducherry.</p>
-                </div>
-              </div>
-            </div>
-            <div class="glass-card">
-              <div class="edu-item">
-                <div class="edu-year" style="font-size:1.5rem;">2021–2025</div>
-                <div>
-                  <h4 style="margin:0;color:#eaf6ff; font-size:1.5rem;">B.Tech (CSE)</h4>
-                  <p class="muted" style="margin-top:6px; font-size:1.3rem;">Mankula Vinayagar Institute of Technology, Puducherry.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section id="contact" class="section bg-black/30">
         <div class="maxw">
           <div class="section-title">
@@ -457,7 +460,7 @@
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="script.js"></script>
+  <script src="./script.js"></script>
 
 </body>
 </html>
