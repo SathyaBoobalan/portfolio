@@ -6,18 +6,17 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
-  --bg: #000000;        /* Pure terminal black */
-  --fg: #00ff87;        /* Classic terminal green */
-  --fg-dim: #7affc0;    /* Softer green */
-  --fg-muted: #6b7280;  /* Gray comments */
-  --border: #003b22;    /* Very subtle green border */
+  --bg: #000000;              /* Pure terminal black */
+  --fg: #00ff87;              /* Classic terminal green */
+  --fg-dim: #7affc0;          /* Softer green */
+  --fg-muted: #6b7280;        /* Gray comments */
+  --border: #003b22;          /* Very subtle green border */
 }
 
 /* =======================================
    1. GLOBAL TERMINAL BASE
    ======================================= */
-html,
-body {
+html, body {
   background-color: #000000 !important;
   background-image: none !important;
   background: #000000 !important;
@@ -35,11 +34,11 @@ body {
    2. NUCLEAR OVERRIDES (The "Black" Fix)
    ======================================= */
 /* Forces backgrounds transparent but PRESERVES layout properties */
-section,
-.section,
-.glass-card,
-.card,
-div[style*="background"],
+section, 
+.section, 
+.glass-card, 
+.card, 
+div[style*="background"], 
 section[style*="background"] {
   background: transparent !important;
   background-color: transparent !important;
@@ -62,7 +61,7 @@ section[style*="background"] {
 .maxw {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1.5rem; 
 }
 
 .section {
@@ -90,11 +89,11 @@ section[style*="background"] {
   min-height: 100vh;           /* Force full screen height */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: center;     
+  align-items: center;         
   text-align: center;
   position: relative;
-  background: #000 !important;
+  background: #000 !important; 
   border-bottom: 1px solid var(--border);
 }
 
@@ -118,7 +117,7 @@ section[style*="background"] {
   margin-top: 2rem;
 }
 
-.social-icons a,
+.social-icons a, 
 .social-icons button {
   font-size: 1.8rem;
   color: var(--fg);
@@ -157,7 +156,7 @@ section[style*="background"] {
   object-fit: cover;
   border: 1px solid var(--border);
   margin-bottom: 0.5rem;
-  border-radius: 0 !important;
+  border-radius: 0 !important; 
 }
 
 /* Fix Project Title Heights */
@@ -193,24 +192,19 @@ section::before {
   margin-left: 1.5rem;
 }
 
-.muted, small {
-  color: var(--fg-muted) !important;
-}
+.muted, small { color: var(--fg-muted) !important; }
 
 /* Interactive Elements */
 a {
   color: var(--fg) !important;
   text-decoration: underline;
 }
-
 a:hover {
   background: var(--fg);
   color: #000 !important;
 }
 
-button,
-.btn,
-.btn-cta {
+button, .btn, .btn-cta {
   background: transparent !important;
   color: var(--fg) !important;
   border: 1px solid var(--border) !important;
@@ -221,9 +215,7 @@ button,
   gap: 10px;
   align-items: center;
 }
-
-button:hover,
-.btn-cta:hover {
+button:hover, .btn-cta:hover {
   background: var(--fg) !important;
   color: #000 !important;
   text-decoration: none;
@@ -236,11 +228,7 @@ button:hover,
   border: 1px solid var(--border);
   padding: 2px 6px;
 }
-
-.tag::before {
-  content: "--";
-  opacity: 0.7;
-}
+.tag::before { content: "--"; opacity: 0.7; }
 
 img {
   border: 1px solid var(--border);
@@ -250,14 +238,12 @@ img {
   height: auto;
 }
 
-nav,
-header {
+nav, header {
   border-bottom: 1px solid var(--border);
   padding: 8px 12px;
   background-color: #000000 !important;
 }
 
-/* Scrollbar Customization */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-thumb { background: var(--fg); }
 ::-webkit-scrollbar-track { background: #000; }
@@ -282,24 +268,20 @@ header {
   opacity: 0.7;
   transition: opacity 0.3s ease;
 }
-
-.scroll-indicator:hover {
-  opacity: 1;
-}
+.scroll-indicator:hover { opacity: 1; }
 
 .mouse {
   width: 30px;
   height: 50px;
-  border: 2px solid var(--fg);
+  border: 2px solid var(--fg); 
   border-radius: 20px;
   position: relative;
   box-shadow: 0 0 10px rgba(0, 255, 135, 0.2);
 }
-
 .wheel {
   width: 4px;
   height: 8px;
-  background: var(--fg);
+  background: var(--fg);   
   border-radius: 2px;
   position: absolute;
   top: 8px;
@@ -307,29 +289,26 @@ header {
   transform: translateX(-50%);
   animation: scrollWheel 2s infinite;
 }
-
 .arrow-scroll span {
   display: block;
   width: 10px;
   height: 10px;
-  border-bottom: 2px solid var(--fg);
-  border-right: 2px solid var(--fg);
+  border-bottom: 2px solid var(--fg); 
+  border-right: 2px solid var(--fg);  
   transform: rotate(45deg);
   margin: -4px auto;
   animation: scrollArrow 2s infinite;
 }
-
 .arrow-scroll span:nth-child(2) { animation-delay: -0.2s; }
 .arrow-scroll span:nth-child(3) { animation-delay: -0.4s; }
 
 @keyframes scrollWheel {
-  0%   { top: 8px; opacity: 1; }
+  0% { top: 8px; opacity: 1; }
   100% { top: 28px; opacity: 0; }
 }
-
 @keyframes scrollArrow {
-  0%   { opacity: 0; transform: rotate(45deg) translate(-5px, -5px); }
-  50%  { opacity: 1; }
+  0% { opacity: 0; transform: rotate(45deg) translate(-5px, -5px); }
+  50% { opacity: 1; }
   100% { opacity: 0; transform: rotate(45deg) translate(5px, 5px); }
 }
 
@@ -346,10 +325,9 @@ header {
    9. FIX: SECTION SPACING (Gap between title and cards)
    ======================================= */
 .section-title {
-  margin-bottom: 3.5rem !important;
+  margin-bottom: 3.5rem !important; 
   position: relative;
 }
-
 .section-title::after {
   content: "";
   display: block;
@@ -361,164 +339,70 @@ header {
 }
 
 /* =======================================
-   10. TEXT REPLACEMENTS & SIZING
+   10. TEXT REPLACEMENTS & SIZING (THE FIXES)
    ======================================= */
-/* Logic: 
-   1. Hide original text (font-size: 0).
-   2. ::before -> "user@host:~$ ./" (Small text: 1rem).
-   3. ::after  -> "Name_Of_File.sh" (Big text: 1.8rem - 3rem).
-*/
-
-/* --- 1. MAIN HERO TITLE: sathya_boobalan.sh --- */
 .glow-title {
   font-size: 0 !important;
 }
-
 .glow-title::before {
-  content: "user@host:~$ ./";  /* Added default prompt for consistency if needed, or keep empty */
-  font-size: 1.2rem;          /* Small Prompt */
+  content: "user@host:~$ whoami";
+  font-size: 1.2rem;       /* Small Prompt */
   color: var(--fg-dim);
-  display: block;             /* Put prompt on its own line */
+  display: block;          /* Put prompt on its own line */
   margin-bottom: 5px;
 }
-
 .glow-title::after {
   content: "SATHYA BOOBALAN"; /* BIG Underscore Text */
-  font-size: clamp(2rem, 5vw, 4rem);
+  font-size: clamp(2rem, 5vw, 4rem); 
   color: var(--fg);
   font-weight: 700;
 }
 
-/* --- 2. TryHackMe -> TryHackMe_Profile.sh --- */
 #tryhackme h2 { font-size: 0 !important; }
-#tryhackme h2::before {
-  content: "user@host:~$ ./";
-  font-size: 1rem;
-  color: var(--fg-dim);
-}
-#tryhackme h2::after {
-  content: "TryHackMe_Profile.sh";
-  font-size: 1.8rem;
-  color: var(--fg);
-}
+#tryhackme h2::before { content: "user@host:~$ ./"; font-size: 1rem; color: var(--fg-dim); }
+#tryhackme h2::after { content: "TryHackMe_Profile.sh"; font-size: 1.8rem; color: var(--fg); }
 
-/* --- 3. About Me -> About_Me.sh --- */
 #about h2 { font-size: 0 !important; }
-#about h2::before {
-  content: "user@host:~$ ./";
-  font-size: 1rem;
-  color: var(--fg-dim);
-}
-#about h2::after {
-  content: "About_Me.sh";
-  font-size: 1.8rem;
-  color: var(--fg);
-}
+#about h2::before { content: "user@host:~$ ./"; font-size: 1rem; color: var(--fg-dim); }
+#about h2::after { content: "About_Me.sh"; font-size: 1.8rem; color: var(--fg); }
 
-/* --- 4. Projects -> Projects.sh --- */
 #projects h2 { font-size: 0 !important; }
-#projects h2::before {
-  content: "user@host:~$ ./";
-  font-size: 1rem;
-  color: var(--fg-dim);
-}
-#projects h2::after {
-  content: "Projects.sh";
-  font-size: 1.8rem;
-  color: var(--fg);
-}
+#projects h2::before { content: "user@host:~$ ./"; font-size: 1rem; color: var(--fg-dim); }
+#projects h2::after { content: "Projects.sh"; font-size: 1.8rem; color: var(--fg); }
 
-/* --- 5. Experience -> Professional_Experience.sh --- */
 #experience h2 { font-size: 0 !important; }
-#experience h2::before {
-  content: "user@host:~$ ./";
-  font-size: 1rem;
-  color: var(--fg-dim);
-}
-#experience h2::after {
-  content: "Professional_Experience.sh";
-  font-size: 1.8rem;
-  color: var(--fg);
-}
+#experience h2::before { content: "user@host:~$ ./"; font-size: 1rem; color: var(--fg-dim); }
+#experience h2::after { content: "Professional_Experience.sh"; font-size: 1.8rem; color: var(--fg); }
 
-/* --- 6. Services -> Services.sh --- */
 #services h2 { font-size: 0 !important; }
-#services h2::before {
-  content: "user@host:~$ ./";
-  font-size: 1rem;
-  color: var(--fg-dim);
-}
-#services h2::after {
-  content: "Services.sh";
-  font-size: 1.8rem;
-  color: var(--fg);
-}
+#services h2::before { content: "user@host:~$ ./"; font-size: 1rem; color: var(--fg-dim); }
+#services h2::after { content: "Services.sh"; font-size: 1.8rem; color: var(--fg); }
 
-/* --- 7. Events -> Events_&_Competitions.sh --- */
 #events h2 { font-size: 0 !important; }
-#events h2::before {
-  content: "user@host:~$ ./";
-  font-size: 1rem;
-  color: var(--fg-dim);
-}
-#events h2::after {
-  content: "Events_&_Competitions.sh";
-  font-size: 1.8rem;
-  color: var(--fg);
-}
+#events h2::before { content: "user@host:~$ ./"; font-size: 1rem; color: var(--fg-dim); }
+#events h2::after { content: "Events_&_Competitions.sh"; font-size: 1.8rem; color: var(--fg); }
 
-/* --- 8. Achievements -> Achievements.sh --- */
 #achievements h2 { font-size: 0 !important; }
-#achievements h2::before {
-  content: "user@host:~$ ./";
-  font-size: 1rem;
-  color: var(--fg-dim);
-}
-#achievements h2::after {
-  content: "Achievements_&_Certificates.sh";
-  font-size: 1.8rem;
-  color: var(--fg);
-}
+#achievements h2::before { content: "user@host:~$ ./"; font-size: 1rem; color: var(--fg-dim); }
+#achievements h2::after { content: "Achievements_&_Certificates.sh"; font-size: 1.8rem; color: var(--fg); }
 
-/* --- 9. Education -> Education.sh --- */
 #education h2 { font-size: 0 !important; }
-#education h2::before {
-  content: "user@host:~$ ./";
-  font-size: 1rem;
-  color: var(--fg-dim);
-}
-#education h2::after {
-  content: "Education.sh";
-  font-size: 1.8rem;
-  color: var(--fg);
-}
+#education h2::before { content: "user@host:~$ ./"; font-size: 1rem; color: var(--fg-dim); }
+#education h2::after { content: "Education.sh"; font-size: 1.8rem; color: var(--fg); }
 
-/* --- 10. Contact -> Contact.sh --- */
 #contact h2 { font-size: 0 !important; }
-#contact h2::before {
-  content: "user@host:~$ ./";
-  font-size: 1rem;
-  color: var(--fg-dim);
-}
-#contact h2::after {
-  content: "Contact.sh";
-  font-size: 1.8rem;
-  color: var(--fg);
-}
+#contact h2::before { content: "user@host:~$ ./"; font-size: 1rem; color: var(--fg-dim); }
+#contact h2::after { content: "Contact.sh"; font-size: 1.8rem; color: var(--fg); }
 
-/* =======================================
+/* ================================
    MODE SWITCHER UI
-   ======================================= */
-
+   ================================ */
 .mode-switch-container {
-  /* !important forces this rule to override style.css and style-terminal.css */
   position: absolute !important;
   top: 1.5rem;
   right: 1.5rem;
   z-index: 999;
 }
-
-/* Button base */
 .mode-btn {
   all: unset;
   cursor: pointer;
@@ -530,45 +414,69 @@ header {
   color: #00ff87;
   background: rgba(0, 0, 0, 0.85);
   border: 1px solid rgba(0, 255, 135, 0.4);
-  transition:
-    background 0.25s ease,
-    border-color 0.25s ease,
-    color 0.25s ease,
-    transform 0.15s ease;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.15s ease;
+}
+.mode-btn:hover { background: rgba(0, 255, 135, 0.1); border-color: #00ff87; }
+.mode-btn:active { transform: translateY(1px); }
+body:not(.terminal-mode) .mode-btn { color: #7aa2ff; border-color: rgba(122, 162, 255, 0.4); background: rgba(10, 15, 30, 0.75); }
+body:not(.terminal-mode) .mode-btn:hover { background: rgba(122, 162, 255, 0.12); border-color: #7aa2ff; }
+
+/* =======================================================
+   TIMELINE: TERMINAL / TTY ADAPTATION
+   ======================================================= */
+.section-title h2 { font-size: 0 !important; margin-bottom: 2rem !important; }
+.section-title h2::before { content: "user@host:~$ ./"; font-size: 1rem; color: var(--fg-dim); font-family: 'JetBrains Mono', monospace; font-weight: 400; }
+.section-title h2::after { content: "Professional_Journey.sh"; font-size: 1.8rem; color: var(--fg); font-family: 'JetBrains Mono', monospace; }
+
+.timeline-container { position: relative; max-width: 1000px; margin: 60px auto 40px; padding: 0 20px; display: flex; flex-direction: column; }
+.timeline-container::before { content: ''; position: absolute; top: 0; bottom: 0; left: 31px; width: 1px; border-left: 1px dashed var(--border); }
+.timeline-item { position: relative; margin-bottom: 50px; padding-left: 60px; width: 100%; }
+.timeline-dot { position: absolute; left: 24px; top: 10px; width: 12px; height: 12px; background: var(--bg); border: 1px solid var(--fg); z-index: 10; }
+.timeline-item.current .timeline-dot { background: var(--fg); box-shadow: 0 0 10px var(--fg); animation: terminal-cursor-blink 1s step-end infinite; }
+.timeline-content { background: transparent !important; border: 1px solid var(--border) !important; padding: 1.5rem !important; transition: border-color 0.3s ease; }
+.timeline-content:hover { border-color: var(--fg) !important; background: rgba(0, 255, 135, 0.02) !important; }
+.timeline-date { display: inline-block; color: var(--fg-dim); margin-bottom: 10px; font-size: 1.4rem; }
+.timeline-date::before { content: "--timestamp: "; color: var(--fg-muted); }
+.timeline-title { color: var(--fg) !important; font-size: 1.4rem !important; margin: 0 0 5px 0 !important; font-weight: 500; }
+.timeline-subtitle { color: var(--fg-dim) !important; font-size: 1.1rem; margin-bottom: 12px; display: block; }
+
+@keyframes terminal-cursor-blink { 50% { opacity: 0; } }
+
+@media (min-width: 768px) {
+    .timeline-container::before { left: 50%; }
+    .timeline-item { width: 50%; padding-left: 0; }
+    .timeline-item:nth-child(odd) { padding-right: 50px; text-align: right; align-self: flex-start; }
+    .timeline-item:nth-child(odd) .timeline-dot { left: auto; right: -7px; }
+    .timeline-item:nth-child(even) { align-self: flex-end; padding-left: 50px; }
+    .timeline-item:nth-child(even) .timeline-dot { left: -7px; }
 }
 
-/* Hover */
-.mode-btn:hover {
-  background: rgba(0, 255, 135, 0.1);
-  border-color: #00ff87;
-}
+/* =======================================================
+   ACHIEVEMENTS & CERTIFICATES
+   ======================================================= */
+.cert-img-wrapper { position: relative; width: 100%; cursor: pointer; overflow: hidden; border: 1px solid var(--border); background: #000; }
+.cert-img-wrapper img, .cert-thumb { display: block; width: 100%; height: auto; transition: filter 0.3s ease, transform 0.3s ease; opacity: 1; }
+.preview-overlay, .cert-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: var(--fg) !important; font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px; padding: 8px 16px; border: 1px solid var(--fg); background: rgba(0, 0, 0, 0.8); opacity: 0; transition: opacity 0.3s ease; z-index: 5; pointer-events: none; }
+.cert-img-wrapper:hover img, .cert-img-wrapper:hover .cert-thumb { filter: brightness(0.3) grayscale(0.8) blur(2px); transform: scale(1.05); }
+.cert-img-wrapper:hover .preview-overlay, .cert-img-wrapper:hover .cert-overlay { opacity: 1; }
+.cert-img-wrapper:hover::after { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 255, 135, 0.05) 50%); background-size: 100% 4px; z-index: 2; pointer-events: none; }
+.glass-card h4 { color: var(--fg) !important; font-family: 'JetBrains Mono', monospace !important; line-height: 1.2; }
+.glass-card .muted { color: var(--fg-muted) !important; font-family: 'JetBrains Mono', monospace !important; }
 
-/* Click feedback */
-.mode-btn:active {
-  transform: translateY(1px);
+/* =======================================================
+   CONTACT CARD ALIGNMENT FIX
+   ======================================================= */
+#contact .contact-card {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 20px !important;
 }
+#contact .contact-card > div:first-child { flex: 1 !important; }
+#contact .contact-card > div:last-child { display: flex !important; flex-direction: column !important; align-items: flex-end !important; margin-top: 0 !important; gap: 10px; }
 
-/* Cyber / Portfolio mode appearance */
-body:not(.terminal-mode) .mode-btn {
-  color: #7aa2ff;
-  border-color: rgba(122, 162, 255, 0.4);
-  background: rgba(10, 15, 30, 0.75);
-}
-
-body:not(.terminal-mode) .mode-btn:hover {
-  background: rgba(122, 162, 255, 0.12);
-  border-color: #7aa2ff;
-}
-
-/* Mobile tweak */
 @media (max-width: 768px) {
-  .mode-switch-container {
-    top: 1rem;
-    right: 1rem;
-  }
-
-  .mode-btn {
-    font-size: 0.8rem;
-    padding: 0.5rem 1rem;
-  }
+  #contact .contact-card { flex-direction: column !important; align-items: flex-start !important; }
+  #contact .contact-card > div:last-child { align-items: flex-start !important; width: 100%; }
 }
