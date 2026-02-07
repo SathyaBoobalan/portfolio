@@ -301,16 +301,39 @@ window.addEventListener('scroll', function() {
   }
 });
 
-// Smooth scroll for nav items
-document.querySelectorAll('.nav-item').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    const href = this.getAttribute('href');
-    if(href.startsWith("#")) {
-        e.preventDefault();
-        const target = document.querySelector(href === "#" ? "body" : href);
-        if(target) {
-            target.scrollIntoView({ behavior: 'smooth' });
-        }
+/* =========================================
+   AUTO-CLOSE MENU ON LINK CLICK
+   ========================================= */
+document.querySelectorAll('.nav-item').forEach(link => {
+  link.addEventListener('click', () => {
+    const navLinks = document.getElementById('terminalNav');
+    const btn = document.querySelector('.hamburger-btn');
+
+    // Remove the open class to hide the menu
+    if (navLinks) {
+      navLinks.classList.remove('mobile-open');
+    }
+
+    // Reset the button state
+    if (btn) {
+      btn.classList.remove('active');
     }
   });
 });
+
+/* =========================================
+   MOBILE MENU TOGGLE
+   ========================================= */
+function toggleMobileMenu() {
+  const navLinks = document.getElementById('terminalNav');
+  const btn = document.querySelector('.hamburger-btn');
+  
+  if (navLinks) {
+    navLinks.classList.toggle('mobile-open');
+  }
+  
+  // Optional: Visual feedback on the button
+  if (btn) {
+    btn.classList.toggle('active');
+  }
+}

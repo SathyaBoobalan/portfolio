@@ -20,25 +20,17 @@
 
 <body>
 <nav class="floating-nav">
-  <div class="nav-container">
-    <div class="nav-links">
-      <div class="nav-links">
-      
-      
-      <a href="#about" class="nav-item">Profile</a>
-      
-      <a href="#projects" class="nav-item">Portfolio</a>
-      
-      
-      
-      <a href="#services" class="nav-item">Expertise</a>
-      
-      <a href="#credentials" class="nav-item">Credentials</a>
+  <button class="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+    <span>SB | ☰</span>
+  </button>
 
-        <a href="#career-timeline" class="nav-item">Career Path</a>
-      
-      <a href="#contact" class="nav-item">Connect</a>
-    </div>    </div>
+  <div class="nav-links" id="terminalNav">
+    <a href="#about" class="nav-item">Profile</a>
+    <a href="#projects" class="nav-item">Portfolio</a>
+    <a href="#services" class="nav-item">Expertise</a>
+    <a href="#credentials" class="nav-item">Credentials</a>
+    <a href="#career-timeline" class="nav-item">Career Path</a>
+    <a href="#contact" class="nav-item">Connect</a>
   </div>
 </nav>
   <canvas id="particles" aria-hidden="true"></canvas>

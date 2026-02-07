@@ -552,7 +552,7 @@ footer span {
 .mode-switch-container {
   position: absolute !important;
   top: 1.5rem;
-  right: 1.5rem;
+  left: 1.5rem;
   z-index: 999;
 }
 
@@ -948,4 +948,186 @@ body:not(.terminal-mode) .mode-btn:hover { background: rgba(122, 162, 255, 0.12)
 @media (max-width: 900px) {
   div[style*="grid-template-columns: 1fr 1.5fr"] { grid-template-columns: 1fr !important; }
   .stat-box { padding: 20px; }
+}
+/* =======================================
+   CYBER THEME: MOBILE HAMBURGER MENU
+   ======================================= */
+
+/* Hide Hamburger by default on Desktop */
+.hamburger-btn {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    
+    /* 1. Position Nav to Top Left */
+    .floating-nav {
+        position: fixed !important;
+        top: 20px !important;
+        right: 20px !important;
+        left: auto !important;
+        transform: none !important;
+        width: auto !important;
+        min-width: 40px;
+        overflow-x: visible !important; /* Disables swipe scroll to allow dropdown */
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding: 10px !important;
+    }
+
+    /* 2. Style the Cyber Hamburger Button */
+    .hamburger-btn {
+        display: flex;
+        align-items: center;
+        background: rgba(14, 165, 233, 0.1);
+        border: 1px solid rgba(14, 165, 233, 0.4);
+        color: var(--neon);
+        font-family: inherit;
+        font-weight: 700;
+        font-size: 0.9rem;
+        padding: 8px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        width: 100%;
+        transition: all 0.3s ease;
+        text-shadow: 0 0 8px var(--neon);
+    }
+
+    .hamburger-btn:hover,
+    .hamburger-btn.active {
+        background: var(--neon);
+        color: #fff;
+        box-shadow: 0 0 15px var(--neon);
+    }
+
+    /* 3. The Dropdown List */
+    .nav-links {
+        display: none; /* Hidden until toggled */
+        width: 100%;
+        flex-direction: column;
+        gap: 5px;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* 4. Toggled State (JS class) */
+    .nav-links.mobile-open {
+        display: flex;
+        margin-top: 12px;
+        padding-top: 10px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* 5. Mobile Nav Links */
+    .nav-item {
+        font-size: 1rem !important;
+        padding: 12px 10px !important;
+        width: 100%;
+        display: block;
+        border-radius: 6px;
+        border-bottom: none !important; /* Remove bootstrap underlines */
+    }
+
+    .nav-item:hover {
+        background: rgba(14, 165, 233, 0.15);
+        color: #fff !important;
+        transform: translateX(5px);
+    }
+
+    /* Hide the underline effect on mobile to save space */
+    .nav-item::after {
+        display: none !important;
+    }
+}
+/* =======================================
+   CYBER THEME: MOBILE PROJECT FIX
+   ======================================= */
+@media (max-width: 768px) {
+    /* 1. Force the grid to a single column */
+    #projects .grid, 
+    .grid {
+        display: flex !important;
+        flex-direction: column !important;
+        grid-template-columns: 1fr !important; 
+        gap: 20px !important;
+    }
+
+    /* 2. Make cards full width */
+    #projects .glass-card,
+    .glass-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: auto !important;
+        height: auto !important;
+        padding: 1.5rem !important;
+    }
+
+    /* 3. Fix project image height for better mobile aspect ratio */
+    #projects .project-img {
+        height: 200px !important;
+        width: 100% !important;
+        object-fit: cover !important;
+        border-radius: 8px !important;
+    }
+
+    /* 4. Ensure title text doesn't overflow or look squashed */
+    #projects .glass-card h3 {
+        min-height: auto !important;
+        font-size: 1.3rem !important;
+        margin-bottom: 10px !important;
+    }
+
+    /* 5. Fix tags and description spacing */
+    .tag {
+        font-size: 0.8rem !important;
+        padding: 0.3rem 0.6rem !important;
+    }
+}
+/* =======================================
+   CYBER THEME: CREDENTIALS MOBILE FIX
+   ======================================= */
+@media (max-width: 768px) {
+    /* 1. Main Container: Stack the TryHackMe card on top of the stats */
+    #credentials .maxw > div[style*="display: grid"] {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+    }
+
+    /* 2. Stats Grid: Stack individual stat boxes */
+    #credentials .stats-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+
+    /* 3. Reset Stat Box columns to take full width */
+    #credentials .stat-box {
+        grid-column: span 1 !important;
+        width: 100% !important;
+        padding: 20px !important;
+    }
+
+    /* 4. Fix typography for smaller screens */
+    #credentials .stat-value {
+        font-size: 1.8rem !important;
+    }
+
+    #credentials .stat-desc {
+        font-size: 1rem !important;
+    }
+}
+@media (max-width: 768px) {
+    .hamburger-btn {
+        font-family: 'Inter', sans-serif !important; /* Use a clean font for these */
+        font-weight: 600 !important;
+        font-size: 0.9rem !important;
+        letter-spacing: 1.5px;
+        display: flex;
+        align-items: center;
+        gap: 10px; /* Space between text and ☰ icon */
+        padding: 6px 14px !important;
+        border-radius: 4px;
+    }
 }
