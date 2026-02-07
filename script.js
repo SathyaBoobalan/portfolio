@@ -218,48 +218,51 @@ document.addEventListener('DOMContentLoaded', () => {
    4. TERMINAL MODE SWITCHER (Logic Only)
    ========================================= */
 document.addEventListener("DOMContentLoaded", () => {
-  // Select the elements that you added to HTML
+  // 1. Select Elements
   const toggleBtn = document.getElementById("mode-toggle");
   const modeText = document.getElementById("mode-text");
   const styleLink = document.getElementById("main-style");
   const particles = document.getElementById("particles");
 
-  // Safety check: if button doesn't exist in HTML, stop
-  if (!toggleBtn || !styleLink) return;
+  // CRITICAL FIX: Only stop if the CSS link is missing. 
+  // We DO NOT stop if the button is missing.
+  if (!styleLink) return;
 
+  // --- FUNCTIONS ---
   function enableTerminal() {
-    styleLink.href = "./styles/style-terminal.css";
+    // Point to your terminal CSS file
+    styleLink.href = "./styles/style-terminal.css"; 
     document.body.classList.add("terminal-mode");
+    
+    // Force Black Background
     document.body.style.backgroundColor = "#000";
     document.body.style.backgroundImage = "none";
     
-    // Update text
+    // Update Button Text (Only if button exists on this page)
     if (modeText) modeText.textContent = "Normal Mode";
     
-    // Hide particles in terminal mode
+    // Hide particles (Only if particles exist)
     if (particles) particles.style.display = "none";
     
-    // Save preference
+    // Save to Memory
     localStorage.setItem("theme", "terminal");
   }
 
   function disableTerminal() {
-    styleLink.href = "./styles/style.css";
+    styleLink.href = "./styles/style.css"; 
     document.body.classList.remove("terminal-mode");
+    
     document.body.style.backgroundColor = "";
     document.body.style.backgroundImage = "";
     
-    // Update text
     if (modeText) modeText.textContent = "Terminal Mode";
-    
-    // Show particles in normal mode
     if (particles) particles.style.display = "block";
     
-    // Save preference
     localStorage.setItem("theme", "cyber");
   }
 
-  // Check saved theme on load
+  // --- 2. APPLY THEME ON LOAD ---
+  // This runs automatically on project.html even without a button!
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "terminal") {
     enableTerminal();
@@ -267,23 +270,47 @@ document.addEventListener("DOMContentLoaded", () => {
     disableTerminal();
   }
 
-  // Click Listener
-  toggleBtn.addEventListener("click", () => {
-    const scrollY = window.scrollY || document.documentElement.scrollTop;
+  // --- 3. BUTTON CLICK LISTENER ---
+  // This only runs on index.html where the button actually exists
+  if (toggleBtn) {
+    toggleBtn.addEventListener("click", () => {
+      // Prevent page jump during CSS swap
+      const scrollY = window.scrollY || document.documentElement.scrollTop;
+      document.body.style.minHeight = document.body.scrollHeight + 'px';
 
-    // Lock Height to prevent jump during CSS swap
-    document.body.style.minHeight = document.body.scrollHeight + 'px';
+      styleLink.onload = () => {
+        window.scrollTo(0, scrollY);
+        document.body.style.minHeight = '';
+        styleLink.onload = null;
+      };
 
-    styleLink.onload = () => {
-      window.scrollTo(0, scrollY);
-      document.body.style.minHeight = '';
-      styleLink.onload = null;
-    };
+      if (document.body.classList.contains("terminal-mode")) {
+        disableTerminal();
+      } else {
+        enableTerminal();
+      }
+    });
+  }
+});
+window.addEventListener('scroll', function() {
+  const nav = document.querySelector('.floating-nav');
+  if (window.scrollY > 50) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+});
 
-    if (document.body.classList.contains("terminal-mode")) {
-      disableTerminal();
-    } else {
-      enableTerminal();
+// Smooth scroll for nav items
+document.querySelectorAll('.nav-item').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if(href.startsWith("#")) {
+        e.preventDefault();
+        const target = document.querySelector(href === "#" ? "body" : href);
+        if(target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
     }
   });
 });

@@ -19,11 +19,29 @@
 </head>
 
 <body>
+<nav class="floating-nav">
+  <div class="nav-container">
+    <div class="nav-links">
+      <div class="nav-links">
+      
+      
+      <a href="#about" class="nav-item">Profile</a>
+      
+      <a href="#projects" class="nav-item">Portfolio</a>
+      
+      <a href="#career-timeline" class="nav-item">Career Path</a>
+      
+      <a href="#services" class="nav-item">Expertise</a>
+      
+      <a href="#achievements" class="nav-item">Certifications</a>
+      
+      <a href="#contact" class="nav-item">Connect</a>
+    </div>    </div>
+  </div>
+</nav>
   <canvas id="particles" aria-hidden="true"></canvas>
-
-  
-
   <div class="site">
+
     <div class="mode-switch-container" style="position: absolute !important; top: 1.5rem; right: 1.5rem; z-index: 9999;">
     <button id="mode-toggle" class="mode-btn" aria-label="Switch Mode">
       <span id="mode-text">Terminal Mode</span>
@@ -62,7 +80,7 @@
 
     <main class="main" role="main">
       
-      <section id="about" class="section">
+      <section id="about" class="section bg-black/40">
         <div class="maxw">
           <div class="section-title">
             <div class="bar" aria-hidden="true"></div>
@@ -86,148 +104,144 @@
         </div>
       </section>
 
-      <section id="projects" class="section bg-black/40">
-        <div class="maxw">
-          <div class="section-title">
-            <div class="bar" aria-hidden="true"></div>
-            <h2>Projects</h2>
-          </div>
-
-          <div class="grid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(300px, 400px)); gap: 24px; justify-content: start;">
-            
-            <article class="glass-card" aria-labelledby="proj-hms-title" tabindex="0"
-    style="padding:1rem; border:1px solid var(--card-border); display: flex; flex-direction: column; height: 100%;">
-    
-    <div style="padding-bottom:6px;padding-top:6px;">
-    <img src="./assets/images/Project/HMS.png" alt="Hospital Management System Dashboard" class="project-img"
-        style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px;">
+<section id="projects" class="section">
+  <div class="maxw">
+    <div class="section-title">
+      <div class="bar" aria-hidden="true"></div>
+      <h2>Projects</h2>
     </div>
 
-    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-top:0.5rem;">
-    <div style="flex: 1;">
-        <h3 id="proj-hms-title" style="font-weight:700; color:#eaf6ff; margin:0; font-size:1.4rem; line-height: 1.3; min-height: 4.2rem; display: flex; align-items: flex-start;">
-        Hospital Management System <br>For AGP Hospital
-        </h3>
-    </div>
-    <span class="tag" aria-hidden="true" style="font-size:1rem; white-space: nowrap;">MEAN • Docker • Secure</span>
-    </div>
-
-    <div style="margin-top: 4px; margin-bottom: 8px;">
-    <p class="muted" style="margin:0; font-size:1.1rem;">Oct 2025 — Present</p>
-    </div>
-
-    <div style="flex-grow: 1;">
-    <p class="muted" style="margin-top:0.5rem; font-size:1.2rem; line-height:1.5;">
-        A comprehensive platform designed to digitize and streamline hospital operations. Built with <strong>DevSecOps principles</strong> to ensure robust security and scalability.
-    </p>
-    </div>
-
-    <div style="margin-top:10px;">
-    <a class="btn-cta" href="https://github.com/SathyaBoobalan/AGP-Hospital-Management-System" target="_blank" aria-label="View Project" style="padding: 0.6rem 1.2rem; font-size: 1.1rem;">
-        <i class="fa fa-laptop-code" style="font-size:1.1rem"></i>
-        <span class="muted" style="color:#cfeffb"> View Project</span>
-    </a>
-    </div>
-</article><article class="glass-card" aria-labelledby="proj1-title" tabindex="0"
-    style="padding:1rem; border:1px solid var(--card-border); display: flex; flex-direction: column; height: 100%;">
-    
-    <div style="padding-bottom:6px;padding-top:6px;">
-    <img src="./assets/images/Project/Final_Year_Project.jpg" alt="Blockchain and AI Project" class="project-img"
-        style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px;">
-    </div>
-
-    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-top:0.5rem;">
-    <div style="flex: 1;">
-        <h3 id="proj1-title" style="font-weight:700; color:#eaf6ff; margin:0; font-size:1.4rem; line-height: 1.3; min-height: 4.2rem; display: flex; align-items: flex-start;">
-        Blockchain and AI based Medical <br>Record Analysis for Bone Fracture on Cloud Environment
-        </h3>
-    </div>
-    <span class="tag" aria-hidden="true" style="font-size:1rem; white-space: nowrap;">AI • Blockchain</span>
-    </div>
-
-    <div style="margin-top: 4px; margin-bottom: 8px;">
-    <p class="muted" style="margin:0; font-size:1.1rem;">Aug 2024 — Nov 2024</p>
-    </div>
-
-    <div style="flex-grow: 1;">
-    <p class="muted" style="margin-top:0.5rem; font-size:1.2rem; line-height:1.5;">
-        A research project utilizing AI for bone fracture analysis, while integrating <strong>Blockchain and IPFS</strong> to ensure secure, decentralized medical record storage.
-        <br><br>
-        <strong style="color:#cfeffb;">Published in Scopus:</strong>
-        <em>Journal of Neonatal Surgery (JNS)</em>, 2025.
-    </p>
-    </div>
-
-    <div style="margin-top:10px;">
-    <a class="btn-cta" href="https://www.jneonatalsurg.com/index.php/jns/article/view/5836" target="_blank" aria-label="View publication" style="padding: 0.6rem 1.2rem; font-size: 1.1rem;">
-        <i class="fa fa-file-lines" style="font-size:1.1rem"></i>
-        <span class="muted" style="color:#cfeffb"> View Publication</span>
-    </a>
-    </div>
-</article>
-          </div>
+    <div class="grid" style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch;">
+      
+      <article class="glass-card" aria-labelledby="proj-hms-title" tabindex="0"
+        style="padding:1rem; border:1px solid var(--card-border); display: flex; flex-direction: column; height: 100%;">
+        
+        <div style="padding-bottom:6px;padding-top:6px;">
+          <img src="./assets/images/Project/HMS.png" alt="Hospital Management System Dashboard" class="project-img"
+            style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px;">
         </div>
-      </section>
 
-      <section id="events" class="section">
-        <div class="maxw">
-          <div class="section-title">
-            <div class="bar" aria-hidden="true"></div>
-            <h2>Events & Competitions</h2>
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-top:0.5rem;">
+          <div style="flex: 1;">
+            <h3 id="proj-hms-title" style="font-weight:700; color:#eaf6ff; margin:0; font-size:1.4rem; line-height: 1.3; min-height: 4.2rem; display: flex; align-items: flex-start;">
+            Hospital Management System <br>For AGP Hospital
+            </h3>
           </div>
-
-          <div class="grid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(300px, 400px)); gap: 24px; justify-content: start;">
-            
-            <article class="glass-card" aria-labelledby="ctf-yukthi-title" tabindex="0"
-              style="padding:1rem; border:1px solid var(--card-border); display: flex; flex-direction: column; height: 100%;">
-              
-              <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-top:0.5rem;">
-                <div style="flex: 1;">
-                  <h3 id="ctf-yukthi-title" style="font-weight:700; color:#eaf6ff; margin:0; font-size:1.4rem; line-height: 1.3; min-height: 4.2rem; display: flex; align-items: flex-start;">
-                    Yukthi CTF Challenge
-                  </h3>
-                </div>
-                <span class="tag" aria-hidden="true" style="font-size:1rem; white-space: nowrap;">Top 23.4% • Rank 75</span>
-              </div>
-
-              <div style="margin-top: 4px; margin-bottom: 8px;">
-                <p class="muted" style="margin:0; font-size:1.1rem;">2025</p>
-              </div>
-
-              <div style="flex-grow: 1;">
-                <p class="muted" style="margin-top:0.5rem; font-size:1.2rem; line-height:1.5;">
-                  Secured <strong>75th Rank</strong> out of <strong>321 participants</strong> (Top 23.4%) in this CTF. Solved complex challenges.
-                </p>
-              </div>
-            </article>
-
-            <article class="glass-card" aria-labelledby="hwi-title" tabindex="0"
-              style="padding:1rem; border:1px solid var(--card-border); display: flex; flex-direction: column; height: 100%;">
-              
-              <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-top:0.5rem;">
-                <div style="flex: 1;">
-                  <h3 id="hwi-title" style="font-weight:700; color:#eaf6ff; margin:0; font-size:1.4rem; line-height: 1.3; min-height: 4.2rem; display: flex; align-items: flex-start;">
-                    HackWithIndiaa <br>Real-World Bug Hunting
-                  </h3>
-                </div>
-                <span class="tag" aria-hidden="true" style="font-size:1rem; white-space: nowrap;">Live Event</span>
-              </div>
-
-              <div style="margin-top: 4px; margin-bottom: 8px;">
-                <p class="muted" style="margin:0; font-size:1.1rem;">Upcoming</p>
-              </div>
-
-              <div style="flex-grow: 1;">
-                <p class="muted" style="margin-top:0.5rem; font-size:1.2rem; line-height:1.5;">
-                  Registered to participate in a <strong>Real Website Bug Hunting</strong> event. Will be testing live infrastructure to identify and report valid security vulnerabilities.
-                </p>
-              </div>
-            </article>
-
-          </div>
+          <span class="tag" aria-hidden="true" style="font-size:1rem; white-space: nowrap;">MEAN • Docker • Secure</span>
         </div>
-      </section>
 
+        <div style="margin-top: 4px; margin-bottom: 8px;">
+          <p class="muted" style="margin:0; font-size:1.1rem;">Oct 2025 — Present</p>
+        </div>
+
+        <div style="flex-grow: 1;">
+          <p class="muted" style="margin-top:0.5rem; font-size:1.2rem; line-height:1.5;">
+            A comprehensive platform designed to digitize and streamline hospital operations. Built with <strong>DevSecOps principles</strong> to ensure robust security and scalability.
+          </p>
+        </div>
+
+        <div style="margin-top:10px;">
+          <a class="btn-cta" href="https://github.com/SathyaBoobalan/AGP-Hospital-Management-System" target="_blank" aria-label="View Project" style="padding: 0.6rem 1.2rem; font-size: 1.1rem;">
+            <i class="fa fa-laptop-code" style="font-size:1.1rem"></i>
+            <span class="muted" style="color:#cfeffb"> View Project</span>
+          </a>
+        </div>
+      </article>
+
+      
+
+      <article class="glass-card" aria-labelledby="proj-more-title" tabindex="0"
+        style="padding:1rem; border:1px solid var(--card-border); display: flex; flex-direction: column; height: 100%;">
+        
+        <div style="padding-bottom:6px; padding-top:6px;">
+             <div style="width: 100%; height: 160px; background: rgba(255,255,255,0.05); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                <i class="fa fa-folder-open" style="font-size: 5rem; color: #cfeffb; opacity: 0.8;"></i>
+             </div>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-top:0.5rem;">
+          <div style="flex: 1;">
+            <h3 id="proj-more-title" style="font-weight:700; color:#eaf6ff; margin:0; font-size:1.4rem; line-height: 1.3; min-height: 4.2rem; display: flex; align-items: center;">
+            See More Projects
+            </h3>
+          </div>
+          <span class="tag" aria-hidden="true" style="font-size:1rem; white-space: nowrap;">Archive</span>
+        </div>
+
+        <div style="margin-top: 4px; margin-bottom: 8px;">
+          <p class="muted" style="margin:0; font-size:1.1rem;">Full Portfolio</p>
+        </div>
+
+        <div style="flex-grow: 1;">
+          <p class="muted" style="margin-top:0.5rem; font-size:1.2rem; line-height:1.5;">
+            View the complete collection of my freelance work, Python automation scripts, and cybersecurity labs.
+          </p>
+        </div>
+
+        <div style="margin-top:10px;">
+          <a class="btn-cta" href="project.html" aria-label="See more projects" style="padding: 0.6rem 1.2rem; font-size: 1.1rem;">
+            <i class="fa fa-arrow-right" style="font-size:1.1rem"></i>
+            <span class="muted" style="color:#cfeffb"> See More Projects</span>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<section id="publications" class="section bg-black/20" style="padding-top: 2rem; padding-bottom: 2rem;">
+  <div class="maxw">
+    <div class="section-title">
+      <div class="bar" aria-hidden="true"></div>
+      <h2>Publications</h2>
+    </div>
+
+    <div class="grid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 24px;">
+      
+      <article class="glass-card" aria-labelledby="pub-1-title" tabindex="0"
+        style="padding:1.5rem; border:1px solid var(--card-border); display: flex; flex-direction: column; height: 100%;">
+        
+        <div style="padding-bottom:6px;padding-top:6px;">
+          <img src="./assets/images/Project/Final_Year_Project.jpg" alt="Blockchain Research" class="project-img"
+            style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px;">
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-top:0.5rem;">
+          <div style="flex: 1;">
+            <h3 id="pub-1-title" style="font-weight:700; color:#eaf6ff; margin:0; font-size:1.6rem; line-height: 1.3; min-height: 4.2rem; display: flex; align-items: flex-start;">
+              Blockchain and AI based Medical <br>Record Analysis (Cloud)
+            </h3>
+          </div>
+          <span class="tag" aria-hidden="true" style="font-size:1rem; white-space: nowrap;">AI • Blockchain</span>
+        </div>
+
+        <div style="margin-top: 4px; margin-bottom: 8px;">
+          <p class="muted" style="margin:0; font-size:1.1rem;">Scopus Indexed • 2025</p>
+        </div>
+
+        <div style="flex-grow: 1;">
+          <p class="muted" style="margin-top:0.5rem; font-size:1.1rem; line-height:1.5;">
+            Research utilizing AI for fracture analysis and Blockchain/IPFS for secure storage.
+            <br><br>
+            <strong style="color:#cfeffb;">Published in:</strong>
+            <em>Journal of Neonatal Surgery (JNS)</em>, 2025.
+          </p>
+        </div>
+
+        <div style="margin-top:15px;">
+          <a class="btn-cta" href="https://www.jneonatalsurg.com/index.php/jns/article/view/5836" target="_blank" aria-label="View publication" style="padding: 0.6rem 1.2rem; font-size: 1rem;">
+            <i class="fa fa-file-lines" style="font-size:1rem"></i>
+            <span class="muted" style="color:#cfeffb"> View Publication</span>
+          </a>
+        </div>
+
+      </article>
+
+    </div>
+  </div>
+</section>
       <section id="tryhackme" class="section bg-black/40">
         <div class="maxw">
           <div class="section-title" style="margin-bottom:15px;">
@@ -300,48 +314,67 @@
     </div>
   </div>
 </section>
+<section id="services" class="section bg-black/40">
+  <div class="maxw">
+    <div class="section-title">
+      <div class="bar" aria-hidden="true"></div>
+      <h2>Expertise & Services</h2>
+    </div>
+    
+    <div class="grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:20px">
+      
+      <div class="glass-card" tabindex="0">
+        <div class="service-icon" aria-hidden="true"><i class="fa fa-code fa-lg" style="color:var(--neon)"></i></div>
+        <h3 style="margin-top:10px; color:#eaf6ff; font-size:1.3rem;">Full-Stack Development</h3>
+        <p class="muted" style="margin-top:8px; font-size:0.95rem; line-height:1.4;">
+          Building scalable, high-performance web applications using <strong>Java</strong>, <strong>Python</strong>.
+        </p>
+      </div>
 
-      <section id="services" class="section bg-black/40">
+      <div class="glass-card" tabindex="0">
+        <div class="service-icon" aria-hidden="true"><i class="fa fa-infinity fa-lg" style="color:var(--neon)"></i></div>
+        <h3 style="margin-top:10px; color:#eaf6ff; font-size:1.3rem;">DevSecOps & Automation</h3>
+        <p class="muted" style="margin-top:8px; font-size:0.95rem; line-height:1.4;">
+          Integrating security into CI/CD pipelines, orchestrating <strong>Docker/Kubernetes</strong>, and automating cloud infrastructure.
+        </p>
+      </div>
+
+      <div class="glass-card" tabindex="0">
+        <div class="service-icon" aria-hidden="true"><i class="fa fa-bug fa-lg" style="color:var(--neon)"></i></div>
+        <h3 style="margin-top:10px; color:#eaf6ff; font-size:1.3rem;">VAPT & Ethical Hacking</h3>
+        <p class="muted" style="margin-top:8px; font-size:0.95rem; line-height:1.4;">
+          Comprehensive Penetration Testing to simulate real-world attacks, identify vulnerabilities, and patch security gaps.
+        </p>
+      </div>
+
+      <div class="glass-card" tabindex="0">
+        <div class="service-icon" aria-hidden="true"><i class="fa fa-shield-alt fa-lg" style="color:var(--neon)"></i></div>
+        <h3 style="margin-top:10px; color:#eaf6ff; font-size:1.3rem;">Security Consulting</h3>
+        <p class="muted" style="margin-top:8px; font-size:0.95rem; line-height:1.4;">
+          Strategic security consulting, compliance auditing, and professional CVE/Disclosure reporting for stakeholders.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+            <section id="achievements" class="section">
         <div class="maxw">
           <div class="section-title">
             <div class="bar" aria-hidden="true"></div>
-            <h2>Services</h2>
-          </div>
-          <div class="grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px">
-            <div class="glass-card" tabindex="0">
-              <div class="service-icon" aria-hidden="true"><i class="fa fa-shield-alt fa-lg" style="color:var(--neon)"></i></div>
-              <h3 style="margin-top:6px;color:#eaf6ff ;font-size:1.5rem;">Vulnerability Analysis</h3>
-              <p class="muted" style="margin-top:8px; font-size:1.3rem;">Thorough scanning and validation of vulnerabilities with prioritized risk ratings and remediation suggestions.</p>
-            </div>
-
-            <div class="glass-card" tabindex="0">
-              <div class="service-icon" aria-hidden="true"><i class="fa fa-bug fa-lg" style="color:var(--neon)"></i></div>
-              <h3 style="margin-top:6px;color:#eaf6ff; font-size:1.5rem;">Penetration Testing</h3>
-              <p class="muted" style="margin-top:8px;font-size:1.3rem;">Web application and network penetration testing with proof-of-concept exploits and step-by-step remediation guidance.</p>
-            </div>
-
-            <div class="glass-card" tabindex="0">
-              <div class="service-icon" aria-hidden="true"><i class="fa fa-file-contract fa-lg" style="color:var(--neon)"></i></div>
-              <h3 style="margin-top:6px;color:#eaf6ff; font-size:1.5rem;">CVE / Disclosure Reports</h3>
-              <p class="muted" style="margin-top:8px; font-size:1.3rem;">Clear, professional writeups formatted for vendor disclosure and program submission (CVE-ready).</p>
-            </div>
-
-            <div class="glass-card" tabindex="0">
-              <div class="service-icon" aria-hidden="true"><i class="fa fa-lock fa-lg" style="color:var(--neon)"></i></div>
-              <h3 style="margin-top:6px;color:#eaf6ff; font-size:1.5rem;">Security Consulting</h3>
-              <p class="muted" style="margin-top:8px; font-size:1.3rem;">Advisory and mitigation planning for long-term security program improvements and secure SDLC integration.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="achievements" class="section">
-        <div class="maxw">
-          <div class="section-title">
-            <div class="bar" aria-hidden="true"></div>
-            <h2>Achievements & Certificates</h2>
+            <h2>Credentials</h2>
           </div>
           <div class="grid-achievements" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px">
+
+<div class="glass-card" tabindex="0">
+  <div class="cert-img-wrapper">
+    <img src="./assets/images/Certificates/Yukthi_CTF_2025.jpg" alt="Yukthi CTF Challenge Rank" class="cert-thumb zoom-img" style="width:100%; display:block;">
+    <div class="cert-overlay">Preview</div>
+  </div>
+  <h4 style="margin-top:8px;color:#eaf6ff; font-size:1.5rem;">Yukthi CTF 2.0</h4>
+  <p class="muted" style="margin-top:6px; font-size:1.3rem;">Dec 7, 2025</p>
+  
+</div>
             
             <div class="glass-card" tabindex="0">
               <div class="cert-img-wrapper">
@@ -370,32 +403,7 @@
               <p class="muted" style="margin-top:6px; font-size:1.3rem;">May 20, 2024</p>
             </div>
 
-            <div class="glass-card" tabindex="0">
-              <div class="cert-img-wrapper">
-                <img src="./assets/images/Certificates/Cyber_Thread_101.jpg" alt="Cyber 101" class="cert-thumb zoom-img" style="width:100%; display:block;">
-                <div class="cert-overlay">Preview</div>
-              </div>
-              <h4 style="margin-top:8px;color:#eaf6ff; font-size:1.5rem;">Cyber Threat Intelligence 101</h4>
-              <p class="muted" style="margin-top:6px; font-size:1.3rem;">May 07, 2025</p>
-            </div>
 
-            <div class="glass-card" tabindex="0">
-              <div class="cert-img-wrapper">
-                <img src="./assets/images/Certificates/CCEP.png" alt="CCEP" class="cert-thumb zoom-img" style="width:100%; display:block;">
-                <div class="cert-overlay">Preview</div>
-              </div>
-              <h4 style="margin-top:8px;color:#eaf6ff; font-size:1.5rem;">Certified Cybersecurity Educator Professional (CCEP)</h4>
-              <p class="muted" style="margin-top:6px; font-size:1.3rem;">Dec 28, 2025</p>
-            </div>
-
-            <div class="glass-card" tabindex="0">
-              <div class="cert-img-wrapper">
-                <img src="./assets/images/Certificates/CPPS.png" alt="CPPS" class="cert-thumb zoom-img" style="width:100%; display:block;">
-                <div class="cert-overlay">Preview</div>
-              </div>
-              <h4 style="margin-top:8px;color:#eaf6ff; font-size:1.5rem;">Certified Phishing Prevention Specialist (CPPS)</h4>
-              <p class="muted" style="margin-top:6px; font-size:1.3rem;">Dec 28, 2025</p>
-            </div>
 
           </div>
         </div>

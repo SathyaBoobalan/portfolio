@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Sathya Boobalan — Project Archive" />
+  <meta name="author" content="Sathya Boobalan" />
+  
+  <title>All Projects | Sathya Boobalan</title>
+  
+  <link id="main-style" rel="stylesheet" href="./styles/style.css">
+  <link rel="icon" type="image/png" href="./assets/favicon.ico">
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <div class="site">
+    
+    <header style="padding: 2rem; position: relative; z-index: 10;">
+        <div class="maxw" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="index.html" class="btn-cta" style="padding: 0.8rem 1.5rem; display: flex; align-items: center; gap: 10px; border-radius: 50px;">
+                <i class="fa fa-arrow-left"></i> <span>Back to Home</span>
+            </a>
+            <h2 id="page-title" style="color: #eaf6ff; margin: 0; font-size: 2rem; font-weight: 700;">Project Archive</h2>
+        </div>
+    </header>
+
+    <main class="main" role="main">
+      
+      <section id="featured" class="section" style="padding-bottom: 2rem;">
+        <div class="maxw">
+          <div class="section-title" style="margin-bottom: 30px;">
+            <div class="bar" aria-hidden="true"></div>
+            <h2>Featured Projects</h2>
+          </div>
+
+          <div class="grid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 24px;">
+            
+            <article class="glass-card" style="padding:1.5rem; display: flex; flex-direction: column; border: 1px solid rgba(14, 165, 233, 0.3);">
+                <h3 style="color:#eaf6ff; font-size:1.6rem; margin-top:0;">Biomedical Management System</h3>
+                <span class="tag" style="width: fit-content; margin: 8px 0;">MEAN Stack • AGP Hospital</span>
+                <p class="muted" style="font-size:1.1rem; flex-grow: 1;">
+                    Developed for A.G. Padmavati’s Hospital. Streamlines biomedical equipment tracking, breakdown management, stock handling, and user access control.
+                </p>
+            </article>
+
+            <article class="glass-card" style="padding:1.5rem; display: flex; flex-direction: column; border: 1px solid rgba(14, 165, 233, 0.3);">
+                <h3 style="color:#eaf6ff; font-size:1.6rem; margin-top:0;">Real-Time Blood Lab System</h3>
+                <span class="tag" style="width: fit-content; margin: 8px 0;">MEAN • Socket.IO • JWT</span>
+                <p class="muted" style="font-size:1.1rem; flex-grow: 1;">
+                    Production-ready system with secure RBAC (Admin/User) and bulk Excel upload. Dashboard updates instantly across clients using Socket.IO for live statistical tracking.
+                </p>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="publications" class="section bg-black/20" style="padding-top: 2rem; padding-bottom: 2rem;">
+        <div class="maxw">
+          <div class="section-title">
+            <div class="bar" aria-hidden="true"></div>
+            <h2>Publications & Research</h2>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 24px;">
+            <article class="glass-card" style="padding: 2rem; border: 1px solid var(--card-border); position: relative; overflow: hidden;">
+              <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 1rem;">
+                
+                <div style="flex: 1; min-width: 300px;">
+                  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+                    <span class="tag" aria-hidden="true" style="font-size: 0.9rem;">Scopus Indexed</span>
+                    <span class="tag" aria-hidden="true" style="font-size: 0.9rem;">Client: AGP Hospital</span>
+                  </div>
+
+                  <h3 style="font-weight: 700; color: #eaf6ff; margin: 0; font-size: 1.8rem; line-height: 1.3;">
+                    Blockchain & AI Medical Record Analysis
+                  </h3>
+
+                  <p class="muted" style="margin-top: 1rem; font-size: 1.2rem; line-height: 1.6; max-width: 800px;">
+                    A project combining <strong>Blockchain</strong> for secure patient data storage, <strong>AI</strong> for bone fracture diagnosis, and cloud solutions. Aims to enhance medical accuracy and security.
+                  </p>
+
+                  <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(255,255,255,0.05); border-radius: 8px; border-left: 4px solid var(--neon);">
+                    <p style="margin: 0; font-size: 1.1rem; color: #cfeffb;">
+                      <strong>Published in:</strong> <em>Journal of Neonatal Surgery (JNS)</em>, 2025.
+                    </p>
+                  </div>
+
+                  <div style="margin-top: 2rem;">
+                    <a class="btn-cta" href="https://www.jneonatalsurg.com/index.php/jns/article/view/5836" target="_blank" aria-label="Read Publication" style="padding: 0.8rem 1.5rem; font-size: 1.1rem;">
+                      <i class="fa fa-external-link-alt"></i>
+                      <span class="muted" style="color: #cfeffb"> View Publication</span>
+                    </a>
+                  </div>
+                </div>
+
+                <div style="display: flex; align-items: center; justify-content: center; width: 100px; opacity: 0.8;">
+                   <i class="fa fa-book-open" style="font-size: 4rem; color: #00ff87;"></i>
+                </div>
+
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="freelance" class="section" style="padding-top: 2rem; padding-bottom: 2rem;">
+        <div class="maxw">
+          <div class="section-title" style="margin-bottom: 30px;">
+            <div class="bar" aria-hidden="true"></div>
+            <h2>Freelance & Client Work</h2>
+          </div>
+
+          <div class="grid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px;">
+            
+            <article class="glass-card" style="padding:1.5rem; display: flex; flex-direction: column;">
+                <h3 style="color:#eaf6ff; font-size:1.4rem; margin-top:0;">AGP Hospital Official Site</h3>
+                <span class="tag" style="width: fit-content; margin: 8px 0;">Wix Studio • Live</span>
+                <p class="muted" style="font-size:1rem; flex-grow: 1;">
+                    Designed and deployed the official website for A.G. Padmavati's Hospital Ltd using Wix Studio.
+                </p>
+                <div style="margin-top:10px;">
+                    <a href="https://www.agphospital.com" target="_blank" style="color:#cfeffb; text-decoration:underline;">Visit agphospital.com</a>
+                </div>
+            </article>
+
+            <article class="glass-card" style="padding:1.5rem; display: flex; flex-direction: column;">
+                <h3 style="color:#eaf6ff; font-size:1.4rem; margin-top:0;">QR Review Tracker</h3>
+                <span class="tag" style="width: fit-content; margin: 8px 0;">Python • AGP Hospital</span>
+                <p class="muted" style="font-size:1rem; flex-grow: 1;">
+                    Generates unique QR codes for staff. Tracks scans redirecting to Google Reviews and ranks staff performance via an admin dashboard.
+                </p>
+            </article>
+
+            <article class="glass-card" style="padding:1.5rem; display: flex; flex-direction: column;">
+                <h3 style="color:#eaf6ff; font-size:1.4rem; margin-top:0;">DocAddress Manager</h3>
+                <span class="tag" style="width: fit-content; margin: 8px 0;">MEAN Stack • AGP Hospital</span>
+                <p class="muted" style="font-size:1rem; flex-grow: 1;">
+                    Web app for medical offices to manage a directory of healthcare professionals. Efficiently stores, searches, and edits logistics info.
+                </p>
+            </article>
+
+            <article class="glass-card" style="padding:1.5rem; display: flex; flex-direction: column;">
+                <h3 style="color:#eaf6ff; font-size:1.4rem; margin-top:0;">TV Video Controller</h3>
+                <span class="tag" style="width: fit-content; margin: 8px 0;">Python • AGP Hospital</span>
+                <p class="muted" style="font-size:1rem; flex-grow: 1;">
+                    Admin portal to upload and manage video/photo playlists that play automatically on designated hospital TV displays.
+                </p>
+            </article>
+
+            <article class="glass-card" style="padding:1.5rem; display: flex; flex-direction: column;">
+                <h3 style="color:#eaf6ff; font-size:1.4rem; margin-top:0;">Nursing L&D Portal</h3>
+                <span class="tag" style="width: fit-content; margin: 8px 0;">HTML/CSS/Python</span>
+                <p class="muted" style="font-size:1rem; flex-grow: 1;">
+                    Learning and Development platform for nursing students containing study materials and resources.
+                </p>
+            </article>
+
+            <article class="glass-card" style="padding:1.5rem; display: flex; flex-direction: column;">
+                <h3 style="color:#eaf6ff; font-size:1.4rem; margin-top:0;">Nursing Test Portal</h3>
+                <span class="tag" style="width: fit-content; margin: 8px 0;">HTML/CSS/Python</span>
+                <p class="muted" style="font-size:1rem; flex-grow: 1;">
+                    A dedicated testing engine for nursing students to take assessments and track progress.
+                </p>
+            </article>
+
+            <article class="glass-card" style="padding:1.5rem; display: flex; flex-direction: column;">
+                <h3 style="color:#eaf6ff; font-size:1.4rem; margin-top:0;">Arumugam Lathe Workshop</h3>
+                <span class="tag" style="width: fit-content; margin: 8px 0;">Dubai • HTML/CSS/JS</span>
+                <p class="muted" style="font-size:1rem; flex-grow: 1;">
+                    Business website developed for Arumugam Rajendiran's lathe workshop in Dubai.
+                </p>
+            </article>
+
+            <article class="glass-card" style="padding:1.5rem; display: flex; flex-direction: column;">
+                <h3 style="color:#eaf6ff; font-size:1.4rem; margin-top:0;">Asha Enterprises</h3>
+                <span class="tag" style="width: fit-content; margin: 8px 0;">Client • HTML/CSS/JS</span>
+                <p class="muted" style="font-size:1rem; flex-grow: 1;">
+                    Professional website development for Asha Enterprises Lathe Workshop.
+                </p>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="mini" class="section bg-black/20" style="padding-top: 2rem;">
+        <div class="maxw">
+          <div class="section-title" style="margin-bottom: 30px;">
+            <div class="bar" aria-hidden="true"></div>
+            <h2>Mini Projects & Utilities</h2>
+          </div>
+
+          <div class="grid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px;">
+            
+            <article class="glass-card" style="padding:1.2rem; display: flex; flex-direction: column;">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <h3 style="color:#eaf6ff; font-size:1.3rem; margin:0;">Med Sync App</h3>
+                    <i class="fab fa-android" style="color:var(--neon)"></i>
+                </div>
+                <p class="muted" style="font-size:1rem; margin-top:10px; flex-grow: 1;">
+                    College Mini Project. An Android app (Java/Firebase) providing offline first-aid details. Features user login to backup and retrieve added descriptions upon reinstallation.
+                </p>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer style="padding: 2rem; text-align: center;">
+      <p style="margin:0; font-size:1.2rem; color: #8892b0;">© 2026 Sathya Boobalan</p>
+    </footer>
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./script.js"></script>
+
+</body>
+</html>

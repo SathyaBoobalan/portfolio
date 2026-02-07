@@ -658,3 +658,186 @@ body:not(.terminal-mode) .mode-btn:hover { background: rgba(122, 162, 255, 0.12)
   .timeline-item:nth-child(even) { align-self: flex-end; margin-left: 50%; padding-left: 50px; }
   .timeline-item:nth-child(even) .timeline-dot { left: -10px; }
 }
+/* Floating Nav Styles */
+.floating-nav {
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  background: rgba(10, 25, 47, 0.85); /* Deep cyber blue */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(14, 165, 233, 0.25);
+  border-radius: 40px;
+  padding: 8px 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 0 12px rgba(14, 165, 233, 0.15);
+  transition: all 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .floating-nav {
+    width: 95%;
+    padding: 8px 12px;
+  }
+}
+/* =========================================
+   Floating Navigation - Compact & Professional
+   ========================================= */
+
+/* The Container - Slimmer Profile */
+.floating-nav {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  /* Deep, rich dark blue background with transparency */
+  background: rgba(15, 23, 42, 0.75); 
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  /* Subtle border for the 'glass' edge */
+  border: 1px solid rgba(14, 165, 233, 0.15); 
+  border-radius: 50px;
+  /* REDUCED PADDING: Makes the bar shorter */
+  padding: 8px 24px; 
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  /* Ensure it doesn't get too wide on mobile */
+  max-width: 95vw; 
+  width: auto;
+}
+
+/* Link Wrapper */
+.nav-links {
+  display: flex;
+  align-items: center;
+  /* REDUCED GAP: Brings items closer together */
+  gap: 20px; 
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Individual Items - Large Text, Small Padding */
+.nav-item {
+  position: relative;
+  color: #94a3b8; 
+  text-decoration: none;
+  font-size: 1.15rem; /* Kept Large as requested */
+  font-weight: 600;   
+  letter-spacing: 0.03em;
+  /* REDUCED ITEM PADDING: Less vertical space */
+  padding: 4px 2px;   
+  transition: all 0.3s ease;
+  white-space: nowrap; /* Prevents text wrapping */
+}
+
+/* Icons styling */
+.nav-item i {
+  font-size: 1.0em;
+  vertical-align: -1px;
+}
+
+/* =========================================
+   Hover & Active Animations
+   ========================================= */
+
+/* Hover State - Neon Glow */
+.nav-item:hover,
+.nav-item.active {
+  color: #38bdf8; /* Bright Neon Blue */
+  text-shadow: 0 0 12px rgba(56, 189, 248, 0.5); 
+}
+
+/* The Underline - Expands from Center Outwards */
+.nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; /* Moved closer to text */
+  left: 50%; 
+  transform: translateX(-50%);
+  width: 0%;
+  height: 2px;
+  background: #38bdf8; 
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.8);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Trigger Animation */
+.nav-item:hover::after,
+.nav-item.active::after {
+  width: 100%;
+}
+
+/* =========================================
+   "Contact" Button - Slimmer Style
+   ========================================= */
+.nav-item.contact-btn {
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  /* REDUCED BUTTON PADDING */
+  padding: 5px 16px; 
+  border-radius: 20px;
+  margin-left: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Disable underline for button */
+.nav-item.contact-btn::after {
+  display: none;
+}
+
+.nav-item.contact-btn:hover {
+  background: rgba(56, 189, 248, 0.1);
+  border-color: #38bdf8;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+/* =========================================
+   Scroll State (Ultra Compact Mode)
+   ========================================= */
+.floating-nav.scrolled {
+  top: 10px;
+  /* Even smaller padding when scrolling */
+  padding: 6px 20px; 
+  background: rgba(15, 23, 42, 0.95); 
+  border-color: rgba(56, 189, 248, 0.3);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+}
+
+.floating-nav.scrolled .nav-item {
+  font-size: 1.05rem; /* Slightly smaller when scrolling */
+}
+
+/* =========================================
+   BOOTSTRAP OVERRIDE (CRITICAL FIX)
+   ========================================= */
+
+/* 1. Kill the underline and outline on ALL states */
+.nav-item,
+.nav-item:visited,
+.nav-item:hover,
+.nav-item:active,
+.nav-item:focus {
+  text-decoration: none !important; 
+  outline: none !important;       
+}
+
+/* 2. Force the correct colors */
+.nav-item,
+.nav-item:visited {
+  color: #94a3b8 !important;
+}
+
+/* Hover & Active State (Neon) */
+.nav-item:hover,
+.nav-item:focus,
+.nav-item:active,
+.nav-item.active {
+  color: #38bdf8 !important; 
+  text-shadow: 0 0 12px rgba(56, 189, 248, 0.5) !important;
+}
