@@ -131,35 +131,10 @@ section[style*="background"] {
 }
 
 /* =======================================
-   5. CARD & PROJECT STYLING (UPDATED FOR NEW PAGE)
+   5. CARD & PROJECT STYLING
    ======================================= */
 
-/* 1. Force 3-Column Grid on Desktop for ALL Project Sections */
-/* This prevents the "long horizontal" single column issue */
-@media (min-width: 1024px) {
-  #featured .grid,
-  #freelance .grid,
-  #mini .grid,
-  #publications .grid,
-  #projects .grid {
-    grid-template-columns: repeat(3, 1fr) !important;
-    display: grid !important;
-    gap: 24px !important;
-  }
-}
-
-/* 2. Tablet Mode (2 Columns) */
-@media (min-width: 768px) and (max-width: 1023px) {
-  #featured .grid,
-  #freelance .grid,
-  #mini .grid,
-  #publications .grid,
-  #projects .grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-}
-
-/* 3. Card Styling */
+/* Card Styling */
 .glass-card {
   border: 1px solid var(--border) !important;
   padding: 1.25rem;
@@ -181,7 +156,7 @@ section[style*="background"] {
   padding: 1.2rem;
 }
 
-/* 4. Fix Image Heights (Only for sections with images) */
+/* Fix Image Heights (Only for sections with images) */
 #projects .project-img,
 #featured .project-img,
 #publications .project-img {
@@ -193,7 +168,7 @@ section[style*="background"] {
   border-radius: 0 !important; 
 }
 
-/* 5. Fix Title Spacing */
+/* Fix Title Spacing */
 #projects .glass-card h3,
 #featured .glass-card h3,
 #freelance .glass-card h3,
@@ -207,6 +182,7 @@ section[style*="background"] {
   display: flex;
   align-items: flex-start;
 }
+
 /* =======================================
    6. TEXT & UTILITIES
    ======================================= */
@@ -319,7 +295,7 @@ nav, header {
 .wheel {
   width: 4px;
   height: 8px;
-  background: var(--fg);   
+  background: var(--fg);    
   border-radius: 2px;
   position: absolute;
   top: 8px;
@@ -404,9 +380,7 @@ nav, header {
 #about h2::before { content: "user@host:~$ ./"; font-size: 1rem; color: var(--fg-dim); }
 #about h2::after { content: "About_Me.sh"; font-size: 1.8rem; color: var(--fg); }
 
-#projects h2 { font-size: 0 !important; }
-#projects h2::before { content: "user@host:~$ ./"; font-size: 1rem; color: var(--fg-dim); }
-#projects h2::after { content: "Projects.sh"; font-size: 1.8rem; color: var(--fg); }
+/* Note: #projects h2 is handled in Section 11 below for Kali Style */
 
 #experience h2 { font-size: 0 !important; }
 #experience h2::before { content: "user@host:~$ ./"; font-size: 1rem; color: var(--fg-dim); }
@@ -517,7 +491,9 @@ body:not(.terminal-mode) .mode-btn:hover { background: rgba(122, 162, 255, 0.12)
 @media (max-width: 768px) {
   #contact .contact-card { flex-direction: column !important; align-items: flex-start !important; }
   #contact .contact-card > div:last-child { align-items: flex-start !important; width: 100%; }
-}/* =======================================
+}
+
+/* =======================================
    1. PROJECT PAGE SPECIFIC OVERRIDES
    ======================================= */
 
@@ -580,6 +556,7 @@ body:not(.terminal-mode) .mode-btn:hover { background: rgba(122, 162, 255, 0.12)
 
 /* Fix Icon Color */
 .fa-book-open { color: var(--fg-dim) !important; opacity: 0.5; }
+
 /* =======================================
    FIX: FORCE 3-COLUMN GRID & CORRECT HEIGHTS
    ======================================= */
@@ -649,156 +626,394 @@ body:not(.terminal-mode) .mode-btn:hover { background: rgba(122, 162, 255, 0.12)
   margin-bottom: 10px !important;
 }
 
-/* --- END OF FILE: DO NOT ADD ANYTHING BELOW THIS --- */
-/* =========================================
-   NAVBAR STYLES (Terminal Mode)
-   ========================================= */
-.navbar {
-    position: fixed;
+/* =======================================================
+   11. NEW SECTIONS TEXT REPLACEMENTS
+   ======================================================= */
+
+/* Update Projects Header to match "Research & Development" */
+#projects h2 { font-size: 0 !important; }
+#projects h2::before { 
+  content: "root@kali:~/research# "; 
+  font-size: 1rem; 
+  color: var(--fg-dim); 
+}
+#projects h2::after { 
+  content: "make build_portfolio"; 
+  font-size: 1.8rem; 
+  color: var(--fg); 
+}
+
+/* =======================================================
+   13. FORCE ALL INLINE COLORS TO GREEN
+   ======================================================= */
+/* This forces the Blue/Green numbers in your HTML to be Terminal Green */
+.stat-value, 
+.stat-value[style], 
+span[style*="color: #0ea5e9"], 
+span[style*="color: #22c55e"] {
+  color: var(--fg) !important;
+  text-shadow: none !important;
+}
+
+/* Turn the TryHackMe Status Dot green */
+.status-dot {
+  background: var(--fg) !important;
+  box-shadow: 0 0 8px var(--fg) !important;
+  animation: blink 1s step-end infinite;
+}
+
+/* Fix the Bar colors in titles */
+.bar {
+  background: var(--fg) !important;
+}
+
+/* Fix Icons */
+i, .fa, .fab, .fas, .service-icon i {
+  color: var(--fg) !important;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* =======================================================
+   CREDENTIALS SECTION (KALI LINUX TERMINAL STYLE)
+   Matches Image: 376126.png
+   ======================================================= */
+
+/* 1. SECTION CONTAINER & HEADER PROMPT */
+#credentials {
+    background-color: #000000 !important;
+    border-bottom: 1px solid #1a1a1a;
+    padding: 60px 0;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+/* Hide default title and replace with Command Prompt */
+#credentials .section-title h2 { 
+    font-size: 0 !important; 
+    margin-bottom: 30px;
+    border-bottom: 1px solid #333; /* The horizontal line under the command */
+    padding-bottom: 10px;
+    display: block;
     width: 100%;
-    z-index: 999;
-    padding: 15px 0;
-    font-family: 'JetBrains Mono', monospace; /* Terminal Font */
-    transition: top 0.4s ease-in-out;
-    
-    /* HIDDEN BY DEFAULT */
-    top: -100px; 
-    
-    /* Terminal Styling */
-    background: rgba(0, 0, 0, 0.95);
-    border-bottom: 1px solid var(--fg); /* Green Border */
-    backdrop-filter: blur(10px);
 }
 
-/* VISIBLE STATE (Added by JS) */
-.navbar.show {
-    top: 0;
+#credentials .section-title h2::before { 
+    content: "user@host:~$ "; 
+    font-size: 1.1rem; 
+    color: #7affc0; /* Dimmed User Color */
+    font-weight: 400;
 }
 
-.navbar .maxw {
+#credentials .section-title h2::after { 
+    content: "./verify_badges.py"; 
+    font-size: 1.8rem; 
+    color: #00ff87; /* Bright Command Color */
+    
+}
+
+/* Hide the colored bar */
+#credentials .section-title .bar { display: none !important; }
+
+
+/* 2. GRID LAYOUT (Left Card vs Right Stats) */
+/* Force the grid to match the screenshot layout */
+@media (min-width: 992px) {
+    #credentials .grid-layout {
+        display: grid;
+        grid-template-columns: 400px 1fr; /* Fixed width for profile card, rest for stats */
+        gap: 30px;
+        align-items: start;
+    }
+}
+
+
+/* 3. CARD STYLING (The "Terminal Windows") */
+/* Applies to both the Main Profile Card and Stat Boxes */
+#credentials .thm-card, 
+#credentials .stat-box {
+    background: #000000 !important;
+    border: 1px solid #333 !important; /* Thin grey border */
+    border-radius: 0 !important;      /* Square corners */
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    color: #00ff87;
+    margin-bottom: 0;
+}
+
+/* 4. TRYHACKME PROFILE CARD SPECIFICS */
+#credentials .thm-card {
+    display: flex;
+    flex-direction: column;
+    padding: 0 !important; /* Remove padding to let header/footer touch edges */
+}
+
+/* The "TRYHACKME | VERIFIED PROFILE" Header */
+#credentials .card-header {
+    border-bottom: 1px dashed #333 !important;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    color: #00ff87;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: transparent;
+}
+
+/* The Iframe Container */
+#credentials .iframe-wrapper {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    background: #000;
+}
+
+/* The "View Metrics" Footer */
+#credentials .card-footer {
+    border-top: 1px dashed #333 !important;
+    padding: 12px 20px;
+    text-align: left;
+    background: transparent;
+}
+
+#credentials .view-link {
+    color: #00ff87 !important;
+    font-size: 0.9rem;
+    text-decoration: none;
+    font-weight: 700;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 40px;
-    max-width: 1100px;
-    margin: 0 auto;
+    gap: 8px;
 }
 
-.navbar .logo a {
-    color: var(--fg);
-    font-size: 28px;
-    font-weight: 600;
-    text-decoration: none;
+
+/* 5. RIGHT SIDE STATS GRID */
+#credentials .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns for top row */
+    gap: 20px;
 }
 
-.navbar .logo a span { 
-    color: var(--fg); 
+/* 6. INDIVIDUAL STAT BOX TYPOGRAPHY */
+#credentials .stat-box {
+    padding: 10px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.navbar .menu li {
-    list-style: none;
-    display: inline-block;
-}
-
-.navbar .menu li a {
+/* Label: "PLATFORM RANKING", "ACHIEVEMENTS" */
+#credentials .stat-label {
+    font-size: 0.85rem;
+    color: #7affc0; /* Dimmed Green */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
     display: block;
-    color: var(--fg);
-    font-size: 18px;
-    margin-left: 25px;
-    text-decoration: none;
-    transition: color 0.3s ease;
 }
 
-.navbar .menu li a:hover {
-    color: #fff; /* White on hover */
-    text-decoration: underline;
+/* Value: "Top 6%", "13", "109" */
+#credentials .stat-value {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #00ff87 !important; /* Force Neon Green */
+    margin-right: 8px;
 }
 
-/* Hide menu button on desktop */
-.menu-btn {
-    color: var(--fg);
-    font-size: 23px;
-    cursor: pointer;
-    display: none;
+/* Description Text */
+#credentials .stat-desc,
+#credentials .stat-desc-inline {
+    font-size: 0.95rem;
+    color: #00ff87;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-@media (max-width: 947px) {
-    .menu-btn {
-        display: block;
-        z-index: 999;
+#credentials p.stat-desc {
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: #7affc0; /* Dimmer green for long text */
+    text-transform: uppercase;
+}
+
+/* 7. FORCE "PLATFORM MASTERY" TO SPAN FULL WIDTH */
+/* This matches the bottom box in your screenshot */
+#credentials .stat-box:last-child {
+    grid-column: span 2;
+}
+
+/* 8. ICONS & DECORATIONS */
+#credentials .status-dot {
+    display: none; /* Removed based on screenshot cleanliness */
+}
+
+/* Override any inline colors from HTML */
+#credentials span[style], 
+#credentials div[style] {
+    color: #00ff87 !important;
+}
+
+/* Responsive Fix for Mobile */
+@media (max-width: 768px) {
+    #credentials .grid-layout,
+    #credentials .stats-grid {
+        grid-template-columns: 1fr;
     }
-    .navbar .menu {
-        position: fixed;
-        height: 100vh;
-        width: 100%;
-        left: -100%;
-        top: 0;
-        background: #000;
-        border-right: 1px solid var(--fg);
-        text-align: center;
-        padding-top: 80px;
-        transition: all 0.3s ease;
+    
+    #credentials .stat-box:last-child {
+        grid-column: span 1;
     }
-    .navbar .menu.active {
-        left: 0;
-    }
-    .navbar .menu li {
-        display: block;
-    }
-    .navbar .menu li /* Floating Nav Styles */
+}
+
+/* =======================================
+   REFINED MOVABLE TERMINAL NAV
+   ======================================= */
 .floating-nav {
+  /* 1. Positioning: Fixed keeps it "movable" with the user */
   position: fixed;
   top: 20px;
+  
+  /* 2. Centering Logic */
   left: 50%;
   transform: translateX(-50%);
-  z-index: 10000; /* Higher than your mode-switch-container */
-  width: auto;
-  min-width: 300px;
-  background: rgba(10, 25, 47, 0.7); /* Deep cyber blue/black */
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(14, 165, 233, 0.2);
-  border-radius: 50px;
-  padding: 10px 25px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(14, 165, 233, 0.1);
-  transition: all 0.3s ease;
-}
-
-/* Hide on very small screens or adjust */
-@media (max-width: 600px) {
-  .floating-nav {
-    width: 90%;
-    padding: 10px;
-  }
+  
+  /* 3. Terminal Aesthetics */
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.9) !important; /* Slight transparency for "glass" terminal feel */
+  border: 1px solid var(--fg) !important;
+  border-radius: 0 !important; /* Keeps it sharp */
+  padding: 12px 30px;
+  
+  /* 4. Layout */
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  justify-content: center;
+  
+  /* 5. Modern Tweak: Subtle glow and scanline */
+  box-shadow: 0 0 15px rgba(0, 255, 135, 0.2);
+  backdrop-filter: blur(5px);
 }
 
 .nav-links {
   display: flex;
-  justify-content: space-around;
   gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-item {
-  color: #cfeffb;
+  color: var(--fg-dim) !important;
+  font-family: 'JetBrains Mono', monospace !important;
   text-decoration: none;
-  font-size: 1.1rem;
-  font-weight: 500;
-  transition: color 0.3s ease;
-  cursor: pointer;
+  text-transform: lowercase;
+  font-size: 0.95rem;
+  padding: 5px 10px;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
 }
 
-.nav-item:hover {
-  color: #0ea5e9; /* Your accent neon blue */
-  text-decoration: none;
+.nav-item:hover, 
+.nav-item.active {
+  color: #000 !important;
+  background: var(--fg) !important;
+  border: 1px solid var(--fg);
 }
 
-/* Scroll Effect: shrinks slightly when scrolling down */
-.floating-nav.scrolled {
-  top: 10px;
-  background: rgba(0, 0, 0, 0.9);
-  padding: 8px 20px;
-}a {
-        display: inline-block;
-        margin: 20px 0;
-        font-size: 25px;
+/* 6. Mobile Centering Adjustment */
+@media (max-width: 768px) {
+  .floating-nav {
+    width: 90%;
+    padding: 10px;
+    top: 10px;
+    flex-wrap: wrap; /* Allows wrap on very small screens */
+  }
+  
+  .nav-item {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
+}
+
+/* =======================================================
+   PROJECT PAGE OVERRIDES (CRITICAL FIX - DO NOT REMOVE)
+   ======================================================= */
+
+/* 1. Header & Back Button */
+#page-title { font-size: 0 !important; }
+#page-title::before { 
+    content: "root@kali:~/projects# "; 
+    font-size: 1.2rem; 
+    color: var(--fg-muted); 
+    font-weight: 400; 
+}
+#page-title::after { 
+    content: "./list_archive.sh"; 
+    font-size: 2rem; 
+    color: var(--fg); 
+}
+
+/* Override inline radius on the Back Button */
+.btn-cta[style] {
+    border-radius: 0 !important;
+    border: 1px solid var(--fg) !important;
+    color: var(--fg) !important;
+}
+
+/* 2. Grid & Layout (Kill inline grid styles) */
+.grid[style], 
+.section[style], 
+.maxw[style] {
+    display: grid !important;
+    background: transparent !important;
+}
+
+/* Force 3 columns on desktop for projects */
+@media (min-width: 1024px) {
+    .grid[style] {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 20px !important;
     }
 }
+
+/* 3. Card Overrides (Kill blue borders) */
+.glass-card[style] {
+    border: 1px solid var(--border) !important;
+    border-radius: 0 !important;
+    background: #000 !important;
+    padding: 1.5rem !important;
+    box-shadow: none !important;
+}
+
+/* 4. Text Colors (Kill inline blue/white text) */
+h2[style], h3[style] {
+    color: var(--fg) !important;
+    font-family: 'JetBrains Mono', monospace !important;
+}
+
+.muted[style], p[style], span[style] {
+    color: var(--fg-dim) !important;
+    font-family: 'JetBrains Mono', monospace !important;
+}
+
+.tag[style] {
+    border: 1px solid var(--fg) !important;
+    background: transparent !important;
+    color: var(--fg) !important;
+    border-radius: 0 !important;
+    padding: 2px 6px !important;
+}
+
+/* 5. Section Headers */
+#featured h2 { font-size: 0 !important; }
+#featured h2::before { content: "~/projects$ cat featured.txt"; font-size: 1.5rem; color: var(--fg); }
+
+#freelance h2 { font-size: 0 !important; }
+#freelance h2::before { content: "~/projects$ cat client_work.log"; font-size: 1.5rem; color: var(--fg); }
+
+#mini h2 { font-size: 0 !important; }
+#mini h2::before { content: "~/projects$ ls ./utilities/"; font-size: 1.5rem; color: var(--fg); }
+
+/* Hide the colored bars */
+.bar { display: none !important; }
