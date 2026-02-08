@@ -909,27 +909,6 @@ i, .fa, .fab, .fas, .service-icon i {
    MOBILE NAV FIX: SWIPEABLE SCROLL
    ======================================= */
 @media (max-width: 768px) {
-  
-  /* 1. The Container Window */
-  .floating-nav {
-    width: 95%;              /* Maximize width */
-    max-width: 100%;
-    top: 15px;
-    padding: 8px 0;          /* Remove side padding from container */
-    
-    /* FORCE HORIZONTAL SCROLL */
-    flex-wrap: nowrap;       /* Stop items from stacking */
-    overflow-x: auto;        /* Enable swiping */
-    justify-content: flex-start; /* Align items to start for scrolling */
-    
-    /* SMOOTH SCROLLING FEEL */
-    -webkit-overflow-scrolling: touch; 
-    scrollbar-width: none;   /* Hide scrollbar (Firefox) */
-    
-    /* BORDER FIX */
-    border-radius: 8px;      /* Slightly tighter radius for mobile */
-    background: rgba(0, 0, 0, 0.95) !important; /* Less transparency for readability */
-  }
 
   /* 2. Hide Scrollbar (Chrome/Safari) */
   .floating-nav::-webkit-scrollbar {
@@ -1030,38 +1009,9 @@ h2[style], h3[style] {
 .bar { display: none !important; }
 @media (max-width: 768px) {
     
-    /* 1. Nav Container - Fixed to Top Left */
-    .floating-nav {
-        top: 20px;
-        left: 20px;            /* Positioned 20px from the left edge */
-        transform: none;       /* Remove the centering transform */
-        width: auto;           /* Allow it to be as wide as the button */
-        min-width: 140px;      /* Ensures the box isn't too tiny */
-        max-width: 80%;        /* Prevents it from hitting the right edge */
-        padding: 10px;
-        
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        
-        background: #000000 !important;
-        border: 1px solid var(--fg);
-        border-radius: 4px;    /* Sharper terminal corners */
-        z-index: 10001;        /* Ensure it stays above everything */
-    }
 
-    /* 2. Hamburger Button */
-    .hamburger-btn {
-        display: block;
-        background: transparent;
-        border: 1px solid var(--fg);
-        color: var(--fg);
-        font-family: 'JetBrains Mono', monospace;
-        font-size: 0.85rem;
-        padding: 6px 12px;
-        width: 100%;           /* Button fills the container width */
-        text-align: left;
-    }
+
+   
 
     /* 3. The Menu List (Dropdown) */
     .nav-links {
@@ -1071,12 +1021,7 @@ h2[style], h3[style] {
         gap: 0;
     }
 
-    /* 4. Open State */
-    .nav-links.mobile-open {
-        display: flex;
-        margin-top: 10px;
-        border-top: 1px dashed var(--border);
-    }
+  
 
     /* 5. Nav Items */
     .nav-item {
@@ -1085,6 +1030,45 @@ h2[style], h3[style] {
         border-bottom: 1px solid #1a1a1a;
         width: 100%;
         display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .floating-nav {
+        /* Keep existing positioning */
+        position: fixed !important;
+        top: 20px !important;
+        right: 20px !important;
+        left: auto !important;
+        
+        /* NEW: Shrink-wrap the width */
+        width: auto !important;       /* Allows box to shrink */
+        min-width: unset !important;   /* Removes the 140px minimum */
+        max-width: 90vw;              /* Safety cap */
+        
+        /* Layout */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        padding: 8px 12px !important; /* Tighter padding */
+        
+        /* Ensure background matches terminal */
+        background: #000000 !important;
+        border: 1px solid var(--fg);
+        z-index: 10001;
+    }
+
+    /* Ensure the button doesn't force width either */
+    .hamburger-btn {
+        width: auto !important;
+        white-space: nowrap;          /* Keeps "SB | ☰" on one line */
+        padding: 4px 8px !important;  /* Tighter button padding */
+    }
+
+    /* Ensure dropdown links align right and match width */
+    .nav-links.mobile-open {
+        width: 100%;
+        min-width: 120px; /* Gives the dropdown a bit of structure when open */
     }
 }
 /* =======================================
@@ -1251,4 +1235,126 @@ h2[style], h3[style] {
         padding: 6px 14px !important;
         border-radius: 4px;
     }
+}
+/* =======================================
+   DESKTOP FIX: HIDE HAMBURGER
+   ======================================= */
+/* 1. Hide the button on large screens */
+.hamburger-btn {
+    display: none;
+}
+
+/* 2. Ensure links are visible on large screens */
+.nav-links {
+    display: flex;
+}
+
+/* 3. MOBILE ONLY overrides */
+@media (max-width: 768px) {
+    .hamburger-btn {
+        display: block; /* Show button only on phone */
+    }
+    
+    .nav-links {
+        display: none; /* Hide links by default on phone */
+    }
+    
+    .nav-links.mobile-open {
+        display: flex; /* Show links when menu is open */
+    }
+}
+/* =======================================
+   MOBILE PADDING FIX (PREVENTS EDGE TOUCHING)
+   ======================================= */
+@media (max-width: 768px) {
+    /* 1. Add safe zone padding to the main container */
+    .maxw {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        width: 100% !important;
+        box-sizing: border-box !important; /* CRITICAL: Prevents horizontal scroll */
+    }
+
+    /* 2. Ensure section padding is balanced */
+    .section {
+        padding: 60px 0 !important;
+    }
+
+    /* 3. Fix Credentials Grid Overflow */
+    #credentials .maxw > div {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+    
+    /* 4. Ensure cards respect the new padding */
+    .thm-card, 
+    .stat-box,
+    .glass-card {
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
+/* =======================================
+   SCROLLBAR HIDER & CLEANUP
+   ======================================= */
+
+/* Hide scrollbars globally but allow scrolling */
+html, body {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+/* Specific fix for the TryHackMe Iframe clipping in your image */
+#credentials .iframe-wrapper {
+    padding: 20px;
+    background: #000;
+    overflow: hidden; /* Prevents the container from showing scrollbars */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#credentials iframe {
+    border: none;
+    width: 100%;
+    height: 90px;
+    /* This makes the internal iframe content scale if possible */
+    overflow: hidden; 
+}
+
+/* Custom Scrollbar for elements that NEED to scroll (appears on hover/scroll) */
+.glass-card, .thm-card, .stats-grid {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+    transition: scrollbar-color 0.3s ease;
+}
+
+.glass-card:hover, .thm-card:hover {
+    scrollbar-color: var(--fg) transparent;
+}
+
+/* Webkit version for the "Fade In" scrollbar effect */
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: transparent; /* Hidden by default */
+    border-radius: 10px;
+}
+
+/* Show scrollbar thumb when moving over a scrollable area */
+*:hover::-webkit-scrollbar-thumb {
+    background: var(--fg); /* Terminal green appears on hover */
 }

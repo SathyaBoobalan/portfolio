@@ -1131,3 +1131,64 @@ body:not(.terminal-mode) .mode-btn:hover { background: rgba(122, 162, 255, 0.12)
         border-radius: 4px;
     }
 }
+/* =======================================
+   CYBER THEME: MOBILE PADDING FIX
+   ======================================= */
+@media (max-width: 768px) {
+    /* 1. Add breathing room to the main container */
+    .maxw {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        box-sizing: border-box; /* Ensures padding doesn't widen the element */
+    }
+
+    /* 2. Ensure section padding is consistent */
+    .section {
+        padding: 60px 0 !important; /* Reduces vertical gap, keeps horizontal reset */
+    }
+
+    /* 3. Credentials Grid: Ensure it respects the container width */
+    #credentials .maxw > div {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+}
+/* =======================================
+   FIX: HIDE IFRAME SCROLLBARS
+   ======================================= */
+.iframe-wrapper {
+    overflow: hidden !important; /* Clips any content attempting to scroll */
+}
+
+.iframe-wrapper iframe {
+    overflow: hidden !important;
+    scrollbar-width: none !important; /* Firefox */
+    -ms-overflow-style: none !important; /* IE/Edge */
+}
+
+.iframe-wrapper iframe::-webkit-scrollbar {
+    display: none !important; /* Chrome, Safari, Opera */
+    width: 0 !important;
+    height: 0 !important;
+}
+/* =======================================
+   FIX: CLEAN IFRAME SCROLLING
+   ======================================= */
+.iframe-wrapper {
+    overflow-x: auto !important; /* Allows scrolling if content is too wide */
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.iframe-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.iframe-wrapper iframe {
+    width: 100%;
+    min-width: 350px; /* Forces the iframe to be wide enough for the badge content */
+    height: 100%;
+    border: none;
+}
