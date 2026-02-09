@@ -1084,40 +1084,7 @@ body:not(.terminal-mode) .mode-btn:hover { background: rgba(122, 162, 255, 0.12)
         padding: 0.3rem 0.6rem !important;
     }
 }
-/* =======================================
-   CYBER THEME: CREDENTIALS MOBILE FIX
-   ======================================= */
-@media (max-width: 768px) {
-    /* 1. Main Container: Stack the TryHackMe card on top of the stats */
-    #credentials .maxw > div[style*="display: grid"] {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 30px !important;
-    }
 
-    /* 2. Stats Grid: Stack individual stat boxes */
-    #credentials .stats-grid {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 15px !important;
-    }
-
-    /* 3. Reset Stat Box columns to take full width */
-    #credentials .stat-box {
-        grid-column: span 1 !important;
-        width: 100% !important;
-        padding: 20px !important;
-    }
-
-    /* 4. Fix typography for smaller screens */
-    #credentials .stat-value {
-        font-size: 1.8rem !important;
-    }
-
-    #credentials .stat-desc {
-        font-size: 1rem !important;
-    }
-}
 @media (max-width: 768px) {
     .hamburger-btn {
         font-family: 'Inter', sans-serif !important; /* Use a clean font for these */
@@ -1150,7 +1117,7 @@ body:not(.terminal-mode) .mode-btn:hover { background: rgba(122, 162, 255, 0.12)
     /* 3. Credentials Grid: Ensure it respects the container width */
     #credentials .maxw > div {
         width: 100% !important;
-        margin: 0 !important;
+        margin: 1 !important;
     }
 }
 /* =======================================
