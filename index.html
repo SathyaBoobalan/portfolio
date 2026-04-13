@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Sathya Boobalan — Ethical Hacker, Penetration Tester & System Administrator. Explore vulnerability assessments, CTF write-ups, and security research." />
+  <meta name="author" content="Sathya Boobalan" />
+  <meta name="google" content="notranslate" />
+  
+  <title>Sathya Boobalan | Offensive Security & System Admin</title>
+  
+  <link id="main-style" rel="stylesheet" href="./styles/style.css">
+  <link rel="icon" type="image/png" href="./assets/favicon.ico">
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+<nav class="floating-nav">
+  <button class="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+    <span>SB | ☰</span>
+  </button>
+
+  <div class="nav-links" id="terminalNav">
+    <a href="#about" class="nav-item">Profile</a>
+    <a href="#projects" class="nav-item">Security Projects</a>
+    <a href="#services" class="nav-item">Expertise</a>
+    <a href="#credentials" class="nav-item">Credentials</a>
+    <a href="#career-timeline" class="nav-item">Career Path</a>
+    <a href="#contact" class="nav-item">Connect</a>
+  </div>
+</nav>
+  <canvas id="particles" aria-hidden="true"></canvas>
+  <div class="site">
+
+    <div class="mode-switch-container" style="position: absolute !important; top: 1.5rem; right: 1.5rem; z-index: 9999;">
+    <button id="mode-toggle" class="mode-btn" aria-label="Switch Mode">
+      <span id="mode-text">Terminal Mode</span>
+    </button>
+  </div>
+    
+    <header class="cyber-header">
+      <div class="glow-overlay"></div>
+      <div class="cyber-content">
+        <h1 class="glow-title">SATHYA&nbsp;BOOBALAN</h1>
+        <p class="glow-subtitle">Ethical&nbsp;Hacker | Penetration Tester | System Administrator</p>
+        <div class="social-icons">
+          <a href="https://github.com/SathyaBoobalan" title="GitHub" target="_blank" rel="noopener">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://sathyaboobalan.tiiny.site" title="Resume / Form" target="_blank" rel="noopener">
+            <i class="fa fa-file-lines"></i>
+          </a>
+          <a href="https://in.linkedin.com/in/sathya-boobalan-07b11024a" title="LinkedIn" target="_blank" rel="noopener">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="mailto:sathyaboobalan.r2003@gmail.com" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-indicator" onclick="event.preventDefault(); document.querySelector('#about').scrollIntoView({behavior:'smooth'});">
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
+        <div class="arrow-scroll">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </a>
+    </header>
+
+    <main class="main" role="main">
+      
+      <section id="about" class="section bg-black/40">
+        <div class="maxw">
+          <div class="section-title">
+            <div class="bar" aria-hidden="true"></div>
+            <h2>About Me</h2>
+          </div>
+
+          <div class="glass-card">
+            <div class="row">
+              <div class="col-md-4 col-sm-12" style="padding-right:16px;padding-bottom:6px;padding-top:6px;">
+                <img src="./assets/images/dp.jpg" alt="Sathya Boobalan" style="width:100%;border-radius:10px;object-fit:cover" />
+              </div>
+              <div class="col-md-8 col-sm-12" style="padding-left:16px">
+    <p style="margin-top:0; color:#dbefff; line-height:1.6;">
+    I am an <strong>Ethical Hacker</strong> and <strong>System Administrator</strong> with a strong foundation in securing IT infrastructure and hardening networks against evolving threats. Currently, I secure and manage critical systems at <strong>A.G. Padmavati's Hospital Ltd.</strong>, ensuring high availability, operational stability, and robust defense.
+    <br><br>
+    Beyond my daily administrative role, my core passion lies in offensive security. I continuously hone my exploitation and reconnaissance skills by participating in <strong>Bug Bounty programs</strong> and <strong>Capture The Flag (CTF)</strong> competitions during my free time, and I am proud to be ranked in the <strong>top 6% globally on TryHackMe</strong>.
+    <br><br>
+    Whether auditing network subnets, engineering decentralized cryptographic storage, or mitigating operational risks, my objective is to secure data and find vulnerabilities before the adversaries do.
+</p>
+</div>
+            </div>
+          </div>
+        </div>
+      </section>
+<section id="projects" class="section">
+  <div class="maxw">
+    <div class="section-title">
+      <div class="bar" aria-hidden="true"></div>
+      <h2>Security Research & VAPT</h2>
+    </div>
+
+    <div class="grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; align-items: stretch;">
+      
+      <article class="glass-card" aria-labelledby="pentest-title" tabindex="0" style="padding:1.5rem; border:1px solid var(--card-border); display: flex; flex-direction: column; height: 100%;">
+        <div style="padding-bottom:6px;padding-top:6px;">
+          <div style="width: 100%; height: 160px; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+             <i class="fa fa-shield-halved" style="font-size: 5rem; color: #0ea5e9; opacity: 0.8; z-index: 2;"></i>
+             <div style="position: absolute; font-family: monospace; font-size: 0.8rem; color: #0ea5e9; opacity: 0.2; width: 100%; text-align: center; line-height: 1.2;">
+               192.168.1.1 [PORT 80] OPEN<br>VULN DETECTED: DEFAULT_CREDS<br>MAP_NETWORK... SUCCESS
+             </div>
+          </div>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-top:0.5rem;">
+          <div style="flex: 1;">
+            <h3 id="pentest-title" style="font-weight:700; color:#eaf6ff; margin:0; font-size:1.6rem; line-height: 1.3; min-height: 4.2rem; display: flex; align-items: flex-start;">Internal Network <br>Vulnerability Assessment</h3>
+          </div>
+          <span class="tag" aria-hidden="true" style="font-size:1rem; white-space: nowrap;">VAPT</span>
+        </div>
+        <div style="margin-top: 4px; margin-bottom: 8px;">
+          <p class="muted" style="margin:0; font-size:1.1rem;">Thendral Hall • April 2026</p>
+        </div>
+        <div style="flex-grow: 1;">
+          <p class="muted" style="margin-top:0.5rem; font-size:1.1rem; line-height:1.5;">Conducted a full-scope internal penetration test on a local subnet. Identified critical gateway credential flaws and verified patched IoT infrastructure.</p>
+        </div>
+        <div style="margin-top:15px;">
+          <a class="btn-cta" href="./assets/docs/Case Study.pdf" target="_blank" aria-label="Read Project Write-up" style="padding: 0.6rem 1.2rem; font-size: 1rem;">
+            <i class="fa fa-book-open" style="font-size:1rem"></i>
+            <span class="muted" style="color:#cfeffb"> Read Report</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="glass-card" tabindex="0" style="padding:1.5rem; border:1px solid var(--card-border); display: flex; flex-direction: column; height: 100%;">
+        <div style="padding-bottom:6px;padding-top:6px;">
+          <div style="width: 100%; height: 160px; background: linear-gradient(135deg, #1e3a8a 0%, #172554 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; position: relative;">
+             <i class="fab fa-windows" style="font-size: 5rem; color: #60a5fa; opacity: 0.8; z-index: 2;"></i>
+             <div style="position: absolute; font-family: monospace; font-size: 0.85rem; color: #60a5fa; opacity: 0.3; width: 100%; text-align: center; line-height: 1.4;">
+               PS> Initialize-ADForest<br>PS> Set-Acl -Misconfigured<br>PS> Enable-Kerberoasting
+             </div>
+          </div>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-top:0.5rem;">
+          <div style="flex: 1;">
+            <h3 style="font-weight:700; color:#eaf6ff; margin:0; font-size:1.5rem; line-height: 1.3;">Vulnerable AD Lab Deployer</h3>
+          </div>
+          <span class="tag" aria-hidden="true" style="font-size:1rem; white-space: nowrap;">PowerShell • IaC</span>
+        </div>
+        <div style="margin-top: 4px; margin-bottom: 8px;">
+          <p class="muted" style="margin:0; font-size:1.1rem;">Red Team Infrastructure</p>
+        </div>
+        <div style="flex-grow: 1;">
+          <p class="muted" style="margin-top:0.5rem; font-size:1.1rem; line-height:1.5;">Leveraged my System Administration background to script an automated Active Directory lab builder. Spins up a Windows domain and injects misconfigurations (Kerberoasting, vulnerable ACLs) for local Red Team practice.</p>
+        </div>
+        <div style="margin-top:15px;">
+          <a class="btn-cta" href="https://github.com/SathyaBoobalan/VulnAD-Deploy" target="_blank" aria-label="View on GitHub" style="padding: 0.6rem 1.2rem; font-size: 1rem;">
+            <i class="fa fa-code" style="font-size:1rem"></i>
+            <span class="muted" style="color:#cfeffb"> View Source</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="glass-card" tabindex="0" style="padding:1.5rem; border:1px solid var(--card-border); display: flex; flex-direction: column; height: 100%;">
+        <div style="padding-bottom:6px;padding-top:6px;">
+          <div style="width: 100%; height: 160px; background: linear-gradient(135deg, #0f172a 0%, #020617 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; position: relative;">
+             <i class="fab fa-github" style="font-size: 5rem; color: #94a3b8; opacity: 0.8; z-index: 2;"></i>
+             <div style="position: absolute; font-family: monospace; font-size: 0.85rem; color: #10b981; opacity: 0.3; width: 100%; text-align: center; line-height: 1.4;">
+               [+] Running Subfinder...<br>[+] Resolving Alive Hosts...<br>[+] Port Scan Initiated
+             </div>
+          </div>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-top:0.5rem;">
+          <div style="flex: 1;">
+            <h3 style="font-weight:700; color:#eaf6ff; margin:0; font-size:1.5rem; line-height: 1.3;">Automated Reconnaissance Script</h3>
+          </div>
+          <span class="tag" aria-hidden="true" style="font-size:1rem; white-space: nowrap;">Python • Bash</span>
+        </div>
+        <div style="margin-top: 4px; margin-bottom: 8px;">
+          <p class="muted" style="margin:0; font-size:1.1rem;">Security Tooling</p>
+        </div>
+        <div style="flex-grow: 1;">
+          <p class="muted" style="margin-top:0.5rem; font-size:1.1rem; line-height:1.5;">Developed a custom Bash/Python automation suite to streamline the external attack surface mapping phase of VAPT engagements. Integrates DNS enumeration, live host discovery, and automated port scanning.</p>
+        </div>
+        <div style="margin-top:15px;">
+          <a class="btn-cta" href="https://github.com/SathyaBoobalan/ReconBot" target="_blank" aria-label="View on GitHub" style="padding: 0.6rem 1.2rem; font-size: 1rem;">
+            <i class="fa fa-code" style="font-size:1rem"></i>
+            <span class="muted" style="color:#cfeffb"> View Source</span>
+          </a>
+        </div>
+      </article>
+      <article class="glass-card" aria-labelledby="proj-more-title" tabindex="0" style="padding:1rem; border:1px solid var(--card-border); display: flex; flex-direction: column; height: 100%;">
+        <div style="padding-bottom:6px; padding-top:6px;">
+             <div style="width: 100%; height: 160px; background: rgba(255,255,255,0.05); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                <i class="fab fa-medium" style="font-size: 5rem; color: #cfeffb; opacity: 0.8;"></i>
+             </div>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-top:0.5rem;">
+          <div style="flex: 1;">
+            <h3 id="proj-more-title" style="font-weight:700; color:#eaf6ff; margin:0; font-size:1.4rem; line-height: 1.3; min-height: 4.2rem; display: flex; align-items: center;">InfoSec Blog & Write-ups</h3>
+          </div>
+          <span class="tag" aria-hidden="true" style="font-size:1rem; white-space: nowrap;">Medium</span>
+        </div>
+        <div style="margin-top: 4px; margin-bottom: 8px;">
+          <p class="muted" style="margin:0; font-size:1.1rem;">CTFs & Methodology</p>
+        </div>
+        <div style="flex-grow: 1;">
+          <p class="muted" style="margin-top:0.5rem; font-size:1.2rem; line-height:1.5;">Read my deep-dive articles, detailed TryHackMe lab walkthroughs, and technical cybersecurity methodologies.</p>
+        </div>
+        <div style="margin-top:10px;">
+          <a class="btn-cta" href="https://medium.com/@sathyaboobalan.r2003" target="_blank" rel="noopener" aria-label="Read on Medium" style="padding: 0.6rem 1.2rem; font-size: 1.1rem;">
+            <i class="fab fa-medium" style="font-size:1.1rem"></i>
+            <span class="muted" style="color:#cfeffb"> Read on Medium</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="glass-card" aria-labelledby="pub-1-title" tabindex="0" style="padding:1.5rem; border:1px solid var(--card-border); display: flex; flex-direction: column; height: 100%;">
+        <div style="padding-bottom:6px;padding-top:6px;">
+          <img src="./assets/images/Project/Final_Year_Project.jpg" alt="Blockchain Security Architecture" class="project-img" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px;">
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-top:0.5rem;">
+          <div style="flex: 1;">
+            <h3 id="pub-1-title" style="font-weight:700; color:#eaf6ff; margin:0; font-size:1.35rem; line-height: 1.3; min-height: 4.2rem; display: flex; align-items: flex-start;">Blockchain and AI based Medical<br>Record Analysis for Bone Fracture</h3>
+          </div>
+          <span class="tag" aria-hidden="true" style="font-size:1rem; white-space: nowrap;">Ethereum • IPFS</span>
+        </div>
+        <div style="margin-top: 4px; margin-bottom: 8px;">
+          <p class="muted" style="margin:0; font-size:1.1rem;">B.Tech CSE Final Year Project • Published 2025</p>
+        </div>
+        <div style="flex-grow: 1;">
+          <p class="muted" style="margin-top:0.5rem; font-size:1.1rem; line-height:1.5;"><strong style="color:#cfeffb;">Role: Lead Blockchain Engineer</strong><br><br>Engineered the immutable, decentralized storage architecture for the EMRs. Integrated <strong>Ethereum smart contracts</strong> for auditability, <strong>XChaCha20 encryption</strong> for data privacy, and <strong>IPFS</strong> to prevent data tampering.</p>
+        </div>
+        <div style="margin-top:15px;">
+          <a class="btn-cta" href="https://www.jneonatalsurg.com/index.php/jns/article/view/5836" target="_blank" aria-label="View Architecture Details" style="padding: 0.6rem 1.2rem; font-size: 1rem;">
+            <i class="fa fa-lock" style="font-size:1rem"></i>
+            <span class="muted" style="color:#cfeffb"> View Publication</span>
+          </a>
+        </div>
+      </article>
+
+<article class="glass-card" aria-labelledby="biomed-title" tabindex="0" style="padding:1.5rem; border:1px solid var(--card-border); display: flex; flex-direction: column; height: 100%;">
+        <div style="padding-bottom:6px;padding-top:6px;">
+          <img src="./assets/images/Project/Biomed_Software_Logo.jpg" alt="Biomedical Software Dashboard Logo" class="project-img" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px;">
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-top:0.5rem;">
+          <div style="flex: 1;">
+            <h3 id="biomed-title" style="font-weight:700; color:#eaf6ff; margin:0; font-size:1.5rem; line-height: 1.3; min-height: 4.2rem; display: flex; align-items: flex-start;">Bio-Med Device <br>Management System</h3>
+          </div>
+          <span class="tag" aria-hidden="true" style="font-size:1rem; white-space: nowrap;">DevSecOps • MEAN</span>
+        </div>
+        <div style="margin-top: 4px; margin-bottom: 8px;">
+          <p class="muted" style="margin:0; font-size:1.1rem;">AGP Hospital • Aug 2025 – Feb 2026</p>
+        </div>
+        <div style="flex-grow: 1;">
+          <p class="muted" style="margin-top:0.5rem; font-size:1.1rem; line-height:1.5;">
+            Engineered a biomedical management system using the MEAN stack. Implemented strict <strong>DevSecOps</strong> workflows, utilizing <strong>GitHub CI/CD pipelines</strong> for automated deployment and <strong>Trivy</strong> for Docker container vulnerability scanning.
+            <br><br>
+            <strong style="color:#cfeffb;">Launched in:</strong> <em>March</em>, 2026.
+          </p>
+        </div>
+        <div style="margin-top:15px;">
+          <a class="btn-cta" href="./assets/docs/BioMed_Documentation.pdf" target="_blank" aria-label="View Documentation PDF" style="padding: 0.6rem 1.2rem; font-size: 1rem;">
+            <i class="fa fa-file-pdf" style="font-size:1rem"></i>
+            <span class="muted" style="color:#cfeffb"> View Documentation</span>
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>      
+<section id="services" class="section">
+  <div class="maxw">
+    <div class="section-title">
+      <div class="bar" aria-hidden="true"></div>
+      <h2>Expertise & Focus Areas</h2>
+    </div>
+    
+    <div class="grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:20px">
+      
+      <div class="glass-card" tabindex="0">
+        <div class="service-icon" aria-hidden="true"><i class="fa fa-bug fa-lg" style="color:var(--neon)"></i></div>
+        <h3 style="margin-top:10px; color:#eaf6ff; font-size:1.3rem;">VAPT & Penetration Testing</h3>
+        <p class="muted" style="margin-top:8px; font-size:0.95rem; line-height:1.4;">
+          Comprehensive vulnerability assessments to simulate real-world attacks, identify architectural flaws, and patch security gaps.
+        </p>
+      </div>
+
+      <div class="glass-card" tabindex="0">
+        <div class="service-icon" aria-hidden="true"><i class="fa fa-network-wired fa-lg" style="color:var(--neon)"></i></div>
+        <h3 style="margin-top:10px; color:#eaf6ff; font-size:1.3rem;">Infrastructure Security</h3>
+        <p class="muted" style="margin-top:8px; font-size:0.95rem; line-height:1.4;">
+          Hardening Linux/Windows systems, securing enterprise networks, managing access controls, and maintaining robust firewalls.
+        </p>
+      </div>
+
+      <div class="glass-card" tabindex="0">
+        <div class="service-icon" aria-hidden="true"><i class="fa fa-magnifying-glass fa-lg" style="color:var(--neon)"></i></div>
+        <h3 style="margin-top:10px; color:#eaf6ff; font-size:1.3rem;">Digital Forensics & OSINT</h3>
+        <p class="muted" style="margin-top:8px; font-size:0.95rem; line-height:1.4;">
+          Gathering Open Source Intelligence and applying fundamental forensic techniques to investigate potential breaches.
+        </p>
+      </div>
+
+      <div class="glass-card" tabindex="0">
+        <div class="service-icon" aria-hidden="true"><i class="fa fa-shield-alt fa-lg" style="color:var(--neon)"></i></div>
+        <h3 style="margin-top:10px; color:#eaf6ff; font-size:1.3rem;">Security Consulting</h3>
+        <p class="muted" style="margin-top:8px; font-size:0.95rem; line-height:1.4;">
+          Strategic security consulting, IT policy enforcement, and professional bug bounty / vulnerability disclosure reporting.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="credentials" class="section bg-black/40" style="padding: 80px 0;">
+  <div class="maxw">
+    
+    <div class="section-title" style="margin-bottom: 40px;">
+      <div class="bar" aria-hidden="true" style="background: #0ea5e9; width: 4px; height: 24px;"></div>
+      <h2>Credentials</h2>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; align-items: stretch;">
+      
+      <div class="thm-card-container">
+        <div class="thm-card" tabindex="0">
+          <div class="card-header">
+            <span class="status-dot"></span>
+            <span class="platform-name">TRYHACKME <span class="dim">| VERIFIED PROFILE</span></span>
+          </div>
+          
+          <div class="iframe-wrapper">
+            <iframe
+  src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=3131789"
+  title="TryHackMe Profile"
+  loading="lazy"
+  style="border:none; width: 100%; height: 95px; overflow:hidden;" 
+  scrolling="no">
+</iframe>
+          </div>
+
+          <div class="card-footer">
+            <a href="https://tryhackme.com/p/SathyaBoobalan" target="_blank" rel="noopener" class="view-link">
+              View Metrics 
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+        
+        <div class="stat-box">
+          <span class="stat-label">Platform Ranking</span>
+          <span class="stat-value">Top 6%</span>
+          <span class="stat-desc">Global Rank on TryHackMe</span>
+        </div>
+
+        <div class="stat-box">
+          <span class="stat-label">Achievements</span>
+          <div style="display: flex; align-items: baseline; gap: 10px;">
+            <span class="stat-value" style="color: #22c55e;">13</span>
+            <span class="stat-desc-inline">Earned Badges</span>
+          </div>
+          <p class="stat-desc" style="margin-top: 5px;">Verified milestones for specialized security pathways.</p>
+        </div>
+
+        <div class="stat-box" style="grid-column: span 2;">
+          <span class="stat-label">Platform Mastery</span>
+          <div style="display: flex; align-items: baseline; gap: 10px;">
+            <span class="stat-value" style="color: #0ea5e9;">109</span>
+            <span class="stat-desc-inline">Rooms Completed</span>
+          </div>
+          <p class="stat-desc" style="margin-top: 5px;">Extensive hands-on training across diverse security labs and attack vectors.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+            <section id="achievements" class="section bg-black/20">
+        <div class="maxw">
+          <div class="section-title">
+            <div class="bar" aria-hidden="true"></div>
+            <h2>Certifications</h2>
+          </div>
+          <div class="grid-achievements" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px">
+
+<div class="glass-card" tabindex="0">
+  <div class="cert-img-wrapper">
+    <img src="./assets/images/Certificates/Yukthi_CTF_2025.jpg" alt="Yukthi CTF Challenge Rank" class="cert-thumb zoom-img" style="width:100%; display:block;">
+    <div class="cert-overlay">Preview</div>
+  </div>
+  <h4 style="margin-top:8px;color:#eaf6ff; font-size:1.5rem;">Yukthi CTF 2.0</h4>
+  <p class="muted" style="margin-top:4px; font-size:1.1rem; color: #a5d1ff;">Rank: 75 / 321 (Top 23.4%)</p>
+  <p class="muted" style="margin-top:2px; font-size:1.3rem;">Dec 7, 2025</p>
+</div>
+            
+            <div class="glass-card" tabindex="0">
+              <div class="cert-img-wrapper">
+                <img src="./assets/images/Certificates/Ethical_Hacker_Certificate.png" alt="Ethical Hacker Certificate" class="cert-thumb zoom-img" style="width:100%; display:block;">
+                <div class="cert-overlay">Preview</div>
+              </div>
+              <h4 style="margin-top:8px;color:#eaf6ff; font-size:1.5rem;">Ethical Hacker (Cisco Network Academy)</h4>
+              <p class="muted" style="margin-top:6px; font-size:1.3rem;">Dec 7, 2025</p>
+            </div>
+
+            <div class="glass-card" tabindex="0">
+              <div class="cert-img-wrapper">
+                <img src="./assets/images/Certificates/CC_Certificate.jpg" alt="CC Certificate" class="cert-thumb zoom-img" style="width:100%; display:block;">
+                <div class="cert-overlay">Preview</div>
+              </div>
+              <h4 style="margin-top:8px;color:#eaf6ff; font-size:1.5rem;">Certified in Cybersecurity (CC)</h4>
+              <p class="muted" style="margin-top:6px; font-size:1.3rem;">Aug 31, 2024</p>
+            </div>
+
+            <div class="glass-card" tabindex="0">
+              <div class="cert-img-wrapper">
+                <img src="./assets/images/Certificates/White_Hat_Hacker_Certificate.jpg" alt="White Hat Hacker" class="cert-thumb zoom-img" style="width:100%; display:block;">
+                <div class="cert-overlay">Preview</div>
+              </div>
+              <h4 style="margin-top:8px;color:#eaf6ff; font-size:1.5rem;">Be A White Hat Hacker and Pen Tester</h4>
+              <p class="muted" style="margin-top:6px; font-size:1.3rem;">May 20, 2024</p>
+            </div>
+
+
+
+          </div>
+        </div>
+      </section>
+
+      <div id="imgModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);justify-content:center;align-items:center;z-index:9999;cursor:zoom-out">
+        <img id="modalImg" src="" style="max-width:90%;max-height:90%;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,0.7)">
+      </div>
+
+      <section id="career-timeline" class="section">
+  <div class="maxw">
+    <div class="section-title">
+      <div class="bar" aria-hidden="true"></div>
+      <h2>Professional Journey</h2>
+    </div>
+
+    <div class="timeline-container">
+
+      <div class="timeline-item current">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">July 2025 – Present</div>
+        <div class="glass-card timeline-content">
+          <div class="edu-icon"><i class="fa-solid fa-network-wired"></i></div>
+          <h3 class="timeline-title">System Admin</h3>
+          <p class="timeline-subtitle">A. G. Padmavati's Hospital Ltd, Puducherry</p>
+          <p class="muted">
+            Securing IT infrastructure, enforcing network access controls, and maintaining server uptime to support and defend critical medical operations.
+          </p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2021 – 2025</div>
+        <div class="glass-card timeline-content">
+          <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h3 class="timeline-title">B.Tech (CSE)</h3>
+          <p class="timeline-subtitle">Manakula Vinayagar Institute of Technology, Puducherry</p>
+          <p class="muted">Specialized in Computer Science and Engineering, developing a strong foundation in network protocols, operating systems, and computer architecture.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2007 – 2021</div>
+        <div class="glass-card timeline-content">
+          <div class="edu-icon"><i class="fa-solid fa-school"></i></div>
+          <h3 class="timeline-title">SSLC & HSC</h3>
+          <p class="timeline-subtitle">Amalorpavam Higher Secondary School, Puducherry</p>
+          <p class="muted">Completed foundational and higher secondary education with a focus on core academic excellence.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section id="contact" class="section bg-black/40">
+  <div class="maxw">
+    <div class="section-title">
+      <div class="bar" aria-hidden="true"></div>
+      <h2>Contact</h2>
+    </div>
+    <div class="contact-grid" style="display:grid; grid-template-columns:1fr 320px; gap:18px; align-items:start;">
+      <div>
+        <div class="glass-card contact-card" style="display: flex; justify-content: space-between; align-items: center; gap: 20px;">
+          
+          <div style="flex: 1;">
+            <h3 style="margin:0; color:#eaf6ff; font-size:1.5rem;">Ready to collaborate?</h3>
+            <p class="muted" style="margin:6px 0 0; font-size:1.3rem;">
+              For security engagements, vulnerability disclosure, or networking — reach out.
+            </p>
+          </div>
+
+          <div style="display:flex; flex-direction:column; align-items:flex-end; gap:8px;">
+            <a class="btn-cta" href="mailto:sathyaboobalan.r2003@gmail.com" aria-label="Email Sathya">
+              <i class="fa fa-envelope"></i><span>Mail</span>
+            </a>
+            <a class="btn-cta" href="https://in.linkedin.com/in/sathya-boobalan-07b11024a" target="_blank" rel="noopener" aria-label="LinkedIn profile">
+              <i class="fab fa-linkedin"></i><span>LinkedIn</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <aside>
+        <div class="glass-card" style="text-align:center;">
+          <h4 style="margin:0; color:#eaf6ff; font-size:1.5rem;">Quick Info</h4>
+          <p class="muted" style="margin-top:8px; font-size:1.3rem;">
+            Email: <a href="mailto:sathyaboobalan.r2003@gmail.com" style="color:var(--neon)">sathyaboobalan.r2003@gmail.com</a>
+          </p>
+          <p class="muted" style="font-size:1.3rem;">Location: India</p>
+          <div style="margin-top:8px; display:flex; justify-content:center; gap:12px">
+            <a href="https://github.com/SathyaBoobalan" style="font-size:1.8rem;" class="text-2xl" title="GitHub" target="_blank" rel="noopener">
+              <i class="fab fa-github" style="color:#cfeffb"></i>
+            </a>
+            <a href="https://sathyaboobalan.tiiny.site" style="font-size:1.8rem;" class="text-2xl" title="Resume" target="_blank" rel="noopener">
+              <i class="fa fa-file-alt" style="color:#cfeffb"></i>
+            </a>
+            <a href="https://in.linkedin.com/in/sathya-boobalan-07b11024a" style="font-size:1.8rem;" class="text-2xl" title="LinkedIn" target="_blank" rel="noopener">
+              <i class="fab fa-linkedin" style="color:#cfeffb"></i>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+    </main>
+
+    <footer>
+      <div class="maxw">
+        <p style="margin:0; font-size:1.3rem;">© <span id="year"></span> Sathya Boobalan. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./script.js"></script>
+
+</body>
+</html>

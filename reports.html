@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Sathya Boobalan — Vulnerability Reports & CTF Write-ups" />
+  <meta name="author" content="Sathya Boobalan" />
+  
+  <title>Reports & Write-ups | Sathya Boobalan</title>
+  
+  <link id="main-style" rel="stylesheet" href="./styles/style.css">
+  <link rel="icon" type="image/png" href="./assets/favicon.ico">
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <div class="site">
+    
+    <header style="padding: 2rem; position: relative; z-index: 10;">
+        <div class="maxw" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="index.html" class="btn-cta" style="padding: 0.8rem 1.5rem; display: flex; align-items: center; gap: 10px; border-radius: 50px;">
+                <i class="fa fa-arrow-left"></i> <span>Back to Home</span>
+            </a>
+            <h2 id="page-title" style="color: #eaf6ff; margin: 0; font-size: 2rem; font-weight: 700;">Archive</h2>
+        </div>
+    </header>
+
+    <main class="main" role="main">
+    
+      <section id="reports" class="section" style="padding-top: 2rem; padding-bottom: 2rem;">
+        <div class="maxw">
+          <div class="section-title" style="margin-bottom: 30px;">
+            <div class="bar" aria-hidden="true"></div>
+            <h2>Methodology Reports & Lab Write-ups</h2>
+          </div>
+
+          <div class="grid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; align-items: stretch;">
+            
+            <article class="glass-card" tabindex="0" style="padding:1.5rem; border:1px solid var(--card-border); display: flex; flex-direction: column; height: 100%;">
+              <div style="padding-bottom:6px;padding-top:6px;">
+                <div style="width: 100%; height: 160px; background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                   <i class="fa fa-globe" style="font-size: 4rem; color: #818cf8; opacity: 0.9;"></i>
+                </div>
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-top:0.5rem;">
+                <div style="flex: 1;">
+                  <h3 style="font-weight:700; color:#eaf6ff; margin:0; font-size:1.5rem; line-height: 1.3;">External Attack Surface Reconnaissance</h3>
+                </div>
+                <span class="tag" aria-hidden="true" style="font-size:1rem; white-space: nowrap;">Bug Bounty</span>
+              </div>
+              <div style="margin-top: 4px; margin-bottom: 8px;">
+                <p class="muted" style="margin:0; font-size:1.1rem;">Methodology Report • 2026</p>
+              </div>
+              <div style="flex-grow: 1;">
+                <p class="muted" style="margin-top:0.5rem; font-size:1.1rem; line-height:1.5;">
+                  A detailed breakdown of my structured reconnaissance methodology on a public bug bounty program, documenting subdomain enumeration, hidden directory discovery, and port scanning techniques.
+                </p>
+              </div>
+              <div style="margin-top:15px;">
+                <a class="btn-cta" href="#" aria-label="Read Report" style="padding: 0.6rem 1.2rem; font-size: 1rem;">
+                  <i class="fa fa-file-alt" style="font-size:1rem"></i>
+                  <span class="muted" style="color:#cfeffb"> Read Report</span>
+                </a>
+              </div>
+            </article>
+
+            <article class="glass-card" tabindex="0" style="padding:1.5rem; border:1px solid var(--card-border); display: flex; flex-direction: column; height: 100%;">
+              <div style="padding-bottom:6px;padding-top:6px;">
+                <div style="width: 100%; height: 160px; background: linear-gradient(135deg, #064e3b 0%, #065f46 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                   <i class="fa fa-sitemap" style="font-size: 4rem; color: #34d399; opacity: 0.9;"></i>
+                </div>
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-top:0.5rem;">
+                <div style="flex: 1;">
+                  <h3 style="font-weight:700; color:#eaf6ff; margin:0; font-size:1.5rem; line-height: 1.3;">Active Directory Penetration Test</h3>
+                </div>
+                <span class="tag" aria-hidden="true" style="font-size:1rem; white-space: nowrap;">Lab Write-up</span>
+              </div>
+              <div style="margin-top: 4px; margin-bottom: 8px;">
+                <p class="muted" style="margin:0; font-size:1.1rem;">TryHackMe • Enterprise Network</p>
+              </div>
+              <div style="flex-grow: 1;">
+                <p class="muted" style="margin-top:0.5rem; font-size:1.1rem; line-height:1.5;">
+                  Step-by-step methodology for exploiting misconfigured SMB shares, harvesting Kerberos tickets (Kerberoasting), and escalating privileges to Domain Admin within a simulated enterprise environment.
+                </p>
+              </div>
+              <div style="margin-top:15px;">
+                <a class="btn-cta" href="#" aria-label="Read Write-up" style="padding: 0.6rem 1.2rem; font-size: 1rem;">
+                  <i class="fa fa-terminal" style="font-size:1rem"></i>
+                  <span class="muted" style="color:#cfeffb"> Read Write-up</span>
+                </a>
+              </div>
+            </article>
+
+            <article class="glass-card" tabindex="0" style="padding:1.5rem; border:1px solid var(--card-border); display: flex; flex-direction: column; height: 100%;">
+              <div style="padding-bottom:6px;padding-top:6px;">
+                <div style="width: 100%; height: 160px; background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                   <i class="fa fa-flag" style="font-size: 4rem; color: #f87171; opacity: 0.9;"></i>
+                </div>
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-top:0.5rem;">
+                <div style="flex: 1;">
+                  <h3 style="font-weight:700; color:#eaf6ff; margin:0; font-size:1.5rem; line-height: 1.3;">Yukthi CTF 2.0 Challenges</h3>
+                </div>
+                <span class="tag" aria-hidden="true" style="font-size:1rem; white-space: nowrap;">CTF</span>
+              </div>
+              <div style="margin-top: 4px; margin-bottom: 8px;">
+                <p class="muted" style="margin:0; font-size:1.1rem;">Memory Forensics • Dec 2025</p>
+              </div>
+              <div style="flex-grow: 1;">
+                <p class="muted" style="margin-top:0.5rem; font-size:1.1rem; line-height:1.5;">
+                  A detailed breakdown of how I solved the advanced memory forensics and steganography challenges during the Yukthi CTF 2.0 event.
+                </p>
+              </div>
+              <div style="margin-top:15px;">
+                <a class="btn-cta" href="#" aria-label="Read Write-up" style="padding: 0.6rem 1.2rem; font-size: 1rem;">
+                  <i class="fa fa-bug" style="font-size:1rem"></i>
+                  <span class="muted" style="color:#cfeffb"> Read Write-up</span>
+                </a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="mini" class="section bg-black/40" style="padding-top: 2rem;">
+        <div class="maxw">
+          <div class="section-title" style="margin-bottom: 30px;">
+            <div class="bar" aria-hidden="true"></div>
+            <h2>Other Technical Projects</h2>
+          </div>
+
+          <div class="grid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; align-items: stretch;">
+            
+            <article class="glass-card" aria-labelledby="biomed-title" tabindex="0"
+              style="padding:1.5rem; border:1px solid var(--card-border); display: flex; flex-direction: column; height: 100%;">
+              
+              <div style="padding-bottom:6px;padding-top:6px;">
+                <img src="./assets/images/Project/Biomed_Software_Logo.jpg" alt="Biomedical Software Dashboard Logo" class="project-img"
+                  style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px;">
+              </div>
+
+              <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-top:0.5rem;">
+                <div style="flex: 1;">
+                  <h3 id="biomed-title" style="font-weight:700; color:#eaf6ff; margin:0; font-size:1.6rem; line-height: 1.3; min-height: 4.2rem; display: flex; align-items: flex-start;">
+                    Bio-Med Device <br>Management System
+                  </h3>
+                </div>
+                <span class="tag" aria-hidden="true" style="font-size:1rem; white-space: nowrap;">DevSecOps • MEAN</span>
+              </div>
+
+              <div style="margin-top: 4px; margin-bottom: 8px;">
+                <p class="muted" style="margin:0; font-size:1.1rem;">AGP Hospital • Aug 2025 – Feb 2026</p>
+              </div>
+
+              <div style="flex-grow: 1;">
+                <p class="muted" style="margin-top:0.5rem; font-size:1.1rem; line-height:1.5;">
+                  Engineered a biomedical management system using the MEAN stack. Implemented strict <strong>DevSecOps</strong> workflows, utilizing <strong>GitHub CI/CD pipelines</strong> for automated deployment and <strong>Trivy</strong> for Docker container vulnerability scanning.
+                  <br><br>
+                  <strong style="color:#cfeffb;">Launched in:</strong>
+                  <em>March</em>, 2026.
+                </p>
+              </div>
+
+              <div style="margin-top:15px;">
+                <a class="btn-cta" href="./assets/docs/BioMed_Documentation.pdf" target="_blank" aria-label="View Documentation PDF" style="padding: 0.6rem 1.2rem; font-size: 1rem;">
+                  <i class="fa fa-file-pdf" style="font-size:1rem"></i>
+                  <span class="muted" style="color:#cfeffb"> View Documentation</span>
+                </a>
+              </div>
+
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer style="padding: 2rem; text-align: center;">
+      <p style="margin:0; font-size:1.2rem; color: #8892b0;">© <span id="year">2026</span> Sathya Boobalan. All rights reserved.</p>
+    </footer>
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./script.js"></script>
+
+</body>
+</html>
