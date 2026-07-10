@@ -41,6 +41,12 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Bumped standard paragraph text by 2px (18px assuming 16px base) */
+p {
+  font-size: 1.125rem; 
+  line-height: 1.6;
+}
+
 /* Beautiful Glowing Orbs in Background */
 body::before {
   content: '';
@@ -89,7 +95,7 @@ body::after {
 
 .nav-item {
   color: var(--text-muted) !important;
-  font-size: 0.95rem;
+  font-size: 1.075rem; /* Increased by 2px from 0.95rem */
   font-weight: 600;   
   text-decoration: none !important;
   transition: all 0.3s ease;
@@ -175,7 +181,7 @@ body::after {
   background: linear-gradient(to bottom, var(--gradient-1), var(--gradient-3));
 }
 
-.muted { color: var(--text-body); font-size: 1.1rem; line-height: 1.7; font-weight: 400; }
+.muted { color: var(--text-body); font-size: 1.225rem; line-height: 1.7; font-weight: 400; } /* Increased by 2px from 1.1rem */
 .tag {
   font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px;
   padding: 0.5rem 1rem; border-radius: 6px;
@@ -195,6 +201,8 @@ body::after {
   box-shadow: var(--shadow-soft);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+
+
 
 .glass-card:hover {
   transform: translateY(-8px);
@@ -229,7 +237,7 @@ body::after {
 .stat-label { font-size: 0.85rem; font-weight: 700; font-family: 'JetBrains Mono', monospace; color: var(--gradient-1); margin-bottom: 12px; display: block; letter-spacing: 1px;}
 .stat-value { font-size: 3rem; font-weight: 900; color: var(--text-main); line-height: 1; margin-right: 12px; }
 .stat-desc-inline { font-size: 1.2rem; color: var(--text-main); font-weight: 700; }
-.stat-desc { font-size: 1rem; color: var(--text-body); margin-top: 10px; }
+.stat-desc { font-size: 1.125rem; color: var(--text-body); margin-top: 10px; } /* Increased by 2px from 1rem */
 
 .card-header { padding: 18px 24px; background: rgba(248, 250, 252, 0.8); border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; align-items: center; gap: 14px; border-radius: 20px 20px 0 0;}
 .status-dot { width: 14px; height: 14px; background: #10B981; border-radius: 50%; box-shadow: 0 0 12px rgba(16, 185, 129, 0.4); }
@@ -321,7 +329,7 @@ footer { padding: 3rem 1rem; text-align: center; color: var(--text-muted); font-
   .hamburger-btn { display: flex; align-items: center; gap: 10px; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); color: var(--gradient-1); font-weight: 700; font-size: 1.05rem; padding: 10px 20px !important; border-radius: 10px; cursor: pointer; width: 100%; text-transform: uppercase; letter-spacing: 1px;}
   .nav-links { display: none; width: 100%; flex-direction: column; gap: 8px; margin: 0; padding: 0; }
   .nav-links.mobile-open { display: flex; margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(0,0,0,0.05); }
-  .nav-item { font-size: 1.1rem !important; padding: 14px !important; width: 100%; display: block; border-radius: 8px; text-align: left; background: rgba(0,0,0,0.03); }
+  .nav-item { font-size: 1.225rem !important; padding: 14px !important; width: 100%; display: block; border-radius: 8px; text-align: left; background: rgba(0,0,0,0.03); } /* Increased by 2px from 1.1rem */
 
   /* Mobile Grid Fixes */
   #projects .grid, .grid, .grid-achievements { display: flex !important; flex-direction: column !important; gap: 24px !important; }
