@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Sathya Boobalan — Cloud Engineer & System Administrator. Explore cloud architecture, infrastructure automation, Azure solutions, and enterprise security." />
+  <meta name="author" content="Sathya Boobalan" />
+  
+  <title>Sathya Boobalan | Cloud Engineer & System Admin</title>
+  
+  <!-- 1. Load Bootstrap First -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- 2. Load Fonts & Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  
+  <!-- 3. Load Tailwind (for grid structures) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 4. LOAD YOUR CUSTOM CSS LAST -->
+  <link id="main-style" rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<nav class="floating-nav">
+  <button class="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+    <span>SB | ☰</span>
+  </button>
+
+  <div class="nav-links" id="terminalNav">
+    <a href="#about" class="nav-item">Profile</a>
+    <a href="#projects" class="nav-item">Cloud & Automation</a>
+    <a href="#services" class="nav-item">Expertise</a>
+    <a href="#credentials" class="nav-item">Metrics</a>
+    <a href="#career-timeline" class="nav-item">Career Path</a>
+    <a href="#contact" class="nav-item">Connect</a>
+  </div>
+</nav>
+  
+  <div class="site">
+    
+    <header class="cyber-header">
+      <div class="glow-overlay"></div>
+      <div class="cyber-content">
+        <h1 class="glow-title">SATHYA&nbsp;BOOBALAN</h1>
+        <p class="glow-subtitle">Cloud Engineer | System Administrator | Infrastructure Automation</p>
+        <div class="social-icons">
+          <a href="https://github.com/SathyaBoobalan" title="GitHub" target="_blank" rel="noopener">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="./assets/docs/Sathya B.pdf" title="Resume / Form" target="_blank" rel="noopener">
+            <i class="fa fa-file-lines"></i>
+          </a>
+          <a href="https://in.linkedin.com/in/sathya-boobalan-07b11024a" title="LinkedIn" target="_blank" rel="noopener">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="mailto:sathyaboobalan.r2003@gmail.com" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-indicator" onclick="event.preventDefault(); document.querySelector('#about').scrollIntoView({behavior:'smooth'});">
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
+      </a>
+    </header>
+
+    <main class="main" role="main">
+      
+      <!-- Removed bg-black/40 -->
+      <section id="about" class="section">
+        <div class="maxw">
+          <div class="section-title">
+            <div class="bar" aria-hidden="true"></div>
+            <h2>About Me</h2>
+          </div>
+
+          <div class="glass-card">
+            <div class="row">
+              <div class="col-md-4 col-sm-12" style="padding-right:16px;padding-bottom:6px;padding-top:6px;">
+                <img src="./assets/images/dp.jpg" alt="Sathya Boobalan" style="width:100%;border-radius:10px;object-fit:cover" />
+              </div>
+              <div class="col-md-8 col-sm-12" style="padding-left:16px">
+                <!-- Removed hardcoded white text color -->
+                <p style="margin-top:0; line-height:1.6; font-size: 1.05rem;">
+                I am a <strong>Cloud Engineer</strong> and <strong>System Administrator</strong> with a strong foundation in designing, automating, and securing enterprise infrastructure. My background in advanced system administration allows me to build scalable cloud environments with a "security-first" mindset.
+                <br><br>
+                Currently, I manage and optimize critical infrastructure at <strong>A.G. Padmavati's Hospital Ltd.</strong> and <strong>Integra</strong>, ensuring high availability, robust backup systems, and operational stability. I specialize in Linux/Windows server administration, virtualization, and infrastructure automation using Python and Bash.
+                <br><br>
+                I am actively expanding my cloud architecture expertise by pursuing the <strong>Microsoft Azure Administrator (AZ-104)</strong> certification. Whether architecting cloud-native solutions, deploying Docker containers, or applying DevSecOps principles, my objective is to build resilient, scalable, and secure operational environments.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="maxw">
+          <div class="section-title">
+            <div class="bar" aria-hidden="true"></div>
+            <h2>Cloud & Infrastructure Automation</h2>
+          </div>
+
+          <div class="grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; align-items: stretch;">
+            
+            <article class="glass-card" tabindex="0">
+              <div style="padding-bottom:6px;padding-top:6px;">
+                <div style="width: 100%; height: 160px; background: linear-gradient(135deg, #020617 0%, #0f172a 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; margin-bottom: 15px;">
+                   <i class="fab fa-docker" style="font-size: 5rem; color: #38bdf8; opacity: 0.8; z-index: 2;"></i>
+                </div>
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-top:0.5rem;">
+                <div style="flex: 1;">
+                  <h3>Bio-Med Device <br>Management System</h3>
+                </div>
+                <span class="tag">Docker • DevSecOps</span>
+              </div>
+              <div style="margin-top: 4px; margin-bottom: 8px;">
+                <p class="muted" style="margin:0;">Enterprise Deployment • March 2026</p>
+              </div>
+              <div style="flex-grow: 1;">
+                <p class="muted" style="margin-top:0.5rem;">Engineered and deployed a comprehensive full-stack application for hospital enterprise use. Designed a scalable architecture using Docker for containerization and implemented CI/CD workflows.</p>
+              </div>
+              <div style="margin-top:15px;">
+                <a class="btn-cta" href="./assets/docs/BioMed_Documentation.pdf" target="_blank" style="padding: 0.6rem 1.2rem; font-size: 1rem;">
+                  <i class="fa fa-file-pdf"></i>
+                  <span> View Doc</span>
+                </a>
+              </div>
+            </article>
+
+            <article class="glass-card" tabindex="0">
+              <div style="padding-bottom:6px;padding-top:6px;">
+                <div style="width: 100%; height: 160px; background: linear-gradient(135deg, #1e3a8a 0%, #172554 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; position: relative; margin-bottom: 15px;">
+                   <i class="fab fa-windows" style="font-size: 5rem; color: #60a5fa; opacity: 0.8; z-index: 2;"></i>
+                </div>
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-top:0.5rem;">
+                <div style="flex: 1;">
+                  <h3>Automated Active Directory Deployer</h3>
+                </div>
+                <span class="tag">PowerShell • IaC</span>
+              </div>
+              <div style="margin-top: 4px; margin-bottom: 8px;">
+                <p class="muted" style="margin:0;">Infrastructure Automation</p>
+              </div>
+              <div style="flex-grow: 1;">
+                <p class="muted" style="margin-top:0.5rem;">Leveraged System Administration expertise to script an automated deployment tool for Windows AD environments. Automatically provisions domain controllers, configures networking, and applies Group Policy objects.</p>
+              </div>
+              <div style="margin-top:15px;">
+                <a class="btn-cta" href="https://github.com/SathyaBoobalan/VulnAD-Deploy" target="_blank" style="padding: 0.6rem 1.2rem; font-size: 1rem;">
+                  <i class="fa fa-code"></i>
+                  <span> View Source</span>
+                </a>
+              </div>
+            </article>
+
+            <article class="glass-card" tabindex="0">
+              <div style="padding-bottom:6px;padding-top:6px;">
+                <div style="width: 100%; height: 160px; background: linear-gradient(135deg, #0f172a 0%, #020617 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; position: relative; margin-bottom: 15px;">
+                   <i class="fa-solid fa-network-wired" style="font-size: 5rem; color: #94a3b8; opacity: 0.8; z-index: 2;"></i>
+                </div>
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-top:0.5rem;">
+                <div style="flex: 1;">
+                  <h3>Infrastructure Automation Suite</h3>
+                </div>
+                <span class="tag">Python • Bash</span>
+              </div>
+              <div style="margin-top: 4px; margin-bottom: 8px;">
+                <p class="muted" style="margin:0;">Cloud Security Posture</p>
+              </div>
+              <div style="flex-grow: 1;">
+                <p class="muted" style="margin-top:0.5rem;">Developed a custom Bash/Python automation suite to streamline infrastructure mapping and network discovery. Automates DNS enumeration and host discovery to validate external-facing network configurations.</p>
+              </div>
+              <div style="margin-top:15px;">
+                <a class="btn-cta" href="https://github.com/SathyaBoobalan/ReconBot" target="_blank" style="padding: 0.6rem 1.2rem; font-size: 1rem;">
+                  <i class="fa fa-code"></i>
+                  <span> View Source</span>
+                </a>
+              </div>
+            </article>
+            
+            <article class="glass-card" tabindex="0">
+              <div style="padding-bottom:6px;padding-top:6px;">
+                <img src="./assets/images/Project/Final_Year_Project.jpg" alt="Cloud Security Architecture" class="project-img">
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-top:0.5rem;">
+                <div style="flex: 1;">
+                  <h3>Cloud-Based AI Medical<br>Record Architecture</h3>
+                </div>
+                <span class="tag">Cloud Storage</span>
+              </div>
+              <div style="margin-top: 4px; margin-bottom: 8px;">
+                <p class="muted" style="margin:0;">Published Architecture • 2025</p>
+              </div>
+              <div style="flex-grow: 1;">
+                <p class="muted" style="margin-top:0.5rem;"><strong>Role: Infrastructure Engineer</strong><br><br>Designed a secure, decentralized cloud architecture to host an AI-assisted healthcare application. Integrated IPFS and cloud storage environments to guarantee highly secure, distributed data management.</p>
+              </div>
+              <div style="margin-top:15px;">
+                <a class="btn-cta" href="https://www.jneonatalsurg.com/index.php/jns/article/view/5836" target="_blank" style="padding: 0.6rem 1.2rem; font-size: 1rem;">
+                  <i class="fa fa-lock"></i>
+                  <span> View Publication</span>
+                </a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>      
+
+      <section id="services" class="section">
+        <div class="maxw">
+          <div class="section-title">
+            <div class="bar" aria-hidden="true"></div>
+            <h2>Core Competencies</h2>
+          </div>
+          
+          <div class="grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:20px">
+            
+            <div class="glass-card" tabindex="0">
+              <div class="service-icon" aria-hidden="true"><i class="fa fa-cloud fa-lg"></i></div>
+              <h3>Cloud Computing</h3>
+              <p class="muted">
+                Architecting scalable cloud solutions, focusing on Azure Virtual Machines, Resource Manager (ARM), and Entra ID integration.
+              </p>
+            </div>
+
+            <div class="glass-card" tabindex="0">
+              <div class="service-icon" aria-hidden="true"><i class="fa fa-server fa-lg"></i></div>
+              <h3>System Administration</h3>
+              <p class="muted">
+                Managing Linux and Windows enterprise servers, configuring Active Directory, enforcing Group Policy, and ensuring high availability.
+              </p>
+            </div>
+
+            <div class="glass-card" tabindex="0">
+              <div class="service-icon" aria-hidden="true"><i class="fa fa-terminal fa-lg"></i></div>
+              <h3>Infrastructure Automation</h3>
+              <p class="muted">
+                Scripting routine administrative tasks and system deployments using Infrastructure as Code (IaC) principles, PowerShell, Bash, and Python.
+              </p>
+            </div>
+
+            <div class="glass-card" tabindex="0">
+              <div class="service-icon" aria-hidden="true"><i class="fa fa-shield-check fa-lg"></i></div>
+              <h3>DevSecOps & Containers</h3>
+              <p class="muted">
+                Deploying isolated applications via Docker, managing continuous integration pipelines (CI/CD), and enforcing strict Role-Based Access Controls.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Removed bg-black/40 -->
+      <section id="credentials" class="section" style="padding: 80px 0;">
+        <div class="maxw">
+          
+          <div class="section-title" style="margin-bottom: 40px;">
+            <div class="bar" aria-hidden="true"></div>
+            <h2>Security Foundation Metrics</h2>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; align-items: stretch;">
+            
+            <div class="thm-card-container">
+              <div class="thm-card" tabindex="0">
+                <div class="card-header">
+                  <span class="status-dot"></span>
+                  <span class="platform-name">TRYHACKME | VERIFIED</span>
+                </div>
+                
+                <div class="iframe-wrapper">
+                  <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=3131789" title="TryHackMe Profile" loading="lazy" scrolling="no"></iframe>
+                </div>
+
+                <div class="card-footer">
+                  <a href="https://tryhackme.com/p/SathyaBoobalan" target="_blank" rel="noopener" class="view-link">
+                    View Metrics 
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="stats-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+              
+              <div class="stat-box">
+                <span class="stat-label">Platform Ranking</span>
+                <span class="stat-value">Top 6%</span>
+                <span class="stat-desc">Global Rank on TryHackMe</span>
+              </div>
+
+              <div class="stat-box">
+                <span class="stat-label">Achievements</span>
+                <div style="display: flex; align-items: baseline; gap: 10px;">
+                  <span class="stat-value" style="color: #22c55e;">13</span>
+                  <span class="stat-desc-inline" style="color: #334155;">Earned Badges</span>
+                </div>
+                <p class="stat-desc" style="margin-top: 5px;">Verified milestones for specialized security pathways.</p>
+              </div>
+
+              <div class="stat-box" style="grid-column: span 2;">
+                <span class="stat-label">Infrastructure Mastery</span>
+                <div style="display: flex; align-items: baseline; gap: 10px;">
+                  <span class="stat-value" style="color: #3b82f6;">109</span>
+                  <span class="stat-desc-inline" style="color: #334155;">Labs Completed</span>
+                </div>
+                <p class="stat-desc" style="margin-top: 5px;">Extensive hands-on training across diverse networking configurations, Linux internals, and security architectures.</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Removed bg-black/20 -->
+      <section id="achievements" class="section">
+        <div class="maxw">
+          <div class="section-title">
+            <div class="bar" aria-hidden="true"></div>
+            <h2>Certifications</h2>
+          </div>
+          <div class="grid-achievements" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px">
+
+            <div class="glass-card" tabindex="0">
+              <div class="cert-img-wrapper" style="background: rgba(14, 165, 233, 0.1); height: 160px; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+                <i class="fa-brands fa-microsoft" style="font-size: 4rem; color: #3b82f6;"></i>
+              </div>
+              <h4 style="margin-top:12px; font-weight: 800; font-size:1.4rem;">Microsoft Azure Administrator</h4>
+              <p class="muted" style="margin-top:4px; font-weight: 700;">AZ-104</p>
+              <p style="margin-top:2px; font-size:1.1rem; color: #22c55e; font-weight: 600;">Status: In Progress</p>
+            </div>
+
+            <div class="glass-card" tabindex="0">
+              <div class="cert-img-wrapper">
+                <img src="./assets/images/Certificates/CC_Certificate.jpg" alt="CC Certificate" class="cert-thumb zoom-img" style="width:100%; display:block;">
+              </div>
+              <h4 style="margin-top:8px; font-weight: 800; font-size:1.4rem;">Certified in Cybersecurity (CC)</h4>
+              <p class="muted" style="margin-top:4px; font-weight: 700;">ISC2</p>
+              <p class="muted" style="margin-top:6px;">Issued: Aug 31, 2024</p>
+            </div>
+            
+            <div class="glass-card" tabindex="0">
+              <div class="cert-img-wrapper">
+                <img src="./assets/images/Certificates/Yukthi_CTF_2025.jpg" alt="Yukthi CTF Challenge Rank" class="cert-thumb zoom-img" style="width:100%; display:block;">
+              </div>
+              <h4 style="margin-top:8px; font-weight: 800; font-size:1.4rem;">Security Infrastructure CTF</h4>
+              <p class="muted" style="margin-top:4px; font-weight: 700;">Rank: 75 / 321 (Top 23.4%)</p>
+              <p class="muted" style="margin-top:2px;">Dec 7, 2025</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="career-timeline" class="section">
+        <div class="maxw">
+          <div class="section-title">
+            <div class="bar" aria-hidden="true"></div>
+            <h2>Professional Journey</h2>
+          </div>
+
+          <div class="timeline-container">
+
+            <div class="timeline-item current">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">May 2026 – Present</div>
+              <div class="glass-card timeline-content">
+                <div class="edu-icon"><i class="fa-solid fa-server"></i></div>
+                <h3 class="timeline-title">System Administrator</h3>
+                <p class="timeline-subtitle">Integra, Puducherry</p>
+                <p class="muted">
+                  Managing and optimizing enterprise-grade infrastructure across ~3,000 endpoints. Automating routine administrative tasks, managing Active Directory, and deploying critical security patches to ensure high availability and operational efficiency.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">July 2025 – May 2026</div>
+              <div class="glass-card timeline-content">
+                <div class="edu-icon"><i class="fa-solid fa-network-wired"></i></div>
+                <h3 class="timeline-title">System Administrator</h3>
+                <p class="timeline-subtitle">A. G. Padmavati's Hospital Ltd, Puducherry</p>
+                <p class="muted">
+                  Administered comprehensive IT infrastructure including Windows/Linux servers. Managed virtualized environments, cloud applications, and networking configurations to maintain 99.9% system uptime for critical medical operations.
+                </p>
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2021 – 2025</div>
+              <div class="glass-card timeline-content">
+                <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h3 class="timeline-title">B.Tech (CSE)</h3>
+                <p class="timeline-subtitle">Manakula Vinayagar Institute of Technology, Puducherry</p>
+                <p class="muted">Specialized in Computer Science and Engineering, developing a strong foundation in network protocols, operating systems, and infrastructure architecture.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Removed bg-black/40 -->
+      <section id="contact" class="section">
+        <div class="maxw">
+          <div class="section-title">
+            <div class="bar" aria-hidden="true"></div>
+            <h2>Contact</h2>
+          </div>
+          <div class="contact-grid" style="display:grid; grid-template-columns:1fr 320px; gap:18px; align-items:start;">
+            <div>
+              <div class="glass-card contact-card">
+                
+                <div style="flex: 1;">
+                  <h3 style="margin:0; font-size:1.8rem; font-weight: 800;">Ready to collaborate?</h3>
+                  <p class="muted" style="margin:6px 0 0; font-size:1.1rem;">
+                    For cloud engineering roles, infrastructure automation, or enterprise system administration — reach out.
+                  </p>
+                </div>
+
+                <div style="display:flex; flex-direction:column; align-items:flex-end; gap:12px;">
+                  <a class="btn-cta" href="mailto:sathyaboobalan.r2003@gmail.com" aria-label="Email Sathya">
+                    <i class="fa fa-envelope"></i><span>Mail</span>
+                  </a>
+                  <a class="btn-cta" href="https://in.linkedin.com/in/sathya-boobalan-07b11024a" target="_blank" rel="noopener" aria-label="LinkedIn profile">
+                    <i class="fab fa-linkedin"></i><span>LinkedIn</span>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+
+            <aside>
+              <div class="glass-card" style="text-align:center;">
+                <h4 style="margin:0; font-size:1.4rem; font-weight: 800;">Quick Info</h4>
+                <p class="muted" style="margin-top:12px; font-weight: 600;">
+                  sathyaboobalan.r2003@gmail.com
+                </p>
+                <p class="muted" style="font-weight: 600;">Location: India</p>
+                <div style="margin-top:15px; display:flex; justify-content:center; gap:18px">
+                  <a href="https://github.com/SathyaBoobalan" style="font-size:1.8rem; color: #3b82f6;" title="GitHub" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a href="./assets/docs/Sathya B.pdf" style="font-size:1.8rem; color: #3b82f6;" title="Resume" target="_blank" rel="noopener">
+                    <i class="fa fa-file-alt"></i>
+                  </a>
+                  <a href="https://in.linkedin.com/in/sathya-boobalan-07b11024a" style="font-size:1.8rem; color: #3b82f6;" title="LinkedIn" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin"></i>
+                  </a>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="maxw">
+        <p style="margin:0;">© <span id="year"></span> Sathya Boobalan. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./script.js"></script>
+
+</body>
+</html>
